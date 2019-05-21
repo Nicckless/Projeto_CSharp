@@ -58,6 +58,13 @@
             this.textBoxKmdepois = new System.Windows.Forms.TextBox();
             this.textBoxKmandtes = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.carroBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.carroAluguerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idCarroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroChassisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.combustivelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -67,6 +74,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carroAluguerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox5
@@ -84,7 +93,15 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCarroDataGridViewTextBoxColumn,
+            this.numeroChassisDataGridViewTextBoxColumn,
+            this.marcaDataGridViewTextBoxColumn,
+            this.modeloDataGridViewTextBoxColumn,
+            this.combustivelDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.carroBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(274, 21);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
@@ -347,6 +364,44 @@
             this.button2.Text = "Devolver Carro / Emitir Fatura";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // carroBindingSource
+            // 
+            this.carroBindingSource.DataSource = typeof(Gestor_de_oficina.Carro);
+            // 
+            // carroAluguerBindingSource
+            // 
+            this.carroAluguerBindingSource.DataSource = typeof(Gestor_de_oficina.CarroAluguer);
+            // 
+            // idCarroDataGridViewTextBoxColumn
+            // 
+            this.idCarroDataGridViewTextBoxColumn.DataPropertyName = "IdCarro";
+            this.idCarroDataGridViewTextBoxColumn.HeaderText = "IdCarro";
+            this.idCarroDataGridViewTextBoxColumn.Name = "idCarroDataGridViewTextBoxColumn";
+            // 
+            // numeroChassisDataGridViewTextBoxColumn
+            // 
+            this.numeroChassisDataGridViewTextBoxColumn.DataPropertyName = "NumeroChassis";
+            this.numeroChassisDataGridViewTextBoxColumn.HeaderText = "NumeroChassis";
+            this.numeroChassisDataGridViewTextBoxColumn.Name = "numeroChassisDataGridViewTextBoxColumn";
+            // 
+            // marcaDataGridViewTextBoxColumn
+            // 
+            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
+            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            // 
+            // modeloDataGridViewTextBoxColumn
+            // 
+            this.modeloDataGridViewTextBoxColumn.DataPropertyName = "Modelo";
+            this.modeloDataGridViewTextBoxColumn.HeaderText = "Modelo";
+            this.modeloDataGridViewTextBoxColumn.Name = "modeloDataGridViewTextBoxColumn";
+            // 
+            // combustivelDataGridViewTextBoxColumn
+            // 
+            this.combustivelDataGridViewTextBoxColumn.DataPropertyName = "Combustivel";
+            this.combustivelDataGridViewTextBoxColumn.HeaderText = "Combustivel";
+            this.combustivelDataGridViewTextBoxColumn.Name = "combustivelDataGridViewTextBoxColumn";
+            // 
             // FormAluguer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -371,6 +426,8 @@
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carroAluguerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -405,5 +462,12 @@
         private System.Windows.Forms.TextBox textBoxKmandtes;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.BindingSource clienteBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCarroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroChassisDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modeloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn combustivelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource carroBindingSource;
+        private System.Windows.Forms.BindingSource carroAluguerBindingSource;
     }
 }
