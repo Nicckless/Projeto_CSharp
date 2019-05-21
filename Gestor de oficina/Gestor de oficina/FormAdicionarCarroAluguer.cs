@@ -30,7 +30,7 @@ namespace Gestor_de_oficina
         {
             CarroAluguer carroAluguer = new CarroAluguer
             {
-                NumeroChassis = Convert.ToInt32(maskedTextBoxNumChassi.Text),
+                NumeroChassis = maskedTextBoxNumChassi.Text,
                 Marca = comboBoxMarca.Text,
                 Modelo = comboBoxModelo.Text,
                 Combustivel = comboBoxCombustivel.Text,

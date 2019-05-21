@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/21/2019 13:12:38
--- Generated from EDMX file: E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\StandAutomoveis.edmx
+-- Date Created: 05/21/2019 16:18:01
+-- Generated from EDMX file: E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\StandAutomoveis.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,11 +17,68 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_ClienteCarroOficina]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Carros_CarroOficina] DROP CONSTRAINT [FK_ClienteCarroOficina];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ClienteVenda]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Vendas] DROP CONSTRAINT [FK_ClienteVenda];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ClienteAluguer]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Aluguers] DROP CONSTRAINT [FK_ClienteAluguer];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CarroOficinaServico]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Servicos] DROP CONSTRAINT [FK_CarroOficinaServico];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ParcelaServico]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Parcelas] DROP CONSTRAINT [FK_ParcelaServico];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CarroAluguerAluguer]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Aluguers] DROP CONSTRAINT [FK_CarroAluguerAluguer];
+GO
+IF OBJECT_ID(N'[dbo].[FK_VendaCarroVenda]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Carros_CarroVenda] DROP CONSTRAINT [FK_VendaCarroVenda];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CarroOficina_inherits_Carro]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Carros_CarroOficina] DROP CONSTRAINT [FK_CarroOficina_inherits_Carro];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CarroAluguer_inherits_Carro]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Carros_CarroAluguer] DROP CONSTRAINT [FK_CarroAluguer_inherits_Carro];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CarroVenda_inherits_Carro]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Carros_CarroVenda] DROP CONSTRAINT [FK_CarroVenda_inherits_Carro];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Clientes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Clientes];
+GO
+IF OBJECT_ID(N'[dbo].[Carros]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Carros];
+GO
+IF OBJECT_ID(N'[dbo].[Vendas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Vendas];
+GO
+IF OBJECT_ID(N'[dbo].[Parcelas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Parcelas];
+GO
+IF OBJECT_ID(N'[dbo].[Servicos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Servicos];
+GO
+IF OBJECT_ID(N'[dbo].[Aluguers]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Aluguers];
+GO
+IF OBJECT_ID(N'[dbo].[Carros_CarroOficina]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Carros_CarroOficina];
+GO
+IF OBJECT_ID(N'[dbo].[Carros_CarroAluguer]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Carros_CarroAluguer];
+GO
+IF OBJECT_ID(N'[dbo].[Carros_CarroVenda]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Carros_CarroVenda];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -40,7 +97,7 @@ GO
 -- Creating table 'Carros'
 CREATE TABLE [dbo].[Carros] (
     [IdCarro] int IDENTITY(1,1) NOT NULL,
-    [NumeroChassis] int  NOT NULL,
+    [NumeroChassis] nvarchar(max)  NOT NULL,
     [Marca] nvarchar(max)  NOT NULL,
     [Modelo] nvarchar(max)  NOT NULL,
     [Combustivel] nvarchar(max)  NOT NULL

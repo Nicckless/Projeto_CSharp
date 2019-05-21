@@ -15,7 +15,7 @@ namespace Gestor_de_oficina
     public partial class Carro
     {
         public int IdCarro { get; set; }
-        public int NumeroChassis { get; set; }
+        public string NumeroChassis { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public string Combustivel { get; set; }

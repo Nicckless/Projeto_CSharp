@@ -19,19 +19,9 @@ namespace Gestor_de_oficina
 
         private void buttonAdicionarCarroOficina_Click(object sender, EventArgs e)
         {
-            /*if (listBoxClientes.SelectedIndex == -1)
+            if (maskedTextBoxNumeroChassis.Mask == "" || comboBoxMarca.SelectedItem = null ||)
                 return;
 
-            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-
-            CarroOficina novoCarro = new CarroOficina();
-
-            clienteSelecionado.CarroOficinas.Add(novoCarro);
-
-            listBoxCarros.DataSource = null;
-            listBoxCarros.DataSource = clienteSelecionado.CarroOficinas;
-
-            listBoxServicos.SelectedItem = novoCarro;*/
         }
     }
 }
