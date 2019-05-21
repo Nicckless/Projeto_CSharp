@@ -325,6 +325,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormOficina";
             this.Text = "FormOficina";
+            this.Load += new System.EventHandler(this.FormOficina_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
