@@ -30,7 +30,7 @@ namespace Gestor_de_oficina
 
         private void FormOficina_Load(object sender, EventArgs e)
         {
-            listBoxClientes.DataSource = myDb.Clientes.ToList<Cliente>();
+            listBoxClientes.DataSource = myDb.Clientes.ToList();
         }
     }
 }
