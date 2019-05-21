@@ -19,3 +19,24 @@ C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de o
 C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\GestorOficina.csproj.CopyComplete
 C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.exe
 C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.pdb
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\bin\Debug\Gestor de oficina.exe.config
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\bin\Debug\Gestor de oficina.exe
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\bin\Debug\Gestor de oficina.pdb
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\bin\Debug\EntityFramework.dll
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\bin\Debug\EntityFramework.xml
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\GestorOficina.csprojAssemblyReference.cache
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormAdicionarCarroAluguer.resources
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormAdicionarCarroVenda.resources
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormAluguer.resources
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormClientes.resources
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormInicial.resources
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormOficina.resources
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormVenda.resources
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.Properties.Resources.resources
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\GestorOficina.csproj.GenerateResource.cache
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\GestorOficina.csproj.CoreCompileInputs.cache
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\GestorOficina.csproj.CopyComplete
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.exe
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.pdb

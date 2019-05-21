@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -56,6 +57,7 @@
             this.textBoxKmdepois = new System.Windows.Forms.TextBox();
             this.textBoxKmandtes = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -64,6 +66,7 @@
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox5
@@ -159,6 +162,7 @@
             // 
             // listBoxClientes
             // 
+            this.listBoxClientes.DataSource = this.clienteBindingSource;
             this.listBoxClientes.FormattingEnabled = true;
             this.listBoxClientes.ItemHeight = 16;
             this.listBoxClientes.Location = new System.Drawing.Point(6, 21);
@@ -338,6 +342,10 @@
             this.button2.Text = "Devolver Carro / Emitir Fatura";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(Gestor_de_oficina.Cliente);
+            // 
             // FormAluguer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -360,6 +368,7 @@
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,5 +402,6 @@
         private System.Windows.Forms.TextBox textBoxKmdepois;
         private System.Windows.Forms.TextBox textBoxKmandtes;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.BindingSource clienteBindingSource;
     }
 }

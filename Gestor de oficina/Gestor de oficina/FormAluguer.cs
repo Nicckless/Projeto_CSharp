@@ -12,9 +12,12 @@ namespace Gestor_de_oficina
 {
     public partial class FormAluguer : Form
     {
+        private StandAutomoveisContainer myDB;
+
         public FormAluguer()
         {
             InitializeComponent();
+            myDB = new StandAutomoveisContainer();
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
@@ -43,6 +46,11 @@ namespace Gestor_de_oficina
                     textBoxKmdepois.Text = "";
                 }
             }
+        }
+
+        private void LerDadosCliente()
+        {
+            listBoxClientes.DataSource = myDB.Clientes.ToList();
         }
     }
 }

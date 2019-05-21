@@ -12,6 +12,8 @@ namespace Gestor_de_oficina
 {
     public partial class FormAdicionarCarroAluguer : Form
     {
+        private StandAutomoveisContainer myDB;
+
         private string chassi;
         private string marca;
         private string modelo;
@@ -21,16 +23,20 @@ namespace Gestor_de_oficina
         public FormAdicionarCarroAluguer()
         {
             InitializeComponent();
+            myDB = new StandAutomoveisContainer();
         }
 
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
-            //adicionar na base de dados
-            chassi = maskedTextBoxNumChassi.Text;
-            marca = comboBoxMarca.Text;
-            modelo = comboBoxModelo.Text;
-            combust = comboBoxCombustivel.Text;
-            matricula = maskedTextBoxMatricula.Text;
+            CarroAluguer carroAluguer = new CarroAluguer
+            {
+                NumeroChassis = Convert.ToInt32(maskedTextBoxNumChassi.Text),
+                Marca = comboBoxMarca.Text,
+                Modelo = comboBoxModelo.Text,
+                Combustivel = comboBoxCombustivel.Text,
+                Matricula = maskedTextBoxMatricula.Text,
+                Estado = "No Stand"
+            };
         }
     }
 }
