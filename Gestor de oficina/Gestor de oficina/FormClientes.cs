@@ -53,7 +53,6 @@ namespace Gestor_de_oficina
         private void FormClientes_Load(object sender, EventArgs e)
         {
             LerDados();
-            //SaveCustomerInfo();
         }
     }
 }

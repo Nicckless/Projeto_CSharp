@@ -79,6 +79,12 @@
     <Compile Include="FormAdicionarCarroAluguer.Designer.cs">
       <DependentUpon>FormAdicionarCarroAluguer.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdicionarCarroOficina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdicionarCarroOficina.Designer.cs">
+      <DependentUpon>FormAdicionarCarroOficina.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAdicionarCarroVenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </Compile>
     <EmbeddedResource Include="FormAdicionarCarroAluguer.resx">
       <DependentUpon>FormAdicionarCarroAluguer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdicionarCarroOficina.resx">
+      <DependentUpon>FormAdicionarCarroOficina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdicionarCarroVenda.resx">
       <DependentUpon>FormAdicionarCarroVenda.cs</DependentUpon>

@@ -12,9 +12,11 @@ namespace Gestor_de_oficina
 {
     public partial class FormOficina : Form
     {
+        private StandAutomoveisContainer myDb;
         public FormOficina()
         {
             InitializeComponent();
+            myDb = new StandAutomoveisContainer();
         }
 
         private void buttonAdicionarCarro_Click(object sender, EventArgs e)
@@ -22,14 +24,13 @@ namespace Gestor_de_oficina
             if (listBoxClientes.SelectedIndex == -1)
                 return;
 
-            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            FormAdicionarCarroOficina formAdicionarCarroOficina = new FormAdicionarCarroOficina();
+            formAdicionarCarroOficina.ShowDialog();
+        }
 
-            CarroOficina novoCarro = new CarroOficina();
-            
-            clienteSelecionado.CarroOficinas.Add(novoCarro);
-
-            listBoxCarros.DataSource = null;
-            listBoxCarros.DataSource = clienteSelecionado.CarroOficinas;
+        private void FormOficina_Load(object sender, EventArgs e)
+        {
+            listBoxClientes.DataSource = myDb.Clientes.ToList<Cliente>();
         }
     }
 }
