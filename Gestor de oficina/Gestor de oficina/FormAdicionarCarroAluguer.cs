@@ -37,6 +37,9 @@ namespace Gestor_de_oficina
                 Matricula = maskedTextBoxMatricula.Text,
                 Estado = "No Stand"
             };
+            myDB.Carros.Add(carroAluguer);
+
+            myDB.SaveChanges();
         }
     }
 }

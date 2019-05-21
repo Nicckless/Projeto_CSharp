@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxKMs = new System.Windows.Forms.TextBox();
+            this.maskedTextBoxMatricula = new System.Windows.Forms.MaskedTextBox();
+            this.comboBoxCombustivel = new System.Windows.Forms.ComboBox();
+            this.comboBoxModelo = new System.Windows.Forms.ComboBox();
+            this.comboBoxMarca = new System.Windows.Forms.ComboBox();
+            this.maskedTextBoxNumeroChassis = new System.Windows.Forms.MaskedTextBox();
             this.buttonAdicionarCarroOficina = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -37,12 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBoxNumeroChassis = new System.Windows.Forms.MaskedTextBox();
-            this.comboBoxMarca = new System.Windows.Forms.ComboBox();
-            this.comboBoxModelo = new System.Windows.Forms.ComboBox();
-            this.comboBoxCombustivel = new System.Windows.Forms.ComboBox();
-            this.maskedTextBoxMatricula = new System.Windows.Forms.MaskedTextBox();
-            this.textBoxKMs = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +66,53 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(435, 509);
             this.panel1.TabIndex = 0;
+            // 
+            // textBoxKMs
+            // 
+            this.textBoxKMs.Location = new System.Drawing.Point(15, 370);
+            this.textBoxKMs.Name = "textBoxKMs";
+            this.textBoxKMs.Size = new System.Drawing.Size(404, 22);
+            this.textBoxKMs.TabIndex = 19;
+            // 
+            // maskedTextBoxMatricula
+            // 
+            this.maskedTextBoxMatricula.Location = new System.Drawing.Point(15, 301);
+            this.maskedTextBoxMatricula.Mask = "CC-CC-CC";
+            this.maskedTextBoxMatricula.Name = "maskedTextBoxMatricula";
+            this.maskedTextBoxMatricula.Size = new System.Drawing.Size(404, 22);
+            this.maskedTextBoxMatricula.TabIndex = 18;
+            // 
+            // comboBoxCombustivel
+            // 
+            this.comboBoxCombustivel.FormattingEnabled = true;
+            this.comboBoxCombustivel.Location = new System.Drawing.Point(15, 239);
+            this.comboBoxCombustivel.Name = "comboBoxCombustivel";
+            this.comboBoxCombustivel.Size = new System.Drawing.Size(404, 24);
+            this.comboBoxCombustivel.TabIndex = 17;
+            // 
+            // comboBoxModelo
+            // 
+            this.comboBoxModelo.FormattingEnabled = true;
+            this.comboBoxModelo.Location = new System.Drawing.Point(15, 180);
+            this.comboBoxModelo.Name = "comboBoxModelo";
+            this.comboBoxModelo.Size = new System.Drawing.Size(404, 24);
+            this.comboBoxModelo.TabIndex = 16;
+            // 
+            // comboBoxMarca
+            // 
+            this.comboBoxMarca.FormattingEnabled = true;
+            this.comboBoxMarca.Location = new System.Drawing.Point(15, 121);
+            this.comboBoxMarca.Name = "comboBoxMarca";
+            this.comboBoxMarca.Size = new System.Drawing.Size(404, 24);
+            this.comboBoxMarca.TabIndex = 15;
+            // 
+            // maskedTextBoxNumeroChassis
+            // 
+            this.maskedTextBoxNumeroChassis.Location = new System.Drawing.Point(15, 61);
+            this.maskedTextBoxNumeroChassis.Mask = "CCCCCCCCCCCCCCCCC";
+            this.maskedTextBoxNumeroChassis.Name = "maskedTextBoxNumeroChassis";
+            this.maskedTextBoxNumeroChassis.Size = new System.Drawing.Size(404, 22);
+            this.maskedTextBoxNumeroChassis.TabIndex = 14;
             // 
             // buttonAdicionarCarroOficina
             // 
@@ -139,53 +186,6 @@
             this.label1.Size = new System.Drawing.Size(187, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Adicionar um carro a Oficina";
-            // 
-            // maskedTextBoxNumeroChassis
-            // 
-            this.maskedTextBoxNumeroChassis.Location = new System.Drawing.Point(15, 61);
-            this.maskedTextBoxNumeroChassis.Mask = "000000000";
-            this.maskedTextBoxNumeroChassis.Name = "maskedTextBoxNumeroChassis";
-            this.maskedTextBoxNumeroChassis.Size = new System.Drawing.Size(404, 22);
-            this.maskedTextBoxNumeroChassis.TabIndex = 14;
-            // 
-            // comboBoxMarca
-            // 
-            this.comboBoxMarca.FormattingEnabled = true;
-            this.comboBoxMarca.Location = new System.Drawing.Point(15, 121);
-            this.comboBoxMarca.Name = "comboBoxMarca";
-            this.comboBoxMarca.Size = new System.Drawing.Size(404, 24);
-            this.comboBoxMarca.TabIndex = 15;
-            // 
-            // comboBoxModelo
-            // 
-            this.comboBoxModelo.FormattingEnabled = true;
-            this.comboBoxModelo.Location = new System.Drawing.Point(15, 180);
-            this.comboBoxModelo.Name = "comboBoxModelo";
-            this.comboBoxModelo.Size = new System.Drawing.Size(404, 24);
-            this.comboBoxModelo.TabIndex = 16;
-            // 
-            // comboBoxCombustivel
-            // 
-            this.comboBoxCombustivel.FormattingEnabled = true;
-            this.comboBoxCombustivel.Location = new System.Drawing.Point(15, 239);
-            this.comboBoxCombustivel.Name = "comboBoxCombustivel";
-            this.comboBoxCombustivel.Size = new System.Drawing.Size(404, 24);
-            this.comboBoxCombustivel.TabIndex = 17;
-            // 
-            // maskedTextBoxMatricula
-            // 
-            this.maskedTextBoxMatricula.Location = new System.Drawing.Point(15, 301);
-            this.maskedTextBoxMatricula.Mask = "00-00-00";
-            this.maskedTextBoxMatricula.Name = "maskedTextBoxMatricula";
-            this.maskedTextBoxMatricula.Size = new System.Drawing.Size(404, 22);
-            this.maskedTextBoxMatricula.TabIndex = 18;
-            // 
-            // textBoxKMs
-            // 
-            this.textBoxKMs.Location = new System.Drawing.Point(15, 370);
-            this.textBoxKMs.Name = "textBoxKMs";
-            this.textBoxKMs.Size = new System.Drawing.Size(404, 22);
-            this.textBoxKMs.TabIndex = 19;
             // 
             // FormAdicionarCarroOficina
             // 

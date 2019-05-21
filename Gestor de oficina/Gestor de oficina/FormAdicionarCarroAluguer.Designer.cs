@@ -51,6 +51,7 @@
             this.buttonAdicionar.TabIndex = 14;
             this.buttonAdicionar.Text = "Adicionar Carro";
             this.buttonAdicionar.UseVisualStyleBackColor = true;
+            this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
             // 
             // groupBox1
             // 
@@ -81,7 +82,7 @@
             // maskedTextBoxNumChassi
             // 
             this.maskedTextBoxNumChassi.Location = new System.Drawing.Point(28, 50);
-            this.maskedTextBoxNumChassi.Mask = "000000000";
+            this.maskedTextBoxNumChassi.Mask = "CCCCCCCCCCCCCCCCC";
             this.maskedTextBoxNumChassi.Name = "maskedTextBoxNumChassi";
             this.maskedTextBoxNumChassi.Size = new System.Drawing.Size(321, 22);
             this.maskedTextBoxNumChassi.TabIndex = 13;
@@ -89,7 +90,7 @@
             // maskedTextBoxMatricula
             // 
             this.maskedTextBoxMatricula.Location = new System.Drawing.Point(28, 290);
-            this.maskedTextBoxMatricula.Mask = "00-AA-00";
+            this.maskedTextBoxMatricula.Mask = "CC-CC-CC";
             this.maskedTextBoxMatricula.Name = "maskedTextBoxMatricula";
             this.maskedTextBoxMatricula.Size = new System.Drawing.Size(321, 22);
             this.maskedTextBoxMatricula.TabIndex = 12;

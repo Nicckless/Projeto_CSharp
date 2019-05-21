@@ -19,8 +19,8 @@ namespace Gestor_de_oficina
 
         private void buttonAdicionarCarroOficina_Click(object sender, EventArgs e)
         {
-            if (maskedTextBoxNumeroChassis.Mask == "" || comboBoxMarca.SelectedItem = null ||)
-                return;
+            //if (maskedTextBoxNumeroChassis.Mask == "" || comboBoxMarca.SelectedItem = null ||)
+               // return;
 
         }
     }
