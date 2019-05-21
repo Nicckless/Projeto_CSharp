@@ -61,6 +61,7 @@ namespace Gestor_de_oficina
         private void FormAluguer_Load(object sender, EventArgs e)
         {
             listBoxClientes.DataSource = myDB.Clientes.ToList();
+            dataGridView1.DataSource = myDB.Carros.OfType<CarroAluguer>().ToList();       
         }
     }
 }
