@@ -50,6 +50,16 @@ namespace Gestor_de_oficina
 
         private void LerDadosCliente()
         {
+
+        }
+
+        private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormAluguer_Load(object sender, EventArgs e)
+        {
             listBoxClientes.DataSource = myDB.Clientes.ToList();
         }
     }
