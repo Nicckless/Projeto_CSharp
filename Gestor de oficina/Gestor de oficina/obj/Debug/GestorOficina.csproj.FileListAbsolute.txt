@@ -19,3 +19,24 @@ C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de o
 C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\GestorOficina.csproj.CopyComplete
 C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.exe
 C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.pdb
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\bin\Debug\Gestor de oficina.exe.config
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\bin\Debug\Gestor de oficina.exe
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\bin\Debug\Gestor de oficina.pdb
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\bin\Debug\EntityFramework.dll
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\bin\Debug\EntityFramework.SqlServer.dll
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\bin\Debug\EntityFramework.xml
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\bin\Debug\EntityFramework.SqlServer.xml
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\GestorOficina.csprojAssemblyReference.cache
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormAdicionarCarroAluguer.resources
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormAdicionarCarroVenda.resources
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormAluguer.resources
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormClientes.resources
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormInicial.resources
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormOficina.resources
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormVenda.resources
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.Properties.Resources.resources
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\GestorOficina.csproj.GenerateResource.cache
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\GestorOficina.csproj.CoreCompileInputs.cache
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\GestorOficina.csproj.CopyComplete
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.exe
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.pdb
