@@ -1,0 +1,42 @@
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\bin\Debug\Gestor de oficina.exe.config
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\bin\Debug\Gestor de oficina.exe
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\bin\Debug\Gestor de oficina.pdb
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\bin\Debug\EntityFramework.dll
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\bin\Debug\EntityFramework.SqlServer.dll
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\bin\Debug\EntityFramework.xml
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\bin\Debug\EntityFramework.SqlServer.xml
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.csprojAssemblyReference.cache
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormAdicionarCarroAluguer.resources
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormAdicionarCarroVenda.resources
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormAluguer.resources
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormClientes.resources
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormInicial.resources
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormOficina.resources
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormVenda.resources
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.Properties.Resources.resources
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.csproj.GenerateResource.cache
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.csproj.CoreCompileInputs.cache
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.csproj.CopyComplete
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.exe
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.pdb
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\bin\Debug\Gestor de oficina.exe.config
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\bin\Debug\Gestor de oficina.exe
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\bin\Debug\Gestor de oficina.pdb
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\bin\Debug\EntityFramework.dll
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\bin\Debug\EntityFramework.xml
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.csprojAssemblyReference.cache
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormAdicionarCarroAluguer.resources
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormAdicionarCarroVenda.resources
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormAluguer.resources
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormClientes.resources
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormInicial.resources
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormOficina.resources
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormVenda.resources
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.Properties.Resources.resources
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.csproj.GenerateResource.cache
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.csproj.CoreCompileInputs.cache
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.csproj.CopyComplete
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.exe
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_DA\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor de oficina.pdb
