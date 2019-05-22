@@ -12,26 +12,30 @@ namespace Gestor_de_oficina
 {
     public partial class FormAdicionarCarroOficina : Form
     {
+        private StandAutomoveisContainer myDB;
         public FormAdicionarCarroOficina()
         {
             InitializeComponent();
+            myDB = new StandAutomoveisContainer();
         }
 
         private void buttonAdicionarCarroOficina_Click(object sender, EventArgs e)
         {
-            /*if (listBoxClientes.SelectedIndex == -1)
+            if (string.IsNullOrEmpty(maskedTextBoxNumeroChassis.Text) || string.IsNullOrEmpty(comboBoxModelo.Text) || string.IsNullOrEmpty(comboBoxMarca.Text) || string.IsNullOrEmpty(comboBoxCombustivel.Text) || string.IsNullOrEmpty(maskedTextBoxMatricula.Text) || string.IsNullOrEmpty(textBoxKMs.Text))
                 return;
 
-            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            CarroOficina novoCarroOficina = new CarroOficina
+            {
+                NumeroChassis = maskedTextBoxNumeroChassis.Text,
+                Marca = comboBoxMarca.Text,
+                Modelo = comboBoxModelo.Text,
+                Combustivel = comboBoxCombustivel.Text,
+                Matricula = maskedTextBoxMatricula.Text,
+                Kms = Convert.ToInt32(textBoxKMs.Text)
+            };
+            myDB.Carros.Add(novoCarroOficina);
 
-            CarroOficina novoCarro = new CarroOficina();
-
-            clienteSelecionado.CarroOficinas.Add(novoCarro);
-
-            listBoxCarros.DataSource = null;
-            listBoxCarros.DataSource = clienteSelecionado.CarroOficinas;
-
-            listBoxServicos.SelectedItem = novoCarro;*/
+            myDB.SaveChanges();
         }
     }
 }

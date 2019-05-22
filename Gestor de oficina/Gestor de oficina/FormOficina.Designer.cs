@@ -301,6 +301,7 @@
             this.listBoxClientes.Name = "listBoxClientes";
             this.listBoxClientes.Size = new System.Drawing.Size(254, 612);
             this.listBoxClientes.TabIndex = 1;
+            this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
             // 
             // label1
             // 

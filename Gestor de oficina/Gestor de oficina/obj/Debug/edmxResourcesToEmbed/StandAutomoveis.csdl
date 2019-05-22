@@ -54,7 +54,7 @@
       <PropertyRef Name="IdCarro" />
     </Key>
     <Property Name="IdCarro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NumeroChassis" Type="Int32" Nullable="false" />
+    <Property Name="NumeroChassis" Type="String" Nullable="false" />
     <Property Name="Marca" Type="String" Nullable="false" />
     <Property Name="Modelo" Type="String" Nullable="false" />
     <Property Name="Combustivel" Type="String" Nullable="false" />

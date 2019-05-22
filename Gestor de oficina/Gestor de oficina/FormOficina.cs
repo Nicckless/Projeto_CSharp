@@ -31,6 +31,18 @@ namespace Gestor_de_oficina
         private void FormOficina_Load(object sender, EventArgs e)
         {
             listBoxClientes.DataSource = myDb.Clientes.ToList();
+            listBoxCarros.DataSource = myDb.Carros.ToList();
+        }
+
+        private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+
+            labelNome.Text = clienteSelecionado.Nome;
+            labelNIF.Text = clienteSelecionado.NIF.ToString();
+            labelMorada.Text = clienteSelecionado.Morada;
+            labelValorTotal.Text = clienteSelecionado.
+
         }
     }
 }
