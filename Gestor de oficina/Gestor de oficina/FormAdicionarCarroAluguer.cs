@@ -28,18 +28,27 @@ namespace Gestor_de_oficina
 
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
-            CarroAluguer carroAluguer = new CarroAluguer
+            if(maskedTextBoxNumChassi.Text != "" && maskedTextBoxMatricula.Text != "" && comboBoxMarca.Text != "" && comboBoxModelo.Text != "" && comboBoxCombustivel.Text != "")
             {
-                NumeroChassis = maskedTextBoxNumChassi.Text,
-                Marca = comboBoxMarca.Text,
-                Modelo = comboBoxModelo.Text,
-                Combustivel = comboBoxCombustivel.Text,
-                Matricula = maskedTextBoxMatricula.Text,
-                Estado = "No Stand"
-            };
-            myDB.Carros.Add(carroAluguer);
+                CarroAluguer carroAluguer = new CarroAluguer
+                {
+                    NumeroChassis = maskedTextBoxNumChassi.Text,
+                    Marca = comboBoxMarca.Text,
+                    Modelo = comboBoxModelo.Text,
+                    Combustivel = comboBoxCombustivel.Text,
+                    Matricula = maskedTextBoxMatricula.Text,
+                    Estado = "No Stand"
+                };
+                myDB.Carros.Add(carroAluguer);
 
-            myDB.SaveChanges();
+                myDB.SaveChanges();
+
+                maskedTextBoxNumChassi.Text = "";
+                comboBoxMarca.Text = "";
+                comboBoxModelo.Text = "";
+                comboBoxCombustivel.Text = "";
+                maskedTextBoxMatricula.Text = "";
+            }
         }
     }
 }
