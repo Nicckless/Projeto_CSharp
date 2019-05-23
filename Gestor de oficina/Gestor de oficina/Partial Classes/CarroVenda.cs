@@ -8,5 +8,9 @@ namespace Gestor_de_oficina
 {
     public partial class CarroVenda : Carro
     {
+        public CarroVenda(string Extras)
+        {
+            this.Extras = Extras;
+        }
     }
 }

@@ -8,5 +8,11 @@ namespace Gestor_de_oficina
 {
     public partial class CarroAluguer : Carro
     {
+        public CarroAluguer(string Estado, string Matricula)
+        {
+            this.Estado = Estado;
+            this.Matricula = Matricula;
+            Aluguers = new HashSet<Aluguer>();
+        }
     }
 }
