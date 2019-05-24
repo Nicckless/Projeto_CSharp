@@ -25,7 +25,23 @@ namespace Gestor_de_oficina
                 return;
 
             FormAdicionarCarroOficina formAdicionarCarroOficina = new FormAdicionarCarroOficina();
-            formAdicionarCarroOficina.ShowDialog();
+            if(formAdicionarCarroOficina.ShowDialog() == DialogResult.OK)
+            {
+
+                CarroOficina novoCarroOficina = new CarroOficina
+                {
+                    NumeroChassis = formAdicionarCarroOficina.numchassis,
+                    Marca = formAdicionarCarroOficina.marca,
+                    Modelo = formAdicionarCarroOficina.modelo,
+                    Combustivel = formAdicionarCarroOficina.combustivel, 
+                    Matricula = formAdicionarCarroOficina.matricula,
+                    Kms = formAdicionarCarroOficina.kms
+                };
+                myDb.Carros.Add(novoCarroOficina);
+
+                myDb.SaveChanges();
+            }
+            
         }
 
         private void FormOficina_Load(object sender, EventArgs e)

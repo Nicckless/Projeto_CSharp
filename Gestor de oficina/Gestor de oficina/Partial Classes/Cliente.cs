@@ -8,10 +8,10 @@ namespace Gestor_de_oficina
 {
     public partial class Cliente
     {
-        public Cliente()
-        {
+        //public Cliente()
+        //{
 
-        }
+        //}
         public Cliente(string Nome, string Morada, int NIF, string Contacto)
         {
             this.Nome = Nome;

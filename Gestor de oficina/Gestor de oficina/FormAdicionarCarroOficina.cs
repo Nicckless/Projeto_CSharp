@@ -12,11 +12,15 @@ namespace Gestor_de_oficina
 {
     public partial class FormAdicionarCarroOficina : Form
     {
-        private StandAutomoveisContainer myDB;
+        public string numchassis;
+        public string marca;
+        public string modelo;
+        public string combustivel;
+        public string matricula;
+        public int kms;
         public FormAdicionarCarroOficina()
         {
             InitializeComponent();
-            myDB = new StandAutomoveisContainer();
         }
 
         private void buttonAdicionarCarroOficina_Click(object sender, EventArgs e)
@@ -24,18 +28,13 @@ namespace Gestor_de_oficina
             if (string.IsNullOrEmpty(maskedTextBoxNumeroChassis.Text) || string.IsNullOrEmpty(comboBoxModelo.Text) || string.IsNullOrEmpty(comboBoxMarca.Text) || string.IsNullOrEmpty(comboBoxCombustivel.Text) || string.IsNullOrEmpty(maskedTextBoxMatricula.Text) || string.IsNullOrEmpty(textBoxKMs.Text))
                 return;
 
-            CarroOficina novoCarroOficina = new CarroOficina
-            {
-                NumeroChassis = maskedTextBoxNumeroChassis.Text,
-                Marca = comboBoxMarca.Text,
-                Modelo = comboBoxModelo.Text,
-                Combustivel = comboBoxCombustivel.Text,
-                Matricula = maskedTextBoxMatricula.Text,
-                Kms = Convert.ToInt32(textBoxKMs.Text)
-            };
-            myDB.Carros.Add(novoCarroOficina);
-
-            myDB.SaveChanges();
+            numchassis = maskedTextBoxNumeroChassis.Text;
+            marca = comboBoxMarca.Text;
+            modelo = comboBoxModelo.Text;
+            combustivel = comboBoxCombustivel.Text;
+            matricula = maskedTextBoxMatricula.Text;
+            kms = Convert.ToInt32(textBoxKMs.Text);
+            DialogResult = DialogResult.OK;
         }
     }
 }
