@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,16 +19,19 @@ namespace Gestor_de_oficina
         {
             InitializeComponent();
             myDb = new StandAutomoveisContainer();
+
+            (from cliente in myDb.Clientes
+             orderby cliente.Nome
+             select cliente).Load();
+
+            clienteBindingSource.DataSource = myDb.Clientes.Local.ToBindingList();
+
+            bindingNavigator1.CountItem.Text = myDb.Clientes.Local.Count().ToString();
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             SaveCustomerInfo();
-        }
-
-        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
-        {
-
         }
         
         private void SaveCustomerInfo()
@@ -47,12 +51,52 @@ namespace Gestor_de_oficina
 
         private void LerDados()
         {
-            dataGridView1.DataSource = myDb.Clientes.ToList();
+            listBoxClientes.DataSource = myDb.Clientes.ToList();
+            clienteBindingSource.DataSource = myDb.Clientes.ToList();
         }
 
         private void FormClientes_Load(object sender, EventArgs e)
         {
             LerDados();
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            Cliente clientselected = (Cliente)listBoxClientes.SelectedItem;
+            myDb.Clientes.Remove(clientselected);
+            myDb.SaveChanges();
+            LerDados();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(textBoxfiltar.Text.Length > 0)
+            {
+                bindingNavigator1.AddNewItem.Enabled = false;
+
+                myDb.Dispose();
+                myDb = new StandAutomoveisContainer();
+
+                (from cliente in myDb.Clientes
+                 where cliente.Nome.ToUpper().Contains(textBoxfiltar.Text.ToUpper())
+                 orderby cliente.Nome
+                 select cliente).ToList();
+
+                listBoxClientes.DataSource = myDb.Clientes.ToList();
+            }
+            else
+            {
+                bindingNavigator1.AddNewItem.Enabled = true;
+
+                myDb.Dispose();
+                myDb = new StandAutomoveisContainer();
+
+                (from cliente in myDb.Clientes
+                 orderby cliente.Nome
+                 select cliente).Load();
+
+                clienteBindingSource.DataSource = myDb.Clientes.Local.ToBindingList();
+            }
         }
     }
 }
