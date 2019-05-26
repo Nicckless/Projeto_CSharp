@@ -25,6 +25,10 @@ namespace Gestor_de_oficina
                 return;
 
             FormAdicionarCarroOficina formAdicionarCarroOficina = new FormAdicionarCarroOficina();
+            Cliente clienteSelecionado = new Cliente();
+
+            clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+
             if(formAdicionarCarroOficina.ShowDialog() == DialogResult.OK)
             {
 
@@ -37,13 +41,20 @@ namespace Gestor_de_oficina
                     Matricula = formAdicionarCarroOficina.matricula,
                     Kms = formAdicionarCarroOficina.kms
                 };
-                myDb.Carros.Add(novoCarroOficina);
+                clienteSelecionado.CarroOficinas.Add(novoCarroOficina);
+
+                listBoxCarros.SelectedItem = novoCarroOficina;
 
                 myDb.SaveChanges();
+                LerDados();
             }
             
         }
-
+        private void LerDados()
+        {
+            listBoxCarros.DataSource = myDb.Carros.ToList();
+            listBoxClientes.DataSource = myDb.Clientes.ToList();
+        }
         private void FormOficina_Load(object sender, EventArgs e)
         {
             listBoxClientes.DataSource = myDb.Clientes.ToList();
