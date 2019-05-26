@@ -98,5 +98,26 @@ namespace Gestor_de_oficina
                 clienteBindingSource.DataSource = myDb.Clientes.Local.ToBindingList();
             }
         }
+
+        private void toolStripLabelGuardarAlt_Click(object sender, EventArgs e)
+        {
+            Cliente clientselected = (Cliente)listBoxClientes.SelectedItem;
+            myDb.Clientes.Attach(clientselected);
+            clientselected.Nome = textBoxNome.Text;
+            clientselected.Contacto = textBoxContacto.Text;
+            clientselected.Morada = textBoxMorada.Text;
+            clientselected.NIF = Convert.ToInt32(textBoxNIF.Text);
+            myDb.SaveChanges();
+            LerDados();
+        }
+
+        private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cliente clienteselected = (Cliente)listBoxClientes.SelectedItem;
+            textBoxNome.Text = clienteselected.Nome;
+            textBoxMorada.Text = clienteselected.Morada;
+            textBoxContacto.Text = clienteselected.Contacto;
+            textBoxNIF.Text = clienteselected.NIF.ToString();
+        }
     }
 }

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClientes));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listBoxClientes = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxfiltar = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -39,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxNIF = new System.Windows.Forms.TextBox();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxMorada = new System.Windows.Forms.TextBox();
             this.textBoxContacto = new System.Windows.Forms.TextBox();
             this.textBoxNome = new System.Windows.Forms.TextBox();
@@ -54,14 +56,12 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listBoxClientes = new System.Windows.Forms.ListBox();
+            this.toolStripLabelGuardarAlt = new System.Windows.Forms.ToolStripLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -75,6 +75,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista de Clientes";
+            // 
+            // listBoxClientes
+            // 
+            this.listBoxClientes.FormattingEnabled = true;
+            this.listBoxClientes.ItemHeight = 16;
+            this.listBoxClientes.Location = new System.Drawing.Point(6, 70);
+            this.listBoxClientes.Name = "listBoxClientes";
+            this.listBoxClientes.Size = new System.Drawing.Size(378, 308);
+            this.listBoxClientes.TabIndex = 9;
+            this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -155,6 +165,10 @@
             this.textBoxNIF.Size = new System.Drawing.Size(308, 22);
             this.textBoxNIF.TabIndex = 4;
             // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(Gestor_de_oficina.Cliente);
+            // 
             // textBoxMorada
             // 
             this.textBoxMorada.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Morada", true));
@@ -199,7 +213,7 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.toolStripLabel1});
+            this.toolStripLabelGuardarAlt});
             this.bindingNavigator1.Location = new System.Drawing.Point(3, 18);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -298,24 +312,12 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripLabel1
+            // toolStripLabelGuardarAlt
             // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(136, 24);
-            this.toolStripLabel1.Text = "Guardar Alterações";
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataSource = typeof(Gestor_de_oficina.Cliente);
-            // 
-            // listBoxClientes
-            // 
-            this.listBoxClientes.FormattingEnabled = true;
-            this.listBoxClientes.ItemHeight = 16;
-            this.listBoxClientes.Location = new System.Drawing.Point(6, 70);
-            this.listBoxClientes.Name = "listBoxClientes";
-            this.listBoxClientes.Size = new System.Drawing.Size(378, 308);
-            this.listBoxClientes.TabIndex = 9;
+            this.toolStripLabelGuardarAlt.Name = "toolStripLabelGuardarAlt";
+            this.toolStripLabelGuardarAlt.Size = new System.Drawing.Size(136, 24);
+            this.toolStripLabelGuardarAlt.Text = "Guardar Alterações";
+            this.toolStripLabelGuardarAlt.Click += new System.EventHandler(this.toolStripLabelGuardarAlt_Click);
             // 
             // FormClientes
             // 
@@ -332,10 +334,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -366,7 +368,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelGuardarAlt;
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private System.Windows.Forms.ListBox listBoxClientes;
     }

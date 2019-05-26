@@ -68,7 +68,6 @@ namespace Gestor_de_oficina
             labelNome.Text = clienteSelecionado.Nome;
             labelNIF.Text = clienteSelecionado.NIF.ToString();
             labelMorada.Text = clienteSelecionado.Morada;
-
         }
     }
 }
