@@ -82,7 +82,7 @@ namespace Gestor_de_oficina
                  orderby cliente.Nome
                  select cliente).ToList();
 
-                listBoxClientes.DataSource = myDb.Clientes.ToList();
+                listBoxClientes.DataSource = myDb.Clientes.Local.ToBindingList();
             }
             else
             {
