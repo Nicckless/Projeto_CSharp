@@ -99,6 +99,7 @@
             this.buttonCriarParcela.TabIndex = 5;
             this.buttonCriarParcela.Text = "Criar Parcela";
             this.buttonCriarParcela.UseVisualStyleBackColor = true;
+            this.buttonCriarParcela.Click += new System.EventHandler(this.buttonCriarParcela_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -187,6 +188,7 @@
             this.buttonCriarServico.TabIndex = 4;
             this.buttonCriarServico.Text = "Criar Servico";
             this.buttonCriarServico.UseVisualStyleBackColor = true;
+            this.buttonCriarServico.Click += new System.EventHandler(this.buttonCriarServico_Click);
             // 
             // listBoxServicos
             // 

@@ -8,11 +8,14 @@ namespace Gestor_de_oficina
 {
     public partial class Parcela
     {
-        public Parcela(int Valor, string Descricao, int ServicoIdServico)
+        public Parcela()
+        {
+
+        }
+        public Parcela(int Valor, string Descricao)
         {
             this.Valor = Valor;
             this.Descricao = Descricao;
-            this.ServicoIdServico = ServicoIdServico;
         }
         public override string ToString()
         {
