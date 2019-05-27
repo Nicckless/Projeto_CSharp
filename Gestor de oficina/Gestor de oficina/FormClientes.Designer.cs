@@ -39,8 +39,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxNIF = new System.Windows.Forms.TextBox();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxMorada = new System.Windows.Forms.TextBox();
             this.textBoxContacto = new System.Windows.Forms.TextBox();
             this.textBoxNome = new System.Windows.Forms.TextBox();
@@ -57,11 +55,13 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabelGuardarAlt = new System.Windows.Forms.ToolStripLabel();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBoxNIF = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -105,11 +105,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBoxNIF);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBoxNIF);
             this.groupBox2.Controls.Add(this.textBoxMorada);
             this.groupBox2.Controls.Add(this.textBoxContacto);
             this.groupBox2.Controls.Add(this.textBoxNome);
@@ -157,18 +157,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Nome:";
             // 
-            // textBoxNIF
-            // 
-            this.textBoxNIF.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "NIF", true));
-            this.textBoxNIF.Location = new System.Drawing.Point(116, 312);
-            this.textBoxNIF.Name = "textBoxNIF";
-            this.textBoxNIF.Size = new System.Drawing.Size(308, 22);
-            this.textBoxNIF.TabIndex = 4;
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataSource = typeof(Gestor_de_oficina.Cliente);
-            // 
             // textBoxMorada
             // 
             this.textBoxMorada.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Morada", true));
@@ -176,6 +164,7 @@
             this.textBoxMorada.Name = "textBoxMorada";
             this.textBoxMorada.Size = new System.Drawing.Size(308, 22);
             this.textBoxMorada.TabIndex = 3;
+            this.textBoxMorada.TextChanged += new System.EventHandler(this.textBoxMorada_TextChanged);
             // 
             // textBoxContacto
             // 
@@ -184,6 +173,7 @@
             this.textBoxContacto.Name = "textBoxContacto";
             this.textBoxContacto.Size = new System.Drawing.Size(308, 22);
             this.textBoxContacto.TabIndex = 2;
+            this.textBoxContacto.TextChanged += new System.EventHandler(this.textBoxContacto_TextChanged);
             // 
             // textBoxNome
             // 
@@ -192,6 +182,7 @@
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(308, 22);
             this.textBoxNome.TabIndex = 1;
+            this.textBoxNome.TextChanged += new System.EventHandler(this.textBoxNome_TextChanged);
             // 
             // bindingNavigator1
             // 
@@ -228,6 +219,7 @@
             // bindingNavigatorAddNewItem
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Enabled = false;
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
@@ -319,6 +311,19 @@
             this.toolStripLabelGuardarAlt.Text = "Guardar Alterações";
             this.toolStripLabelGuardarAlt.Click += new System.EventHandler(this.toolStripLabelGuardarAlt_Click);
             // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(Gestor_de_oficina.Cliente);
+            // 
+            // textBoxNIF
+            // 
+            this.textBoxNIF.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Morada", true));
+            this.textBoxNIF.Location = new System.Drawing.Point(116, 307);
+            this.textBoxNIF.Name = "textBoxNIF";
+            this.textBoxNIF.Size = new System.Drawing.Size(308, 22);
+            this.textBoxNIF.TabIndex = 9;
+            this.textBoxNIF.TextChanged += new System.EventHandler(this.textBoxNIF_TextChanged);
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -334,10 +339,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -352,7 +357,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxNIF;
         private System.Windows.Forms.TextBox textBoxMorada;
         private System.Windows.Forms.TextBox textBoxContacto;
         private System.Windows.Forms.TextBox textBoxNome;
@@ -371,5 +375,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabelGuardarAlt;
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private System.Windows.Forms.ListBox listBoxClientes;
+        private System.Windows.Forms.TextBox textBoxNIF;
     }
 }

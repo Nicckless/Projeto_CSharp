@@ -27,6 +27,7 @@ namespace Gestor_de_oficina
             clienteBindingSource.DataSource = myDb.Clientes.Local.ToBindingList();
 
             bindingNavigator1.CountItem.Text = myDb.Clientes.Local.Count().ToString();
+
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
@@ -95,7 +96,7 @@ namespace Gestor_de_oficina
                  orderby cliente.Nome
                  select cliente).Load();
 
-                clienteBindingSource.DataSource = myDb.Clientes.Local.ToBindingList();
+                listBoxClientes.DataSource = myDb.Clientes.Local.ToBindingList();
             }
         }
 
@@ -118,6 +119,54 @@ namespace Gestor_de_oficina
             textBoxMorada.Text = clienteselected.Morada;
             textBoxContacto.Text = clienteselected.Contacto;
             textBoxNIF.Text = clienteselected.NIF.ToString();
+        }
+
+        private void textBoxNome_TextChanged(object sender, EventArgs e)
+        {
+            if(textBoxNome.Text.Length > 0)
+            {
+                bindingNavigator1.AddNewItem.Enabled = false;
+            }
+            else
+            {
+                bindingNavigator1.AddNewItem.Enabled = true;
+            }
+        }
+
+        private void textBoxContacto_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxContacto.Text.Length > 0)
+            {
+                bindingNavigator1.AddNewItem.Enabled = false;
+            }
+            else
+            {
+                bindingNavigator1.AddNewItem.Enabled = true;
+            }
+        }
+
+        private void textBoxMorada_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxMorada.Text.Length > 0)
+            {
+                bindingNavigator1.AddNewItem.Enabled = false;
+            }
+            else
+            {
+                bindingNavigator1.AddNewItem.Enabled = true;
+            }
+        }
+
+        private void textBoxNIF_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxNIF.Text.Length > 0)
+            {
+                bindingNavigator1.AddNewItem.Enabled = false;
+            }
+            else
+            {
+                bindingNavigator1.AddNewItem.Enabled = true;
+            }
         }
     }
 }
