@@ -8,12 +8,11 @@ namespace Gestor_de_oficina
 {
     public partial class Servico
     {
-        public Servico(DateTime DataEntrada, DateTime DataSaida, string Tipo, int CarroOficinaIdCarro)
+        public Servico(DateTime DataEntrada, DateTime DataSaida, string Tipo)
         {
             this.DataEntrada = DataEntrada;
             this.DataSaida = DataSaida;
             this.Tipo = Tipo;
-            this.CarroOficinaIdCarro = CarroOficinaIdCarro;
             this.Parcelas = new HashSet<Parcela>();
         }
         public decimal totalGastoNoStand
