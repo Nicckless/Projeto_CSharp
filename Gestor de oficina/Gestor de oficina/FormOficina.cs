@@ -121,7 +121,6 @@ namespace Gestor_de_oficina
             if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1)
                 return;
 
-
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,16 +19,20 @@ namespace Gestor_de_oficina
         {
             InitializeComponent();
             myDb = new StandAutomoveisContainer();
+
+            (from cliente in myDb.Clientes
+             orderby cliente.Nome
+             select cliente).Load();
+
+            clienteBindingSource.DataSource = myDb.Clientes.Local.ToBindingList();
+
+            bindingNavigator1.CountItem.Text = myDb.Clientes.Local.Count().ToString();
+
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             SaveCustomerInfo();
-        }
-
-        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
-        {
-
         }
         
         private void SaveCustomerInfo()
@@ -47,12 +52,121 @@ namespace Gestor_de_oficina
 
         private void LerDados()
         {
-            dataGridView1.DataSource = myDb.Clientes.ToList();
+            listBoxClientes.DataSource = myDb.Clientes.ToList();
+            clienteBindingSource.DataSource = myDb.Clientes.ToList();
         }
 
         private void FormClientes_Load(object sender, EventArgs e)
         {
             LerDados();
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            Cliente clientselected = (Cliente)listBoxClientes.SelectedItem;
+            myDb.Clientes.Remove(clientselected);
+            myDb.SaveChanges();
+            LerDados();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(textBoxfiltar.Text.Length > 0)
+            {
+                bindingNavigator1.AddNewItem.Enabled = false;
+
+                myDb.Dispose();
+                myDb = new StandAutomoveisContainer();
+
+                (from cliente in myDb.Clientes
+                 where cliente.Nome.ToUpper().Contains(textBoxfiltar.Text.ToUpper())
+                 orderby cliente.Nome
+                 select cliente).ToList();
+
+                listBoxClientes.DataSource = myDb.Clientes.Local.ToBindingList();
+            }
+            else
+            {
+                bindingNavigator1.AddNewItem.Enabled = true;
+
+                myDb.Dispose();
+                myDb = new StandAutomoveisContainer();
+
+                (from cliente in myDb.Clientes
+                 orderby cliente.Nome
+                 select cliente).Load();
+
+                listBoxClientes.DataSource = myDb.Clientes.Local.ToBindingList();
+            }
+        }
+
+        private void toolStripLabelGuardarAlt_Click(object sender, EventArgs e)
+        {
+            Cliente clientselected = (Cliente)listBoxClientes.SelectedItem;
+            myDb.Clientes.Attach(clientselected);
+            clientselected.Nome = textBoxNome.Text;
+            clientselected.Contacto = textBoxContacto.Text;
+            clientselected.Morada = textBoxMorada.Text;
+            clientselected.NIF = Convert.ToInt32(textBoxNIF.Text);
+            myDb.SaveChanges();
+            LerDados();
+        }
+
+        private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cliente clienteselected = (Cliente)listBoxClientes.SelectedItem;
+            textBoxNome.Text = clienteselected.Nome;
+            textBoxMorada.Text = clienteselected.Morada;
+            textBoxContacto.Text = clienteselected.Contacto;
+            textBoxNIF.Text = clienteselected.NIF.ToString();
+        }
+
+        private void textBoxNome_TextChanged(object sender, EventArgs e)
+        {
+            if(textBoxNome.Text.Length > 0)
+            {
+                bindingNavigator1.AddNewItem.Enabled = false;
+            }
+            else
+            {
+                bindingNavigator1.AddNewItem.Enabled = true;
+            }
+        }
+
+        private void textBoxContacto_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxContacto.Text.Length > 0)
+            {
+                bindingNavigator1.AddNewItem.Enabled = false;
+            }
+            else
+            {
+                bindingNavigator1.AddNewItem.Enabled = true;
+            }
+        }
+
+        private void textBoxMorada_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxMorada.Text.Length > 0)
+            {
+                bindingNavigator1.AddNewItem.Enabled = false;
+            }
+            else
+            {
+                bindingNavigator1.AddNewItem.Enabled = true;
+            }
+        }
+
+        private void textBoxNIF_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxNIF.Text.Length > 0)
+            {
+                bindingNavigator1.AddNewItem.Enabled = false;
+            }
+            else
+            {
+                bindingNavigator1.AddNewItem.Enabled = true;
+            }
         }
     }
 }

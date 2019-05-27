@@ -31,15 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClientes));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.listBoxClientes = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxfiltar = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxNIF = new System.Windows.Forms.TextBox();
             this.textBoxMorada = new System.Windows.Forms.TextBox();
             this.textBoxContacto = new System.Windows.Forms.TextBox();
             this.textBoxNome = new System.Windows.Forms.TextBox();
@@ -55,18 +54,10 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabelGuardarAlt = new System.Windows.Forms.ToolStripLabel();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nIFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carroOficinasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vendasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aluguersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBoxNIF = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -75,9 +66,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.listBoxClientes);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBoxfiltar);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(398, 392);
@@ -85,25 +76,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista de Clientes";
             // 
-            // dataGridView1
+            // listBoxClientes
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idClienteDataGridViewTextBoxColumn,
-            this.nomeDataGridViewTextBoxColumn,
-            this.nIFDataGridViewTextBoxColumn,
-            this.moradaDataGridViewTextBoxColumn,
-            this.contactoDataGridViewTextBoxColumn,
-            this.carroOficinasDataGridViewTextBoxColumn,
-            this.vendasDataGridViewTextBoxColumn,
-            this.aluguersDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.clienteBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 62);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(378, 315);
-            this.dataGridView1.TabIndex = 2;
+            this.listBoxClientes.FormattingEnabled = true;
+            this.listBoxClientes.ItemHeight = 16;
+            this.listBoxClientes.Location = new System.Drawing.Point(6, 70);
+            this.listBoxClientes.Name = "listBoxClientes";
+            this.listBoxClientes.Size = new System.Drawing.Size(378, 308);
+            this.listBoxClientes.TabIndex = 9;
+            this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -113,21 +94,22 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Filtrar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // textBoxfiltar
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 22);
-            this.textBox1.TabIndex = 0;
+            this.textBoxfiltar.Location = new System.Drawing.Point(6, 34);
+            this.textBoxfiltar.Name = "textBoxfiltar";
+            this.textBoxfiltar.Size = new System.Drawing.Size(269, 22);
+            this.textBoxfiltar.TabIndex = 0;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBoxNIF);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBoxNIF);
             this.groupBox2.Controls.Add(this.textBoxMorada);
             this.groupBox2.Controls.Add(this.textBoxContacto);
             this.groupBox2.Controls.Add(this.textBoxNome);
@@ -175,33 +157,32 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Nome:";
             // 
-            // textBoxNIF
-            // 
-            this.textBoxNIF.Location = new System.Drawing.Point(116, 312);
-            this.textBoxNIF.Name = "textBoxNIF";
-            this.textBoxNIF.Size = new System.Drawing.Size(308, 22);
-            this.textBoxNIF.TabIndex = 4;
-            // 
             // textBoxMorada
             // 
+            this.textBoxMorada.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Morada", true));
             this.textBoxMorada.Location = new System.Drawing.Point(116, 251);
             this.textBoxMorada.Name = "textBoxMorada";
             this.textBoxMorada.Size = new System.Drawing.Size(308, 22);
             this.textBoxMorada.TabIndex = 3;
+            this.textBoxMorada.TextChanged += new System.EventHandler(this.textBoxMorada_TextChanged);
             // 
             // textBoxContacto
             // 
+            this.textBoxContacto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Contacto", true));
             this.textBoxContacto.Location = new System.Drawing.Point(116, 192);
             this.textBoxContacto.Name = "textBoxContacto";
             this.textBoxContacto.Size = new System.Drawing.Size(308, 22);
             this.textBoxContacto.TabIndex = 2;
+            this.textBoxContacto.TextChanged += new System.EventHandler(this.textBoxContacto_TextChanged);
             // 
             // textBoxNome
             // 
+            this.textBoxNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Nome", true));
             this.textBoxNome.Location = new System.Drawing.Point(116, 132);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(308, 22);
             this.textBoxNome.TabIndex = 1;
+            this.textBoxNome.TextChanged += new System.EventHandler(this.textBoxNome_TextChanged);
             // 
             // bindingNavigator1
             // 
@@ -223,7 +204,7 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.toolStripLabel1});
+            this.toolStripLabelGuardarAlt});
             this.bindingNavigator1.Location = new System.Drawing.Point(3, 18);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -238,6 +219,7 @@
             // bindingNavigatorAddNewItem
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Enabled = false;
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
@@ -260,6 +242,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -306,7 +289,6 @@
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
-            this.bindingNavigatorMoveNextItem.Click += new System.EventHandler(this.bindingNavigatorMoveNextItem_Click);
             // 
             // bindingNavigatorMoveLastItem
             // 
@@ -322,63 +304,25 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripLabel1
+            // toolStripLabelGuardarAlt
             // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(136, 24);
-            this.toolStripLabel1.Text = "Guardar Alterações";
+            this.toolStripLabelGuardarAlt.Name = "toolStripLabelGuardarAlt";
+            this.toolStripLabelGuardarAlt.Size = new System.Drawing.Size(136, 24);
+            this.toolStripLabelGuardarAlt.Text = "Guardar Alterações";
+            this.toolStripLabelGuardarAlt.Click += new System.EventHandler(this.toolStripLabelGuardarAlt_Click);
             // 
             // clienteBindingSource
             // 
             this.clienteBindingSource.DataSource = typeof(Gestor_de_oficina.Cliente);
             // 
-            // idClienteDataGridViewTextBoxColumn
+            // textBoxNIF
             // 
-            this.idClienteDataGridViewTextBoxColumn.DataPropertyName = "IdCliente";
-            this.idClienteDataGridViewTextBoxColumn.HeaderText = "IdCliente";
-            this.idClienteDataGridViewTextBoxColumn.Name = "idClienteDataGridViewTextBoxColumn";
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            // 
-            // nIFDataGridViewTextBoxColumn
-            // 
-            this.nIFDataGridViewTextBoxColumn.DataPropertyName = "NIF";
-            this.nIFDataGridViewTextBoxColumn.HeaderText = "NIF";
-            this.nIFDataGridViewTextBoxColumn.Name = "nIFDataGridViewTextBoxColumn";
-            // 
-            // moradaDataGridViewTextBoxColumn
-            // 
-            this.moradaDataGridViewTextBoxColumn.DataPropertyName = "Morada";
-            this.moradaDataGridViewTextBoxColumn.HeaderText = "Morada";
-            this.moradaDataGridViewTextBoxColumn.Name = "moradaDataGridViewTextBoxColumn";
-            // 
-            // contactoDataGridViewTextBoxColumn
-            // 
-            this.contactoDataGridViewTextBoxColumn.DataPropertyName = "Contacto";
-            this.contactoDataGridViewTextBoxColumn.HeaderText = "Contacto";
-            this.contactoDataGridViewTextBoxColumn.Name = "contactoDataGridViewTextBoxColumn";
-            // 
-            // carroOficinasDataGridViewTextBoxColumn
-            // 
-            this.carroOficinasDataGridViewTextBoxColumn.DataPropertyName = "CarroOficinas";
-            this.carroOficinasDataGridViewTextBoxColumn.HeaderText = "CarroOficinas";
-            this.carroOficinasDataGridViewTextBoxColumn.Name = "carroOficinasDataGridViewTextBoxColumn";
-            // 
-            // vendasDataGridViewTextBoxColumn
-            // 
-            this.vendasDataGridViewTextBoxColumn.DataPropertyName = "Vendas";
-            this.vendasDataGridViewTextBoxColumn.HeaderText = "Vendas";
-            this.vendasDataGridViewTextBoxColumn.Name = "vendasDataGridViewTextBoxColumn";
-            // 
-            // aluguersDataGridViewTextBoxColumn
-            // 
-            this.aluguersDataGridViewTextBoxColumn.DataPropertyName = "Aluguers";
-            this.aluguersDataGridViewTextBoxColumn.HeaderText = "Aluguers";
-            this.aluguersDataGridViewTextBoxColumn.Name = "aluguersDataGridViewTextBoxColumn";
+            this.textBoxNIF.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Morada", true));
+            this.textBoxNIF.Location = new System.Drawing.Point(116, 307);
+            this.textBoxNIF.Name = "textBoxNIF";
+            this.textBoxNIF.Size = new System.Drawing.Size(308, 22);
+            this.textBoxNIF.TabIndex = 9;
+            this.textBoxNIF.TextChanged += new System.EventHandler(this.textBoxNIF_TextChanged);
             // 
             // FormClientes
             // 
@@ -393,7 +337,6 @@
             this.Load += new System.EventHandler(this.FormClientes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
@@ -407,15 +350,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxfiltar;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxNIF;
         private System.Windows.Forms.TextBox textBoxMorada;
         private System.Windows.Forms.TextBox textBoxContacto;
         private System.Windows.Forms.TextBox textBoxNome;
@@ -431,15 +372,9 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idClienteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nIFDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moradaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contactoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn carroOficinasDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vendasDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aluguersDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelGuardarAlt;
         private System.Windows.Forms.BindingSource clienteBindingSource;
+        private System.Windows.Forms.ListBox listBoxClientes;
+        private System.Windows.Forms.TextBox textBoxNIF;
     }
 }
