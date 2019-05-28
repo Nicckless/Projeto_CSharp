@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -194,6 +195,19 @@ namespace Gestor_de_oficina
                 return;
 
 
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            CarroOficina carroOficinaSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
+            Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
+
+            string[] lines = { "Cliente: " + clienteSelecionado.Nome, "Numero Chassis: " + carroOficinaSelecionado.NumeroChassis + "\n\nMarca + Modelo: " + carroOficinaSelecionado.Marca + " " + carroOficinaSelecionado.Modelo , "-------------------------------------\nValor total do Servico: " + servicoSelecionado.totalGastoNoStand + "€" };
+
+            string docPath = @"E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Recibos da Oficina";
+
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, clienteSelecionado.Nome + ".txt")))
+            {
+                foreach (string line in lines)
+                    outputFile.WriteLine(line);
+            }
         }
     }
 }

@@ -1,0 +1,6 @@
+Cliente: Tiago
+Numero Chassis: 1232141241x41221c
+
+Marca + Modelo: VW Golf 2
+-------------------------------------
+Valor total do Servico: 12€
