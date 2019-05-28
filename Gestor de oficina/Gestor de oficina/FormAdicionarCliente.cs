@@ -31,5 +31,6 @@ namespace Gestor_de_oficina
             myDb.Clientes.Add(novoCliente);
             myDb.SaveChanges();
             Close();
+        }
     }
 }

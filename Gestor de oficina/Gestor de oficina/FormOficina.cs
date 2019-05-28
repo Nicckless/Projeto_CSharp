@@ -58,6 +58,11 @@ namespace Gestor_de_oficina
         }
         private void FormOficina_Load(object sender, EventArgs e)
         {
+            listBoxClientes.SelectedItem = 0;
+            listBoxCarros.SelectedItem = 0;
+            listBoxServicos.SelectedItem = 0;
+            listBoxParcelas.SelectedItem = 0;
+
             listBoxClientes.DataSource = myDb.Clientes.ToList();
             listBoxCarros.DataSource = myDb.Carros.ToList();
             listBoxServicos.DataSource = myDb.Servicos.ToList();
@@ -66,19 +71,24 @@ namespace Gestor_de_oficina
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1)
+                return;
+
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
 
             labelNome.Text = clienteSelecionado.Nome;
             labelNIF.Text = clienteSelecionado.NIF.ToString();
             labelMorada.Text = clienteSelecionado.Morada;
-            labelValorTotal.Text = servicoSelecionado.totalGastoNoStand.ToString();
 
             atualizarListaCarros(clienteSelecionado);
         }
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1)
+                return;
+
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             CarroOficina carroOficinaSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
 
@@ -87,9 +97,14 @@ namespace Gestor_de_oficina
 
         private void listBoxServicos_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1)
+                return;
+
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             CarroOficina carroOficinaSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
+
+            labelValorTotal.Text = servicoSelecionado.totalGastoNoStand.ToString();
 
             atualizarListaParcelas(servicoSelecionado);
         }

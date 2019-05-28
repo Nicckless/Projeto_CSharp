@@ -34,13 +34,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxfiltar = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-<<<<<<< HEAD
             this.textBoxNIF = new System.Windows.Forms.TextBox();
 
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-
-=======
->>>>>>> parent of 6b0e655... Mais coisas feitas
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -127,7 +123,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Adicionar Cliente";
             // 
-<<<<<<< HEAD
             // textBoxNIF
             // 
             this.textBoxNIF.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Morada", true));
@@ -142,8 +137,6 @@
 
 
             // 
-=======
->>>>>>> parent of 6b0e655... Mais coisas feitas
             // label4
             // 
             this.label4.AutoSize = true;
@@ -407,7 +400,16 @@
             this.textBoxNIF.Name = "textBoxNIF";
             this.textBoxNIF.Size = new System.Drawing.Size(308, 22);
             this.textBoxNIF.TabIndex = 9;
-            this.textBoxNIF.TextChanged += new System.EventHandler(this.textBoxNIF_TextChanged);
+            //this.textBoxNIF.TextChanged += new System.EventHandler(this.textBoxNIF_TextChanged);
+            // 
+            // textBoxNIF
+            // 
+            this.textBoxNIF.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Morada", true));
+            this.textBoxNIF.Location = new System.Drawing.Point(116, 307);
+            this.textBoxNIF.Name = "textBoxNIF";
+            this.textBoxNIF.Size = new System.Drawing.Size(308, 22);
+            this.textBoxNIF.TabIndex = 9;
+            //this.textBoxNIF.TextChanged += new System.EventHandler(this.textBoxNIF_TextChanged);
             // 
             // FormClientes
             // 

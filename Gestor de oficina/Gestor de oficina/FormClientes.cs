@@ -125,11 +125,11 @@ namespace Gestor_de_oficina
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
                 
-            Cliente clienteselected = (Cliente)listBoxClientes.SelectedItem;
+           /* Cliente clienteselected = (Cliente)listBoxClientes.SelectedItem;
             textBoxNome.Text = clienteselected.Nome;
             textBoxMorada.Text = clienteselected.Morada;
             textBoxContacto.Text = clienteselected.Contacto;
-            textBoxNIF.Text = clienteselected.NIF.ToString();
+            textBoxNIF.Text = clienteselected.NIF.ToString();*/
 
         }
     }
