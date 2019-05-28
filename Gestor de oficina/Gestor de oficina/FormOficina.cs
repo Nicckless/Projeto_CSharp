@@ -72,9 +72,6 @@ namespace Gestor_de_oficina
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1)
-                return;
-
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             CarroOficina carroOficinaSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
@@ -92,8 +89,6 @@ namespace Gestor_de_oficina
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-            if (listBoxClientes.SelectedIndex == -1)
-                return;
             CarroOficina carroOficinaSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
 
             atualizarListaServicos(carroOficinaSelecionado);
@@ -103,8 +98,6 @@ namespace Gestor_de_oficina
         {
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             CarroOficina carroOficinaSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
-            if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1)
-                return;
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
 
             atualizarListaParcelas(servicoSelecionado);
