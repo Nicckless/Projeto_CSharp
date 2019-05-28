@@ -66,24 +66,59 @@ namespace Gestor_de_oficina
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1)
+                return;
+
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-            CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
-            Parcela parcelaSelecionada = (Parcela)listBoxParcelas.SelectedItem;
 
             labelNome.Text = clienteSelecionado.Nome;
             labelNIF.Text = clienteSelecionado.NIF.ToString();
             labelMorada.Text = clienteSelecionado.Morada;
+            labelValorTotal.Text = servicoSelecionado.totalGastoNoStand.ToString();
 
             atualizarListaCarros(clienteSelecionado);
         }
 
+        private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            if (listBoxClientes.SelectedIndex == -1)
+                return;
+            CarroOficina carroOficinaSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
+
+            atualizarListaServicos(carroOficinaSelecionado);
+        }
+
+        private void listBoxServicos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            CarroOficina carroOficinaSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
+            if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1)
+                return;
+            Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
+
+            atualizarListaParcelas(servicoSelecionado);
+        }
+
+        private void listBoxParcelas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void atualizarListaCarros(Cliente clienteSelecionado)
         {
-            listBoxCarros.DataSource = null;
-            listBoxParcelas.DataSource = null;
-            listBoxServicos.DataSource = null;
             listBoxCarros.DataSource = clienteSelecionado.CarroOficinas.ToList();
+        }
+
+        private void atualizarListaServicos(CarroOficina carroOficinaSelecionado)
+        {
+            listBoxServicos.DataSource = carroOficinaSelecionado.Servicoes.ToList();
+        }
+        
+        private void atualizarListaParcelas(Servico servicoSelecionado)
+        {
+            listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
         }
 
         private void buttonCriarServico_Click(object sender, EventArgs e)
@@ -120,6 +155,36 @@ namespace Gestor_de_oficina
         {
             if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1)
                 return;
+
+            Cliente clienteSelecionado = new Cliente();
+            CarroOficina carroOficinaSelecionado = new CarroOficina();
+            Servico servicoSelecionado = new Servico();
+
+            clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            carroOficinaSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
+            servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
+
+            if (string.IsNullOrEmpty(textBoxValorParcela.Text) || string.IsNullOrEmpty(textBoxDescricaoParcela.Text))
+                return;
+
+            Parcela novaParcela = new Parcela
+            {
+                Valor = Convert.ToInt32(textBoxValorParcela.Text),
+                Descricao = textBoxDescricaoParcela.Text
+            };
+            servicoSelecionado.Parcelas.Add(novaParcela);
+
+            listBoxParcelas.SelectedItem = novaParcela;
+
+            myDb.SaveChanges();
+            LerDados();
+        }
+
+        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1 || listBoxParcelas.SelectedIndex == -1)
+                return;
+
 
         }
     }

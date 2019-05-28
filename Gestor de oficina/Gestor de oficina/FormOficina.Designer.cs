@@ -54,12 +54,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.listBoxClientes = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.reciboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel5.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -160,6 +164,7 @@
             this.listBoxParcelas.Name = "listBoxParcelas";
             this.listBoxParcelas.Size = new System.Drawing.Size(367, 308);
             this.listBoxParcelas.TabIndex = 4;
+            this.listBoxParcelas.SelectedIndexChanged += new System.EventHandler(this.listBoxParcelas_SelectedIndexChanged);
             // 
             // panel4
             // 
@@ -198,6 +203,7 @@
             this.listBoxServicos.Name = "listBoxServicos";
             this.listBoxServicos.Size = new System.Drawing.Size(254, 388);
             this.listBoxServicos.TabIndex = 3;
+            this.listBoxServicos.SelectedIndexChanged += new System.EventHandler(this.listBoxServicos_SelectedIndexChanged);
             // 
             // panel3
             // 
@@ -226,6 +232,7 @@
             this.listBoxCarros.Name = "listBoxCarros";
             this.listBoxCarros.Size = new System.Drawing.Size(254, 388);
             this.listBoxCarros.TabIndex = 2;
+            this.listBoxCarros.SelectedIndexChanged += new System.EventHandler(this.listBoxCarros_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -234,9 +241,9 @@
             this.panel2.Controls.Add(this.labelNIF);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.labelNome);
-            this.panel2.Location = new System.Drawing.Point(277, 6);
+            this.panel2.Location = new System.Drawing.Point(277, 29);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(904, 176);
+            this.panel2.Size = new System.Drawing.Size(904, 153);
             this.panel2.TabIndex = 7;
             // 
             // labelValorTotal
@@ -290,9 +297,9 @@
             // 
             this.panel1.Controls.Add(this.listBoxClientes);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(10, 6);
+            this.panel1.Location = new System.Drawing.Point(10, 31);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(261, 635);
+            this.panel1.Size = new System.Drawing.Size(261, 610);
             this.panel1.TabIndex = 5;
             // 
             // listBoxClientes
@@ -314,6 +321,32 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Selecione um cliente";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reciboToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1192, 28);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // reciboToolStripMenuItem
+            // 
+            this.reciboToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.guardarToolStripMenuItem});
+            this.reciboToolStripMenuItem.Name = "reciboToolStripMenuItem";
+            this.reciboToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.reciboToolStripMenuItem.Text = "Ficheiro";
+            // 
+            // guardarToolStripMenuItem
+            // 
+            this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.guardarToolStripMenuItem.Text = "Guardar Recibo";
+            this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
+            // 
             // FormOficina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -326,6 +359,8 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormOficina";
             this.Text = "FormOficina";
             this.Load += new System.EventHandler(this.FormOficina_Load);
@@ -340,6 +375,8 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,5 +410,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListBox listBoxClientes;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem reciboToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
     }
 }

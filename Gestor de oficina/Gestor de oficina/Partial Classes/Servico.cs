@@ -15,6 +15,7 @@ namespace Gestor_de_oficina
             this.Tipo = Tipo;
             this.Parcelas = new HashSet<Parcela>();
         }
+
         public decimal totalGastoNoStand
         {
             get
