@@ -32,7 +32,9 @@ namespace Gestor_de_oficina
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            SaveCustomerInfo();
+            FormAdicionarCliente formAdicionarCliente = new FormAdicionarCliente();
+            formAdicionarCliente.ShowDialog();
+            LerDados();
         }
         
         private void SaveCustomerInfo()
@@ -52,7 +54,7 @@ namespace Gestor_de_oficina
 
         private void LerDados()
         {
-            listBoxClientes.DataSource = myDb.Clientes.ToList();
+            dataGridViewClientes.DataSource = myDb.Clientes.ToList();
             clienteBindingSource.DataSource = myDb.Clientes.ToList();
         }
 
@@ -63,10 +65,17 @@ namespace Gestor_de_oficina
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            Cliente clientselected = (Cliente)listBoxClientes.SelectedItem;
-            myDb.Clientes.Remove(clientselected);
-            myDb.SaveChanges();
-            LerDados();
+            //Cliente clientselected = (Cliente)listBoxClientes.SelectedItem;
+            //Cliente clientselected = (Cliente)dataGridViewClientes.SelectedRows.Cast<Cliente>();
+            //Console.WriteLine(clientselected.Nome);
+            //myDb.Clientes.Remove(clientselected);
+            //myDb.SaveChanges();
+            for(int i = 0;i < dataGridViewClientes.SelectedRows.Count; i++)
+            {
+                myDb.Clientes.Remove(dataGridViewClientes.SelectedRows[i].DataBoundItem as Cliente);
+                clienteBindingSource.RemoveAt(dataGridViewClientes.SelectedRows[i].Index);
+            }
+            //LerDados();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -83,7 +92,7 @@ namespace Gestor_de_oficina
                  orderby cliente.Nome
                  select cliente).ToList();
 
-                listBoxClientes.DataSource = myDb.Clientes.Local.ToBindingList();
+                dataGridViewClientes.DataSource = myDb.Clientes.Local.ToBindingList();
             }
             else
             {
@@ -96,12 +105,13 @@ namespace Gestor_de_oficina
                  orderby cliente.Nome
                  select cliente).Load();
 
-                listBoxClientes.DataSource = myDb.Clientes.Local.ToBindingList();
+                dataGridViewClientes.DataSource = myDb.Clientes.Local.ToBindingList();
             }
         }
 
         private void toolStripLabelGuardarAlt_Click(object sender, EventArgs e)
         {
+            /*
             Cliente clientselected = (Cliente)listBoxClientes.SelectedItem;
             myDb.Clientes.Attach(clientselected);
             clientselected.Nome = textBoxNome.Text;
@@ -119,54 +129,7 @@ namespace Gestor_de_oficina
             textBoxMorada.Text = clienteselected.Morada;
             textBoxContacto.Text = clienteselected.Contacto;
             textBoxNIF.Text = clienteselected.NIF.ToString();
-        }
-
-        private void textBoxNome_TextChanged(object sender, EventArgs e)
-        {
-            if(textBoxNome.Text.Length > 0)
-            {
-                bindingNavigator1.AddNewItem.Enabled = false;
-            }
-            else
-            {
-                bindingNavigator1.AddNewItem.Enabled = true;
-            }
-        }
-
-        private void textBoxContacto_TextChanged(object sender, EventArgs e)
-        {
-            if (textBoxContacto.Text.Length > 0)
-            {
-                bindingNavigator1.AddNewItem.Enabled = false;
-            }
-            else
-            {
-                bindingNavigator1.AddNewItem.Enabled = true;
-            }
-        }
-
-        private void textBoxMorada_TextChanged(object sender, EventArgs e)
-        {
-            if (textBoxMorada.Text.Length > 0)
-            {
-                bindingNavigator1.AddNewItem.Enabled = false;
-            }
-            else
-            {
-                bindingNavigator1.AddNewItem.Enabled = true;
-            }
-        }
-
-        private void textBoxNIF_TextChanged(object sender, EventArgs e)
-        {
-            if (textBoxNIF.Text.Length > 0)
-            {
-                bindingNavigator1.AddNewItem.Enabled = false;
-            }
-            else
-            {
-                bindingNavigator1.AddNewItem.Enabled = true;
-            }
+            */
         }
     }
 }
