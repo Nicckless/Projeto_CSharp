@@ -30,10 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClientes));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBoxfiltar = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxNIF = new System.Windows.Forms.TextBox();
+
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+
             this.textBoxNIF = new System.Windows.Forms.TextBox();
 
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -57,53 +58,20 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabelGuardarAlt = new System.Windows.Forms.ToolStripLabel();
-            this.dataGridViewClientes = new System.Windows.Forms.DataGridView();
-            this.idClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nIFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carroOficinasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vendasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aluguersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listBoxClientes = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBoxfiltar = new System.Windows.Forms.TextBox();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+
             this.textBoxNIF = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dataGridViewClientes);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBoxfiltar);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(398, 392);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Lista de Clientes";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(279, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Filtrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBoxfiltar
-            // 
-            this.textBoxfiltar.Location = new System.Drawing.Point(6, 34);
-            this.textBoxfiltar.Name = "textBoxfiltar";
-            this.textBoxfiltar.Size = new System.Drawing.Size(269, 22);
-            this.textBoxfiltar.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -116,21 +84,21 @@
             this.groupBox2.Controls.Add(this.textBoxContacto);
             this.groupBox2.Controls.Add(this.textBoxNome);
             this.groupBox2.Controls.Add(this.bindingNavigator1);
-            this.groupBox2.Location = new System.Drawing.Point(416, 12);
+            this.groupBox2.Location = new System.Drawing.Point(411, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(493, 392);
-            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Adicionar Cliente";
             // 
             // textBoxNIF
             // 
-            this.textBoxNIF.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Morada", true));
             this.textBoxNIF.Location = new System.Drawing.Point(116, 307);
             this.textBoxNIF.Name = "textBoxNIF";
             this.textBoxNIF.Size = new System.Drawing.Size(308, 22);
             this.textBoxNIF.TabIndex = 9;
             // 
+
             // clienteBindingSource
             // 
             this.clienteBindingSource.DataSource = typeof(Gestor_de_oficina.Cliente);
@@ -175,7 +143,6 @@
             // 
             // textBoxMorada
             // 
-            this.textBoxMorada.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Morada", true));
             this.textBoxMorada.Location = new System.Drawing.Point(116, 251);
             this.textBoxMorada.Name = "textBoxMorada";
             this.textBoxMorada.Size = new System.Drawing.Size(308, 22);
@@ -183,7 +150,6 @@
             // 
             // textBoxContacto
             // 
-            this.textBoxContacto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Contacto", true));
             this.textBoxContacto.Location = new System.Drawing.Point(116, 192);
             this.textBoxContacto.Name = "textBoxContacto";
             this.textBoxContacto.Size = new System.Drawing.Size(308, 22);
@@ -191,7 +157,6 @@
             // 
             // textBoxNome
             // 
-            this.textBoxNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Nome", true));
             this.textBoxNome.Location = new System.Drawing.Point(116, 132);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(308, 22);
@@ -200,7 +165,6 @@
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.bindingNavigator1.BindingSource = this.clienteBindingSource;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.CountItemFormat = "de 0";
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
@@ -238,7 +202,6 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -255,7 +218,6 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Delete";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -322,76 +284,47 @@
             this.toolStripLabelGuardarAlt.Name = "toolStripLabelGuardarAlt";
             this.toolStripLabelGuardarAlt.Size = new System.Drawing.Size(136, 24);
             this.toolStripLabelGuardarAlt.Text = "Guardar Alterações";
-            this.toolStripLabelGuardarAlt.Click += new System.EventHandler(this.toolStripLabelGuardarAlt_Click);
             // 
-            // dataGridViewClientes
+            // groupBox1
             // 
-            this.dataGridViewClientes.AutoGenerateColumns = false;
-            this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idClienteDataGridViewTextBoxColumn,
-            this.nomeDataGridViewTextBoxColumn,
-            this.nIFDataGridViewTextBoxColumn,
-            this.moradaDataGridViewTextBoxColumn,
-            this.contactoDataGridViewTextBoxColumn,
-            this.carroOficinasDataGridViewTextBoxColumn,
-            this.vendasDataGridViewTextBoxColumn,
-            this.aluguersDataGridViewTextBoxColumn});
-            this.dataGridViewClientes.DataSource = this.clienteBindingSource;
-            this.dataGridViewClientes.Location = new System.Drawing.Point(6, 63);
-            this.dataGridViewClientes.Name = "dataGridViewClientes";
-            this.dataGridViewClientes.RowTemplate.Height = 24;
-            this.dataGridViewClientes.Size = new System.Drawing.Size(378, 315);
-            this.dataGridViewClientes.TabIndex = 10;
+            this.groupBox1.Controls.Add(this.listBoxClientes);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.textBoxfiltar);
+            this.groupBox1.Location = new System.Drawing.Point(7, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(398, 392);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Lista de Clientes";
             // 
-
-            // idClienteDataGridViewTextBoxColumn
+            // listBoxClientes
             // 
-            this.idClienteDataGridViewTextBoxColumn.DataPropertyName = "IdCliente";
-            this.idClienteDataGridViewTextBoxColumn.HeaderText = "IdCliente";
-            this.idClienteDataGridViewTextBoxColumn.Name = "idClienteDataGridViewTextBoxColumn";
+            this.listBoxClientes.FormattingEnabled = true;
+            this.listBoxClientes.ItemHeight = 16;
+            this.listBoxClientes.Location = new System.Drawing.Point(6, 70);
+            this.listBoxClientes.Name = "listBoxClientes";
+            this.listBoxClientes.Size = new System.Drawing.Size(378, 308);
+            this.listBoxClientes.TabIndex = 9;
             // 
-            // nomeDataGridViewTextBoxColumn
+            // button1
             // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.button1.Location = new System.Drawing.Point(279, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(105, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Filtrar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // nIFDataGridViewTextBoxColumn
+            // textBoxfiltar
             // 
-            this.nIFDataGridViewTextBoxColumn.DataPropertyName = "NIF";
-            this.nIFDataGridViewTextBoxColumn.HeaderText = "NIF";
-            this.nIFDataGridViewTextBoxColumn.Name = "nIFDataGridViewTextBoxColumn";
+            this.textBoxfiltar.Location = new System.Drawing.Point(6, 34);
+            this.textBoxfiltar.Name = "textBoxfiltar";
+            this.textBoxfiltar.Size = new System.Drawing.Size(269, 22);
+            this.textBoxfiltar.TabIndex = 0;
             // 
-            // moradaDataGridViewTextBoxColumn
+            // clienteBindingSource
             // 
-            this.moradaDataGridViewTextBoxColumn.DataPropertyName = "Morada";
-            this.moradaDataGridViewTextBoxColumn.HeaderText = "Morada";
-            this.moradaDataGridViewTextBoxColumn.Name = "moradaDataGridViewTextBoxColumn";
-            // 
-            // contactoDataGridViewTextBoxColumn
-            // 
-            this.contactoDataGridViewTextBoxColumn.DataPropertyName = "Contacto";
-            this.contactoDataGridViewTextBoxColumn.HeaderText = "Contacto";
-            this.contactoDataGridViewTextBoxColumn.Name = "contactoDataGridViewTextBoxColumn";
-            // 
-            // carroOficinasDataGridViewTextBoxColumn
-            // 
-            this.carroOficinasDataGridViewTextBoxColumn.DataPropertyName = "CarroOficinas";
-            this.carroOficinasDataGridViewTextBoxColumn.HeaderText = "CarroOficinas";
-            this.carroOficinasDataGridViewTextBoxColumn.Name = "carroOficinasDataGridViewTextBoxColumn";
-            // 
-            // vendasDataGridViewTextBoxColumn
-            // 
-            this.vendasDataGridViewTextBoxColumn.DataPropertyName = "Vendas";
-            this.vendasDataGridViewTextBoxColumn.HeaderText = "Vendas";
-            this.vendasDataGridViewTextBoxColumn.Name = "vendasDataGridViewTextBoxColumn";
-            // 
-            // aluguersDataGridViewTextBoxColumn
-            // 
-            this.aluguersDataGridViewTextBoxColumn.DataPropertyName = "Aluguers";
-            this.aluguersDataGridViewTextBoxColumn.HeaderText = "Aluguers";
-            this.aluguersDataGridViewTextBoxColumn.Name = "aluguersDataGridViewTextBoxColumn";
+            this.clienteBindingSource.DataSource = typeof(Gestor_de_oficina.Cliente);
             // 
             // textBoxNIF
             // 
@@ -415,32 +348,27 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(921, 413);
+            this.ClientSize = new System.Drawing.Size(914, 420);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormClientes";
             this.Text = "FormClientes";
-            this.Load += new System.EventHandler(this.FormClientes_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBoxfiltar;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox textBoxNIF;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -461,16 +389,10 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripLabel toolStripLabelGuardarAlt;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ListBox listBoxClientes;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxfiltar;
         private System.Windows.Forms.BindingSource clienteBindingSource;
-        private System.Windows.Forms.TextBox textBoxNIF;
-        private System.Windows.Forms.DataGridView dataGridViewClientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idClienteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nIFDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moradaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contactoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn carroOficinasDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vendasDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aluguersDataGridViewTextBoxColumn;
     }
 }
