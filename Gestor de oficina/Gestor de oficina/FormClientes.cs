@@ -120,10 +120,10 @@ namespace Gestor_de_oficina
             clientselected.NIF = Convert.ToInt32(textBoxNIF.Text);
             myDb.SaveChanges();
             LerDados();
-        }
-
+        
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
+                /*
             Cliente clienteselected = (Cliente)listBoxClientes.SelectedItem;
             textBoxNome.Text = clienteselected.Nome;
             textBoxMorada.Text = clienteselected.Morada;
