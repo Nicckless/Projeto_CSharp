@@ -119,7 +119,7 @@ namespace Gestor_de_oficina
             clientselected.Morada = textBoxMorada.Text;
             clientselected.NIF = Convert.ToInt32(textBoxNIF.Text);
             myDb.SaveChanges();
-            LerDados();
+            LerDados();            */
         }
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,7 +129,7 @@ namespace Gestor_de_oficina
             textBoxMorada.Text = clienteselected.Morada;
             textBoxContacto.Text = clienteselected.Contacto;
             textBoxNIF.Text = clienteselected.NIF.ToString();
-            */
+
         }
     }
 }

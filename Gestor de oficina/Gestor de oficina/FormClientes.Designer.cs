@@ -135,7 +135,6 @@
             // 
             this.clienteBindingSource.DataSource = typeof(Gestor_de_oficina.Cliente);
 
-            this.textBoxNIF.TextChanged += new System.EventHandler(this.textBoxNIF_TextChanged);
 
             // 
             // label4
