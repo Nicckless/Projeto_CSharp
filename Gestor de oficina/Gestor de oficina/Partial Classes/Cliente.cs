@@ -8,10 +8,6 @@ namespace Gestor_de_oficina
 {
     public partial class Cliente
     {
-        //public Cliente()
-        //{
-
-        //}
         public Cliente(string Nome, string Morada, int NIF, string Contacto)
         {
             this.Nome = Nome;
@@ -21,6 +17,19 @@ namespace Gestor_de_oficina
             CarroOficinas = new HashSet<CarroOficina>();
             Vendas = new HashSet<Venda>();
             Aluguers = new HashSet<Aluguer>();
+        }
+
+        public Decimal TotalCliente
+        {
+            get
+            {
+                Decimal TotalCliente = 0;
+                foreach (CarroOficina item in this.CarroOficinas)
+                {
+                    TotalCliente = TotalCliente + item.TotalCarroOficina;
+                }
+                return TotalCliente;
+            }
         }
         public override string ToString()
         {

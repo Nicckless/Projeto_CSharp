@@ -35,7 +35,9 @@
             this.textBoxfiltar = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBoxNIF = new System.Windows.Forms.TextBox();
+
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,6 +67,7 @@
             this.carroOficinasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vendasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aluguersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
@@ -131,6 +134,9 @@
             // clienteBindingSource
             // 
             this.clienteBindingSource.DataSource = typeof(Gestor_de_oficina.Cliente);
+
+            this.textBoxNIF.TextChanged += new System.EventHandler(this.textBoxNIF_TextChanged);
+
             // 
             // label4
             // 
@@ -338,6 +344,7 @@
             this.dataGridViewClientes.Size = new System.Drawing.Size(378, 315);
             this.dataGridViewClientes.TabIndex = 10;
             // 
+
             // idClienteDataGridViewTextBoxColumn
             // 
             this.idClienteDataGridViewTextBoxColumn.DataPropertyName = "IdCliente";

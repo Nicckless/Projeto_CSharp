@@ -21,7 +21,7 @@ namespace Gestor_de_oficina
             get
             {
                 decimal totalInternoVendas = 0;
-                foreach (Parcela valorParcela in Parcelas)
+                foreach (Parcela valorParcela in this.Parcelas.ToList())
                 {
                     totalInternoVendas += valorParcela.Valor;
                 }
