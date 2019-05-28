@@ -164,7 +164,6 @@
             this.listBoxParcelas.Name = "listBoxParcelas";
             this.listBoxParcelas.Size = new System.Drawing.Size(367, 308);
             this.listBoxParcelas.TabIndex = 4;
-            this.listBoxParcelas.SelectedIndexChanged += new System.EventHandler(this.listBoxParcelas_SelectedIndexChanged);
             // 
             // panel4
             // 
@@ -343,7 +342,7 @@
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
             this.guardarToolStripMenuItem.Text = "Guardar Recibo";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 

@@ -35,6 +35,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxfiltar = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxNIF = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabelGuardarAlt = new System.Windows.Forms.ToolStripLabel();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBoxNIF = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
@@ -120,6 +120,15 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Adicionar Cliente";
+            // 
+            // textBoxNIF
+            // 
+            this.textBoxNIF.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Morada", true));
+            this.textBoxNIF.Location = new System.Drawing.Point(116, 307);
+            this.textBoxNIF.Name = "textBoxNIF";
+            this.textBoxNIF.Size = new System.Drawing.Size(308, 22);
+            this.textBoxNIF.TabIndex = 9;
+            this.textBoxNIF.TextChanged += new System.EventHandler(this.textBoxNIF_TextChanged);
             // 
             // label4
             // 
@@ -219,7 +228,6 @@
             // bindingNavigatorAddNewItem
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Enabled = false;
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
@@ -314,15 +322,6 @@
             // clienteBindingSource
             // 
             this.clienteBindingSource.DataSource = typeof(Gestor_de_oficina.Cliente);
-            // 
-            // textBoxNIF
-            // 
-            this.textBoxNIF.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Morada", true));
-            this.textBoxNIF.Location = new System.Drawing.Point(116, 307);
-            this.textBoxNIF.Name = "textBoxNIF";
-            this.textBoxNIF.Size = new System.Drawing.Size(308, 22);
-            this.textBoxNIF.TabIndex = 9;
-            this.textBoxNIF.TextChanged += new System.EventHandler(this.textBoxNIF_TextChanged);
             // 
             // FormClientes
             // 
