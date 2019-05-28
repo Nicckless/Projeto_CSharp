@@ -34,11 +34,9 @@ namespace Gestor_de_oficina
         {
             FormAdicionarCliente formAdicionarCliente = new FormAdicionarCliente();
             formAdicionarCliente.ShowDialog();
-            LerDados();
-            //SaveCustomerInfo();
+            SaveCustomerInfo();
         }
 
-        /*
         private void SaveCustomerInfo()
         {
             Cliente novoCliente = new Cliente
@@ -53,11 +51,10 @@ namespace Gestor_de_oficina
             myDb.SaveChanges();
             LerDados();
         }
-        */
 
         private void LerDados()
         {
-            dataGridView1.DataSource = myDb.Clientes.ToList();
+            listBoxClientes.DataSource = myDb.Clientes.ToList();
             clienteBindingSource.DataSource = myDb.Clientes.ToList();
         }
 
@@ -68,10 +65,10 @@ namespace Gestor_de_oficina
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            //Cliente clientselected = (Cliente)listBoxClientes.SelectedItem;
-            //myDb.Clientes.Remove(clientselected);
-            //myDb.SaveChanges();
-            //LerDados();
+            Cliente clientselected = (Cliente)listBoxClientes.SelectedItem;
+            myDb.Clientes.Remove(clientselected);
+            myDb.SaveChanges();
+            LerDados();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -88,7 +85,7 @@ namespace Gestor_de_oficina
                  orderby cliente.Nome
                  select cliente).ToList();
 
-                dataGridView1.DataSource = myDb.Clientes.Local.ToBindingList();
+                listBoxClientes.DataSource = myDb.Clientes.Local.ToBindingList();
             }
             else
             {
@@ -101,13 +98,12 @@ namespace Gestor_de_oficina
                  orderby cliente.Nome
                  select cliente).Load();
 
-                dataGridView1.DataSource = myDb.Clientes.Local.ToBindingList();
+                listBoxClientes.DataSource = myDb.Clientes.Local.ToBindingList();
             }
         }
 
         private void toolStripLabelGuardarAlt_Click(object sender, EventArgs e)
         {
-            /*
             Cliente clientselected = (Cliente)listBoxClientes.SelectedItem;
             myDb.Clientes.Attach(clientselected);
             clientselected.Nome = textBoxNome.Text;
@@ -116,12 +112,15 @@ namespace Gestor_de_oficina
             clientselected.NIF = Convert.ToInt32(textBoxNIF.Text);
             myDb.SaveChanges();
             LerDados();
-            */
         }
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LerDados();      
+            Cliente clienteselected = (Cliente)listBoxClientes.SelectedItem;
+            textBoxNome.Text = clienteselected.Nome;
+            textBoxMorada.Text = clienteselected.Morada;
+            textBoxContacto.Text = clienteselected.Contacto;
+            textBoxNIF.Text = clienteselected.NIF.ToString();
         }
     }
 }
