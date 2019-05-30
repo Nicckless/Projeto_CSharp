@@ -45,3 +45,4 @@ E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Proje
 C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormAdicionarCliente.resources
 C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormAdicionarServico.resources
 E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormAdicionarCliente.resources
+E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\GestorOficina.csprojAssemblyReference.cache
