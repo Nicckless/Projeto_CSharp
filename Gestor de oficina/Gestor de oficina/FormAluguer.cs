@@ -18,6 +18,8 @@ namespace Gestor_de_oficina
         {
             InitializeComponent();
             myDB = new StandAutomoveisContainer();
+
+            //fazer aquela cena que parece SQL para os carros aluguer
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
@@ -30,6 +32,7 @@ namespace Gestor_de_oficina
                 dateTimePicker2.Value = DateTime.Now;
         }
 
+        /*
         private void textBoxKmdepois_TextChanged(object sender, EventArgs e)
         {
             if (textBoxKmdepois.Text != "")
@@ -47,10 +50,12 @@ namespace Gestor_de_oficina
                 }
             }
         }
-
-        private void LerDadosCliente()
+        */
+        private void LerDados()
         {
-
+            listBoxClientes.DataSource = myDB.Clientes.ToList();
+            dataGridViewCarrosAluguer.DataSource = myDB.Carros.OfType<CarroAluguer>().ToList();
+            listBoxAlugueres.DataSource = myDB.Aluguers.ToList();
         }
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,8 +65,55 @@ namespace Gestor_de_oficina
 
         private void FormAluguer_Load(object sender, EventArgs e)
         {
-            listBoxClientes.DataSource = myDB.Clientes.ToList();
-            dataGridView1.DataSource = myDB.Carros.OfType<CarroAluguer>().ToList();       
+            LerDados();     
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePicker1.Value = DateTime.Now;
+        }
+
+        private void buttonAlugar_Click(object sender, EventArgs e)
+        {
+            CarroAluguer carroAluguer = (CarroAluguer)dataGridViewCarrosAluguer.CurrentRow.DataBoundItem;
+            Cliente clienteselected = (Cliente)listBoxClientes.SelectedItem;
+
+            Aluguer aluguer = new Aluguer
+            {
+                DataInicio = dateTimePicker1.Value,
+                DataFim = dateTimePicker2.Value,
+                ClienteIdCliente = clienteselected.IdCliente,
+                Cliente = clienteselected,
+                CarroAluguer = carroAluguer
+            };
+            myDB.Aluguers.Add(aluguer);
+
+            carroAluguer.Estado = "Alugado";
+
+            myDB.SaveChanges();
+
+            if (MessageBox.Show("Aluguer Criado") == DialogResult.OK)
+            {
+                LerDados();
+            }
+        }
+
+        private void buttonDevolver_Click(object sender, EventArgs e)
+        {
+            Cliente clienteselected = (Cliente)listBoxClientes.SelectedItem;
+
+            //Usar link para pesquisar ou usar foreach
+            foreach (Aluguer aluguer in clienteselected.Aluguers)
+            {
+                if(aluguer.Kms == 0)
+                {
+                    Console.WriteLine("there is a rented car");
+                }
+                else
+                {
+                    Console.WriteLine("there is no rented car");
+                }
+            }
         }
     }
 }

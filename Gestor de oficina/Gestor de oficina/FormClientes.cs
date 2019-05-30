@@ -70,8 +70,8 @@ namespace Gestor_de_oficina
         {
             //Cliente clientselected = (Cliente)listBoxClientes.SelectedItem;
             //myDb.Clientes.Remove(clientselected);
-            //myDb.SaveChanges();
-            //LerDados();
+            myDb.SaveChanges();
+            LerDados();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -118,11 +118,7 @@ namespace Gestor_de_oficina
             LerDados();
             */
         }
-
-        private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LerDados();      
-        }
+        
     }
 }
 
