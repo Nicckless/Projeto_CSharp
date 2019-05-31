@@ -343,7 +343,7 @@
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
             this.guardarToolStripMenuItem.Text = "Guardar Recibo";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
@@ -362,7 +362,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormOficina";
-            this.Text = "FormOficina";
+            this.Text = "Oficina do Stand";
             this.Load += new System.EventHandler(this.FormOficina_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();

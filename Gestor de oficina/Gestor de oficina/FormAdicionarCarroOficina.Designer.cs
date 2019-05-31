@@ -194,7 +194,7 @@
             this.ClientSize = new System.Drawing.Size(459, 533);
             this.Controls.Add(this.panel1);
             this.Name = "FormAdicionarCarroOficina";
-            this.Text = "FormAdicionarCarroOficina";
+            this.Text = "Adicionar um novo carro";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

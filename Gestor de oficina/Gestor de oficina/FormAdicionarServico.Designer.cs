@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxTipoServico = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.buttonAdivionarServico = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.dateTimePickerDataSaida = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxTipoServico = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonAdivionarServico = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,21 +50,21 @@
             this.panel1.Size = new System.Drawing.Size(611, 131);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // dateTimePickerDataSaida
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, -3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Adicionar os dados do servico";
+            this.dateTimePickerDataSaida.Location = new System.Drawing.Point(13, 96);
+            this.dateTimePickerDataSaida.Name = "dateTimePickerDataSaida";
+            this.dateTimePickerDataSaida.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerDataSaida.TabIndex = 5;
             // 
-            // textBoxTipoServico
+            // label3
             // 
-            this.textBoxTipoServico.Location = new System.Drawing.Point(11, 47);
-            this.textBoxTipoServico.Name = "textBoxTipoServico";
-            this.textBoxTipoServico.Size = new System.Drawing.Size(443, 22);
-            this.textBoxTipoServico.TabIndex = 1;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(172, 17);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Data de Saída do Veículo:";
             // 
             // label2
             // 
@@ -74,6 +74,22 @@
             this.label2.Size = new System.Drawing.Size(111, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tipo de Servico:";
+            // 
+            // textBoxTipoServico
+            // 
+            this.textBoxTipoServico.Location = new System.Drawing.Point(11, 47);
+            this.textBoxTipoServico.Name = "textBoxTipoServico";
+            this.textBoxTipoServico.Size = new System.Drawing.Size(443, 22);
+            this.textBoxTipoServico.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, -3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(198, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Adicionar os dados do servico";
             // 
             // buttonAdivionarServico
             // 
@@ -85,22 +101,6 @@
             this.buttonAdivionarServico.UseVisualStyleBackColor = true;
             this.buttonAdivionarServico.Click += new System.EventHandler(this.buttonAdivionarServico_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(172, 17);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Data de Saída do Veículo:";
-            // 
-            // dateTimePickerDataSaida
-            // 
-            this.dateTimePickerDataSaida.Location = new System.Drawing.Point(13, 96);
-            this.dateTimePickerDataSaida.Name = "dateTimePickerDataSaida";
-            this.dateTimePickerDataSaida.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerDataSaida.TabIndex = 5;
-            // 
             // FormAdicionarServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -109,7 +109,7 @@
             this.Controls.Add(this.buttonAdivionarServico);
             this.Controls.Add(this.panel1);
             this.Name = "FormAdicionarServico";
-            this.Text = "FormAdicionarServico";
+            this.Text = "Adicionar servico";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

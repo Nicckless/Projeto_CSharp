@@ -128,7 +128,7 @@
             this.Controls.Add(this.textBoxContacto);
             this.Controls.Add(this.textBoxNome);
             this.Name = "FormAdicionarCliente";
-            this.Text = "FormAdicionarCliente";
+            this.Text = "Adicionar Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

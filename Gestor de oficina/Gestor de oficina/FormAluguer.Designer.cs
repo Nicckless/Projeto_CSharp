@@ -31,6 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idCarroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroChassisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.combustivelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -58,15 +64,10 @@
             this.textBoxKmdepois = new System.Windows.Forms.TextBox();
             this.textBoxKmandtes = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.carroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carroAluguerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idCarroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroChassisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.combustivelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -74,7 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroAluguerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,6 +107,40 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(588, 229);
             this.dataGridView1.TabIndex = 4;
+            // 
+            // idCarroDataGridViewTextBoxColumn
+            // 
+            this.idCarroDataGridViewTextBoxColumn.DataPropertyName = "IdCarro";
+            this.idCarroDataGridViewTextBoxColumn.HeaderText = "IdCarro";
+            this.idCarroDataGridViewTextBoxColumn.Name = "idCarroDataGridViewTextBoxColumn";
+            // 
+            // numeroChassisDataGridViewTextBoxColumn
+            // 
+            this.numeroChassisDataGridViewTextBoxColumn.DataPropertyName = "NumeroChassis";
+            this.numeroChassisDataGridViewTextBoxColumn.HeaderText = "NumeroChassis";
+            this.numeroChassisDataGridViewTextBoxColumn.Name = "numeroChassisDataGridViewTextBoxColumn";
+            // 
+            // marcaDataGridViewTextBoxColumn
+            // 
+            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
+            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            // 
+            // modeloDataGridViewTextBoxColumn
+            // 
+            this.modeloDataGridViewTextBoxColumn.DataPropertyName = "Modelo";
+            this.modeloDataGridViewTextBoxColumn.HeaderText = "Modelo";
+            this.modeloDataGridViewTextBoxColumn.Name = "modeloDataGridViewTextBoxColumn";
+            // 
+            // combustivelDataGridViewTextBoxColumn
+            // 
+            this.combustivelDataGridViewTextBoxColumn.DataPropertyName = "Combustivel";
+            this.combustivelDataGridViewTextBoxColumn.HeaderText = "Combustivel";
+            this.combustivelDataGridViewTextBoxColumn.Name = "combustivelDataGridViewTextBoxColumn";
+            // 
+            // carroBindingSource
+            // 
+            this.carroBindingSource.DataSource = typeof(Gestor_de_oficina.Carro);
             // 
             // groupBox2
             // 
@@ -364,43 +398,9 @@
             this.button2.Text = "Devolver Carro / Emitir Fatura";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // carroBindingSource
-            // 
-            this.carroBindingSource.DataSource = typeof(Gestor_de_oficina.Carro);
-            // 
             // carroAluguerBindingSource
             // 
             this.carroAluguerBindingSource.DataSource = typeof(Gestor_de_oficina.CarroAluguer);
-            // 
-            // idCarroDataGridViewTextBoxColumn
-            // 
-            this.idCarroDataGridViewTextBoxColumn.DataPropertyName = "IdCarro";
-            this.idCarroDataGridViewTextBoxColumn.HeaderText = "IdCarro";
-            this.idCarroDataGridViewTextBoxColumn.Name = "idCarroDataGridViewTextBoxColumn";
-            // 
-            // numeroChassisDataGridViewTextBoxColumn
-            // 
-            this.numeroChassisDataGridViewTextBoxColumn.DataPropertyName = "NumeroChassis";
-            this.numeroChassisDataGridViewTextBoxColumn.HeaderText = "NumeroChassis";
-            this.numeroChassisDataGridViewTextBoxColumn.Name = "numeroChassisDataGridViewTextBoxColumn";
-            // 
-            // marcaDataGridViewTextBoxColumn
-            // 
-            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
-            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
-            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
-            // 
-            // modeloDataGridViewTextBoxColumn
-            // 
-            this.modeloDataGridViewTextBoxColumn.DataPropertyName = "Modelo";
-            this.modeloDataGridViewTextBoxColumn.HeaderText = "Modelo";
-            this.modeloDataGridViewTextBoxColumn.Name = "modeloDataGridViewTextBoxColumn";
-            // 
-            // combustivelDataGridViewTextBoxColumn
-            // 
-            this.combustivelDataGridViewTextBoxColumn.DataPropertyName = "Combustivel";
-            this.combustivelDataGridViewTextBoxColumn.HeaderText = "Combustivel";
-            this.combustivelDataGridViewTextBoxColumn.Name = "combustivelDataGridViewTextBoxColumn";
             // 
             // FormAluguer
             // 
@@ -413,10 +413,11 @@
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormAluguer";
-            this.Text = "FormAluguer";
+            this.Text = "Aluguer de carros do Stand";
             this.Load += new System.EventHandler(this.FormAluguer_Load);
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -426,7 +427,6 @@
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroAluguerBindingSource)).EndInit();
             this.ResumeLayout(false);
 

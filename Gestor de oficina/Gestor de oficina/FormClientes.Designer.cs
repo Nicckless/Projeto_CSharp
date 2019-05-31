@@ -33,7 +33,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBoxNIF = new System.Windows.Forms.TextBox();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,9 +54,6 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabelGuardarAlt = new System.Windows.Forms.ToolStripLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBoxfiltar = new System.Windows.Forms.TextBox();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +63,8 @@
             this.carroOficinasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vendasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aluguersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBoxfiltar = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
@@ -300,22 +298,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista de Clientes";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(279, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Filtrar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBoxfiltar
-            // 
-            this.textBoxfiltar.Location = new System.Drawing.Point(6, 34);
-            this.textBoxfiltar.Name = "textBoxfiltar";
-            this.textBoxfiltar.Size = new System.Drawing.Size(269, 22);
-            this.textBoxfiltar.TabIndex = 0;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -384,6 +366,22 @@
             this.aluguersDataGridViewTextBoxColumn.HeaderText = "Aluguers";
             this.aluguersDataGridViewTextBoxColumn.Name = "aluguersDataGridViewTextBoxColumn";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(279, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(105, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Filtrar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBoxfiltar
+            // 
+            this.textBoxfiltar.Location = new System.Drawing.Point(6, 34);
+            this.textBoxfiltar.Name = "textBoxfiltar";
+            this.textBoxfiltar.Size = new System.Drawing.Size(269, 22);
+            this.textBoxfiltar.TabIndex = 0;
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -392,7 +390,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormClientes";
-            this.Text = "FormClientes";
+            this.Text = "Clientes do Stand";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
