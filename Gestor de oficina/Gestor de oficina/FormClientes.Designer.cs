@@ -93,7 +93,7 @@
             // 
             // textBoxNIF
             // 
-            this.textBoxNIF.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Morada", true));
+            this.textBoxNIF.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "NIF", true));
             this.textBoxNIF.Location = new System.Drawing.Point(116, 307);
             this.textBoxNIF.Name = "textBoxNIF";
             this.textBoxNIF.Size = new System.Drawing.Size(308, 22);
@@ -141,6 +141,7 @@
             // 
             // textBoxMorada
             // 
+            this.textBoxMorada.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Morada", true));
             this.textBoxMorada.Location = new System.Drawing.Point(116, 251);
             this.textBoxMorada.Name = "textBoxMorada";
             this.textBoxMorada.Size = new System.Drawing.Size(308, 22);
@@ -148,6 +149,7 @@
             // 
             // textBoxContacto
             // 
+            this.textBoxContacto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Contacto", true));
             this.textBoxContacto.Location = new System.Drawing.Point(116, 192);
             this.textBoxContacto.Name = "textBoxContacto";
             this.textBoxContacto.Size = new System.Drawing.Size(308, 22);
@@ -155,6 +157,7 @@
             // 
             // textBoxNome
             // 
+            this.textBoxNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Nome", true));
             this.textBoxNome.Location = new System.Drawing.Point(116, 132);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(308, 22);

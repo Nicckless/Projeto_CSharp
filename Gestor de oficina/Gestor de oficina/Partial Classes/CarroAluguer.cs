@@ -14,5 +14,10 @@ namespace Gestor_de_oficina
             this.Matricula = Matricula;
             Aluguers = new HashSet<Aluguer>();
         }
+
+        public override string ToString()
+        {
+            return Matricula + " / " + Modelo + "-" +Modelo;
+        }
     }
 }

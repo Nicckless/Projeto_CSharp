@@ -136,6 +136,7 @@
     <Compile Include="Parcela.cs">
       <DependentUpon>StandAutomoveis.tt</DependentUpon>
     </Compile>
+    <Compile Include="Partial Classes\Aluguer.cs" />
     <Compile Include="Partial Classes\Carro.cs" />
     <Compile Include="Partial Classes\CarroAluguer.cs" />
     <Compile Include="Partial Classes\CarroOficina.cs" />
@@ -206,6 +207,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Aluguer.datasource" />
     <None Include="Properties\DataSources\Carro.datasource" />
     <None Include="Properties\DataSources\CarroAluguer.datasource" />
     <None Include="Properties\DataSources\Cliente.datasource" />

@@ -14,12 +14,6 @@ namespace Gestor_de_oficina
     {
         private StandAutomoveisContainer myDB;
 
-        private string chassi;
-        private string marca;
-        private string modelo;
-        private string combust;
-        private string matricula;
-
         public FormAdicionarCarroAluguer()
         {
             InitializeComponent();
