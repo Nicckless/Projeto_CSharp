@@ -38,5 +38,16 @@ namespace Gestor_de_oficina
         {
 
         }
+
+        private void buttonVender_Click(object sender, EventArgs e)
+        {
+            if (listBoxCliente.SelectedIndex == -1)
+                return;
+
+            FormCriarVenda formCriarVenda = new FormCriarVenda();
+            Cliente clienteSelecionado = new Cliente();
+            clienteSelecionado = (Cliente)listBoxCliente.SelectedItem;
+
+        }
     }
 }
