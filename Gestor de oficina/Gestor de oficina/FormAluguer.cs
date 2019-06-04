@@ -12,6 +12,8 @@ namespace Gestor_de_oficina
 {
     public partial class FormAluguer : Form
     {
+        private float precoaluguer;
+        private float total;
         private StandAutomoveisContainer myDB;
 
         public FormAluguer()
@@ -19,7 +21,16 @@ namespace Gestor_de_oficina
             InitializeComponent();
             myDB = new StandAutomoveisContainer();
 
-            //fazer aquela cena que parece SQL para os carros aluguer
+            (from carro in myDB.Carros.OfType<CarroAluguer>()
+             where carro.Estado.Contains("No Stand")
+             orderby carro.IdCarro
+             select carro).ToList();
+
+            carroBindingSource.DataSource = myDB.Carros.OfType<CarroAluguer>().ToList();
+            dataGridViewCarrosAluguer.Update();
+
+            precoaluguer = 0.34f;
+            total = 0f;
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
@@ -32,35 +43,22 @@ namespace Gestor_de_oficina
                 dateTimePicker2.Value = DateTime.Now;
         }
 
-        /*
-        private void textBoxKmdepois_TextChanged(object sender, EventArgs e)
-        {
-            if (textBoxKmdepois.Text != "")
-            {
-                textBoxKmandtes.Text = "1000";
-                try
-                {
-                    labelMaisKms.Text = "+ " + (Convert.ToDecimal(textBoxKmdepois.Text) - Convert.ToDecimal(textBoxKmandtes.Text)).ToString() + " Km";
-                }
-                catch (FormatException ex)
-                {
-                    //em vez disto fazer um pop up
-                    Console.WriteLine("Erro não é um número");
-                    textBoxKmdepois.Text = "";
-                }
-            }
-        }
-        */
         private void LerDados()
         {
+            (from carro in myDB.Carros.OfType<CarroAluguer>()
+             where carro.Estado.Contains("No Stand")
+             orderby carro.IdCarro
+             select carro).ToList();
             listBoxClientes.DataSource = myDB.Clientes.ToList();
-            dataGridViewCarrosAluguer.DataSource = myDB.Carros.OfType<CarroAluguer>().ToList();
+            carroBindingSource.DataSource = myDB.Carros.OfType<CarroAluguer>().ToList();
+            dataGridViewCarrosAluguer.Update();
             listBoxAlugueres.DataSource = myDB.Aluguers.ToList();
         }
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Cliente clientselected = (Cliente)listBoxClientes.SelectedItem;
+            listBoxAlugueres.DataSource = clientselected.Aluguers.ToList();
         }
 
         private void FormAluguer_Load(object sender, EventArgs e)
@@ -100,18 +98,49 @@ namespace Gestor_de_oficina
 
         private void buttonDevolver_Click(object sender, EventArgs e)
         {
-            Cliente clienteselected = (Cliente)listBoxClientes.SelectedItem;
+            Aluguer aluguerselected = (Aluguer)listBoxAlugueres.SelectedItem;
 
-            //Usar link para pesquisar ou usar foreach
-            foreach (Aluguer aluguer in clienteselected.Aluguers)
+            if(aluguerselected.Valor <= 0)
             {
-                if(aluguer.Kms == 0)
+                total = total + Convert.ToInt32(textBoxKmfeitos.Text) * precoaluguer;
+                aluguerselected.Kms = Convert.ToInt32(textBoxKmfeitos.Text);
+                aluguerselected.Valor = Convert.ToInt32(total);
+                aluguerselected.CarroAluguer.Estado = "No Stand";
+                myDB.SaveChanges();
+                textBoxKmfeitos.Text = "";
+                labeltotal.Text = "0€";
+                checkBoxOverdate.Checked = false;
+                total = 0f;
+            }
+            
+            LerDados();
+        }
+
+        private void listBoxAlugueres_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Aluguer aluguerselected = (Aluguer)listBoxAlugueres.SelectedItem;
+            if(aluguerselected.Valor <= 0)
+            {
+                if (aluguerselected.DataFim < DateTime.Now)
+                    checkBoxOverdate.Checked = true;
+
+                if (checkBoxOverdate.Checked == true)
+                    total = total + 50;
+            }
+        }
+
+        private void textBoxKmfeitos_TextChanged(object sender, EventArgs e)
+        {
+            Aluguer aluguerselected = (Aluguer)listBoxAlugueres.SelectedItem;
+            if (aluguerselected.Valor <= 0)
+            {
+                if (textBoxKmfeitos.Text.Length > 0)
                 {
-                    Console.WriteLine("there is a rented car");
+                    labeltotal.Text = (total + Convert.ToInt32(textBoxKmfeitos.Text) * precoaluguer).ToString() + "€";
                 }
                 else
                 {
-                    Console.WriteLine("there is no rented car");
+                    labeltotal.Text = "0€";
                 }
             }
         }

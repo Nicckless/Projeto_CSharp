@@ -24,7 +24,7 @@ namespace Gestor_de_oficina
         }
         public override string ToString()
         {
-            return Nome + " (" + IdCliente + ") - " + NIF + " Total Carros: " + CarroOficinas.Count;
+            return Nome + " (" + IdCliente + ") - " + NIF + " Total Carros: " + CarroOficinas.Count; 
         }
     }
 }
