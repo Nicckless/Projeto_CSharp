@@ -8,6 +8,9 @@ namespace Gestor_de_oficina
 {
     public partial class Carro
     {
-        
+        public Carro()
+        {
+            
+        }
     }
 }
