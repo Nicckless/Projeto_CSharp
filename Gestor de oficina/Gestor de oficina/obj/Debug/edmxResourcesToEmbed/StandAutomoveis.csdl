@@ -44,35 +44,35 @@
     <NavigationProperty Name="CarroOficinas" Relationship="StandAutomoveis.ClienteCarroOficina" FromRole="Cliente" ToRole="CarroOficina" />
     <NavigationProperty Name="Vendas" Relationship="StandAutomoveis.ClienteVenda" FromRole="Cliente" ToRole="Venda" />
     <NavigationProperty Name="Aluguers" Relationship="StandAutomoveis.ClienteAluguer" FromRole="Cliente" ToRole="Aluguer" />
-    <Property Name="Nome" Type="String" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="NIF" Type="Int32" Nullable="false" />
-    <Property Name="Morada" Type="String" Nullable="false" />
-    <Property Name="Contacto" Type="String" Nullable="false" />
+    <Property Name="Morada" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Contacto" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="Carro">
     <Key>
       <PropertyRef Name="IdCarro" />
     </Key>
     <Property Name="IdCarro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NumeroChassis" Type="String" Nullable="false" />
-    <Property Name="Marca" Type="String" Nullable="false" />
-    <Property Name="Modelo" Type="String" Nullable="false" />
-    <Property Name="Combustivel" Type="String" Nullable="false" />
+    <Property Name="NumeroChassis" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Marca" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Modelo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Combustivel" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="CarroAluguer" BaseType="StandAutomoveis.Carro">
-    <Property Name="Estado" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
-    <Property Name="Matricula" Type="String" Nullable="false" />
+    <Property Name="Estado" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Matricula" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Aluguers" Relationship="StandAutomoveis.CarroAluguerAluguer" FromRole="CarroAluguer" ToRole="Aluguer" />
   </EntityType>
   <EntityType Name="CarroOficina" BaseType="StandAutomoveis.Carro">
-    <Property Name="Matricula" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Name="Matricula" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Kms" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Cliente" Relationship="StandAutomoveis.ClienteCarroOficina" FromRole="CarroOficina" ToRole="Cliente" />
     <Property Name="ClienteIdCliente" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Servicoes" Relationship="StandAutomoveis.CarroOficinaServico" FromRole="CarroOficina" ToRole="Servico" />
   </EntityType>
   <EntityType Name="CarroVenda" BaseType="StandAutomoveis.Carro">
-    <Property Name="Extras" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Name="Extras" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Venda" Relationship="StandAutomoveis.VendaCarroVenda" FromRole="CarroVenda" ToRole="Venda" />
   </EntityType>
   <EntityType Name="Venda">
@@ -81,8 +81,8 @@
     </Key>
     <Property Name="IdVenda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Valor" Type="Int32" Nullable="false" />
-    <Property Name="Estado" Type="String" Nullable="false" />
-    <Property Name="Data" Type="DateTime" Nullable="false" />
+    <Property Name="Estado" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Data" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="Cliente" Relationship="StandAutomoveis.ClienteVenda" FromRole="Venda" ToRole="Cliente" />
     <Property Name="ClienteIdCliente" Type="Int32" Nullable="false" />
     <NavigationProperty Name="CarroVenda" Relationship="StandAutomoveis.VendaCarroVenda" FromRole="Venda" ToRole="CarroVenda" />
@@ -93,7 +93,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Valor" Type="Int32" Nullable="false" />
-    <Property Name="Descricao" Type="String" Nullable="false" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Servico" Relationship="StandAutomoveis.ParcelaServico" FromRole="Parcela" ToRole="Servico" />
     <Property Name="ServicoIdServico" Type="Int32" Nullable="false" />
   </EntityType>
@@ -102,9 +102,9 @@
       <PropertyRef Name="IdServico" />
     </Key>
     <Property Name="IdServico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="DataEntrada" Type="DateTime" Nullable="false" />
-    <Property Name="Tipo" Type="String" Nullable="false" />
-    <Property Name="DataSaida" Type="DateTime" Nullable="false" />
+    <Property Name="DataEntrada" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Tipo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="DataSaida" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="CarroOficina" Relationship="StandAutomoveis.CarroOficinaServico" FromRole="Servico" ToRole="CarroOficina" />
     <Property Name="CarroOficinaIdCarro" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Parcelas" Relationship="StandAutomoveis.ParcelaServico" FromRole="Servico" ToRole="Parcela" />
@@ -114,8 +114,8 @@
       <PropertyRef Name="IdAluguer" />
     </Key>
     <Property Name="IdAluguer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="DataInicio" Type="DateTime" Nullable="false" />
-    <Property Name="DataFim" Type="DateTime" Nullable="false" />
+    <Property Name="DataInicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataFim" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Valor" Type="Int32" Nullable="false" />
     <Property Name="Kms" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Cliente" Relationship="StandAutomoveis.ClienteAluguer" FromRole="Aluguer" ToRole="Cliente" />

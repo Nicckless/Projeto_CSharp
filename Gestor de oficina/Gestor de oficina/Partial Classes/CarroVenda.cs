@@ -16,5 +16,9 @@ namespace Gestor_de_oficina
         {
             this.Extras = Extras;
         }
+        public override string ToString()
+        {
+            return Marca + " " + Modelo +  " - Chassis: " + NumeroChassis + " - Combustivel: " + Combustivel;
+        }
     }
 }
