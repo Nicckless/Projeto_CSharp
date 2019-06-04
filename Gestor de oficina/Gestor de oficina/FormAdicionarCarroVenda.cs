@@ -32,24 +32,12 @@ namespace Gestor_de_oficina
                 Combustivel = comboBoxCombustivel.Text,
                 Extras = listBoxExtras.Items.OfType<string>().ToString()
             };
-            myDb.Carros.Add(novoCarroVenda);
-
             myDb.SaveChanges();
-
-            MessageBox.Show("Carro adicionado com sucesso", "Carro Adicionado");
-
-            maskedTextBoxNumChassi.Text = "";
-            comboBoxMarca.Text = "";
-            comboBoxModelo.Text = "";
-            comboBoxCombustivel.Text = "";
-            listBoxExtras.Items.Clear();
-
         }
 
         private void buttonAddExtra_Click(object sender, EventArgs e)
         {
             listBoxExtras.Items.Add(textBoxExtra.Text);
-            textBoxExtra.Text = "";
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)

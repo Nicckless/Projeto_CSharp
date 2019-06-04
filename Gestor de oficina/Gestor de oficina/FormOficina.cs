@@ -75,12 +75,6 @@ namespace Gestor_de_oficina
             if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1)
                 return;
 
-            if(listBoxCarros.SelectedIndex == -1)
-            {
-                listBoxServicos.Items.Clear();
-                listBoxParcelas.Items.Clear();
-            }
-
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
 
