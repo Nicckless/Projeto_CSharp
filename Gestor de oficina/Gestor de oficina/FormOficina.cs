@@ -203,7 +203,7 @@ namespace Gestor_de_oficina
                 "\n-------------------------------------\nDados do Automóvel: \n Numero Chassis: " + carroOficinaSelecionado.NumeroChassis + "\n\nMarca + Modelo: " + carroOficinaSelecionado.Marca + " " + carroOficinaSelecionado.Modelo + "\n Combustivel: " + carroOficinaSelecionado.Combustivel + "\n Matricula: " + carroOficinaSelecionado.Matricula + "\n Quilometros: " + carroOficinaSelecionado.Kms + " kms",
                 "\n-------------------------------------\nDados do Servico: \n Data de entrada: " + servicoSelecionado.DataEntrada + "\n Data de saída: " + servicoSelecionado.DataSaida + "\n Tipo de servico: " + servicoSelecionado.Tipo + "\nValor total do Servico: " + servicoSelecionado.totalGastoNoStand + "€"}; 
 
-            string docPath = @"E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Recibos da Oficina";
+            string docPath = @"C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Recibos da Oficina";
 
             using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, clienteSelecionado.Nome + ".txt")))
             {

@@ -22,13 +22,7 @@ namespace Gestor_de_oficina
             InitializeComponent();
             myDB = new StandAutomoveisContainer();
 
-            (from carro in myDB.Carros.OfType<CarroAluguer>()
-             where carro.Estado.Contains("No Stand")
-             orderby carro.IdCarro
-             select carro).ToList();
-
-            carroBindingSource.DataSource = myDB.Carros.OfType<CarroAluguer>().ToList();
-            dataGridViewCarrosAluguer.Update();
+            LerDados();
 
             precoaluguer = 0.34f;
             total = 0f;
@@ -50,10 +44,10 @@ namespace Gestor_de_oficina
              where carro.Estado.Contains("No Stand")
              orderby carro.IdCarro
              select carro).ToList();
+
             listBoxClientes.DataSource = myDB.Clientes.ToList();
             carroBindingSource.DataSource = myDB.Carros.OfType<CarroAluguer>().ToList();
             dataGridViewCarrosAluguer.Update();
-            listBoxAlugueres.DataSource = myDB.Aluguers.ToList();
         }
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -91,9 +85,11 @@ namespace Gestor_de_oficina
 
             myDB.SaveChanges();
 
+
             if (MessageBox.Show("Aluguer Criado") == DialogResult.OK)
             {
                 LerDados();
+                listBoxAlugueres.DataSource = clienteselected.Aluguers.ToList();
             }
         }
 
@@ -114,9 +110,9 @@ namespace Gestor_de_oficina
                 {
                     string[] lines = { "Dados do Cliente:\n Nome do cliente: " + clienteSelecionado.Nome +  "\n Morada: " + clienteSelecionado.Morada + "\n Contacto: " + clienteSelecionado.Contacto + "\n NIF: " + clienteSelecionado.NIF,
                                         "\n-------------------------------------\nDados do Automóvel: \n Numero Chassis: " + aluguerselected.CarroAluguer.NumeroChassis + "\n\nMarca + Modelo: " + aluguerselected.CarroAluguer.Marca + " " + aluguerselected.CarroAluguer.Modelo + "\n Combustivel: " + aluguerselected.CarroAluguer.Combustivel + "\n Matricula: " + aluguerselected.CarroAluguer.Matricula,
-                                        "\n-------------------------------------\nDados do Aluguer: \n Data de inicio de aluguer: " + aluguerselected.DataInicio + "\n Data de termino de aluguer: " + aluguerselected.DataFim + "\n Quilometros feitos: " + aluguerselected.Kms +"\n Carro entregue a tempo: Sim" + "\nValor total do aluguer: " + aluguerselected.Valor + "€"};
+                                        "\n-------------------------------------\nDados do Aluguer: \n Data de inicio de aluguer: " + aluguerselected.DataInicio + "\n Data de termino de aluguer: " + aluguerselected.DataFim + "\n Quilometros feitos: " + aluguerselected.Kms +"\n Carro entregue a tempo: Não" + "\nValor total do aluguer: " + aluguerselected.Valor + "€"};
 
-                    string docPath = @"E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Recibos da Oficina";
+                    string docPath = @"C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Recibos de Aluguer";
 
                     using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, clienteSelecionado.Nome + ".txt")))
                     {
@@ -128,9 +124,9 @@ namespace Gestor_de_oficina
                 {
                     string[] lines = { "Dados do Cliente:\n Nome do cliente: " + clienteSelecionado.Nome +  "\n Morada: " + clienteSelecionado.Morada + "\n Contacto: " + clienteSelecionado.Contacto + "\n NIF: " + clienteSelecionado.NIF,
                                         "\n-------------------------------------\nDados do Automóvel: \n Numero Chassis: " + aluguerselected.CarroAluguer.NumeroChassis + "\n\nMarca + Modelo: " + aluguerselected.CarroAluguer.Marca + " " + aluguerselected.CarroAluguer.Modelo + "\n Combustivel: " + aluguerselected.CarroAluguer.Combustivel + "\n Matricula: " + aluguerselected.CarroAluguer.Matricula,
-                                        "\n-------------------------------------\nDados do Aluguer: \n Data de inicio de aluguer: " + aluguerselected.DataInicio + "\n Data de termino de aluguer: " + aluguerselected.DataFim + "\n Quilometros feitos: " + aluguerselected.Kms  + "\n Carro entregue a tempo: Não" +  "\nValor total do aluguer: " + aluguerselected.Valor + "€"};
+                                        "\n-------------------------------------\nDados do Aluguer: \n Data de inicio de aluguer: " + aluguerselected.DataInicio + "\n Data de termino de aluguer: " + aluguerselected.DataFim + "\n Quilometros feitos: " + aluguerselected.Kms  + "\n Carro entregue a tempo: Sim" +  "\nValor total do aluguer: " + aluguerselected.Valor + "€"};
 
-                    string docPath = @"E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Recibos da Oficina";
+                    string docPath = @"C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Recibos de Aluguer";
 
                     using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, clienteSelecionado.Nome + ".txt")))
                     {
@@ -139,15 +135,18 @@ namespace Gestor_de_oficina
                     }
                 }
 
-                
+                if (MessageBox.Show("Carro devolvido e Fatura emitida") == DialogResult.OK)
+                {
+                    listBoxAlugueres.DataSource = clienteSelecionado.Aluguers.ToList();
+                }
 
                 textBoxKmfeitos.Text = "";
                 labeltotal.Text = "0€";
                 checkBoxOverdate.Checked = false;
                 total = 0f;
+
+                LerDados();
             }
-            
-            LerDados();
         }
 
         private void listBoxAlugueres_SelectedIndexChanged(object sender, EventArgs e)
