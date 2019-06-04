@@ -12,9 +12,31 @@ namespace Gestor_de_oficina
 {
     public partial class FormVenda : Form
     {
+        private StandAutomoveisContainer myDb;
         public FormVenda()
         {
             InitializeComponent();
+            myDb = new StandAutomoveisContainer();
+        }
+
+        private void listBoxCarrosVenda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormVenda_Load(object sender, EventArgs e)
+        {
+
+            lerDados();
+        }
+        private void lerDados()
+        {
+            listBoxCarrosVenda.DataSource = myDb.Carros.OfType<CarroVenda>().ToList();
+            listBoxCliente.DataSource = myDb.Clientes.ToList();
+        }
+        private void inserirCarroVenda()
+        {
+
         }
     }
 }

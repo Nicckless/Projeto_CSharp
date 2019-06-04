@@ -34,10 +34,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.listBoxCarrosVenda = new System.Windows.Forms.ListBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.buttonVender = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,7 +46,6 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -96,10 +95,10 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.listBoxCarrosVenda);
             this.panel3.Controls.Add(this.comboBox2);
             this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.buttonVender);
-            this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Controls.Add(this.checkedListBox1);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
@@ -108,6 +107,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(939, 324);
             this.panel3.TabIndex = 0;
+            // 
+            // listBoxCarrosVenda
+            // 
+            this.listBoxCarrosVenda.FormattingEnabled = true;
+            this.listBoxCarrosVenda.ItemHeight = 16;
+            this.listBoxCarrosVenda.Location = new System.Drawing.Point(209, 21);
+            this.listBoxCarrosVenda.Name = "listBoxCarrosVenda";
+            this.listBoxCarrosVenda.Size = new System.Drawing.Size(727, 260);
+            this.listBoxCarrosVenda.TabIndex = 19;
+            this.listBoxCarrosVenda.SelectedIndexChanged += new System.EventHandler(this.listBoxCarrosVenda_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -133,15 +142,6 @@
             this.buttonVender.TabIndex = 2;
             this.buttonVender.Text = "Vender Carro";
             this.buttonVender.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(209, 14);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(727, 267);
-            this.dataGridView1.TabIndex = 16;
             // 
             // checkedListBox1
             // 
@@ -203,12 +203,12 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormVenda";
             this.Text = "Venda";
+            this.Load += new System.EventHandler(this.FormVenda_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,7 +222,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -231,5 +230,6 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button buttonVender;
+        private System.Windows.Forms.ListBox listBoxCarrosVenda;
     }
 }

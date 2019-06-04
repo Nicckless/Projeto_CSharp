@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewCarrosAluguer = new System.Windows.Forms.DataGridView();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -56,6 +57,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxKmfeitos = new System.Windows.Forms.TextBox();
+
+            this.textBoxKmandtes = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.carroAluguerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+
             this.buttonDevolver = new System.Windows.Forms.Button();
             this.carroAluguerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -114,6 +122,40 @@
             // clienteBindingSource
             // 
             this.clienteBindingSource.DataSource = typeof(Gestor_de_oficina.Cliente);
+            // 
+            // idCarroDataGridViewTextBoxColumn
+            // 
+            this.idCarroDataGridViewTextBoxColumn.DataPropertyName = "IdCarro";
+            this.idCarroDataGridViewTextBoxColumn.HeaderText = "IdCarro";
+            this.idCarroDataGridViewTextBoxColumn.Name = "idCarroDataGridViewTextBoxColumn";
+            // 
+            // numeroChassisDataGridViewTextBoxColumn
+            // 
+            this.numeroChassisDataGridViewTextBoxColumn.DataPropertyName = "NumeroChassis";
+            this.numeroChassisDataGridViewTextBoxColumn.HeaderText = "NumeroChassis";
+            this.numeroChassisDataGridViewTextBoxColumn.Name = "numeroChassisDataGridViewTextBoxColumn";
+            // 
+            // marcaDataGridViewTextBoxColumn
+            // 
+            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
+            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            // 
+            // modeloDataGridViewTextBoxColumn
+            // 
+            this.modeloDataGridViewTextBoxColumn.DataPropertyName = "Modelo";
+            this.modeloDataGridViewTextBoxColumn.HeaderText = "Modelo";
+            this.modeloDataGridViewTextBoxColumn.Name = "modeloDataGridViewTextBoxColumn";
+            // 
+            // combustivelDataGridViewTextBoxColumn
+            // 
+            this.combustivelDataGridViewTextBoxColumn.DataPropertyName = "Combustivel";
+            this.combustivelDataGridViewTextBoxColumn.HeaderText = "Combustivel";
+            this.combustivelDataGridViewTextBoxColumn.Name = "combustivelDataGridViewTextBoxColumn";
+            // 
+            // carroBindingSource
+            // 
+            this.carroBindingSource.DataSource = typeof(Gestor_de_oficina.Carro);
             // 
             // groupBox2
             // 
@@ -350,6 +392,14 @@
             // 
             // buttonDevolver
             // 
+
+            this.button2.Location = new System.Drawing.Point(12, 225);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(413, 60);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Devolver Carro / Emitir Fatura";
+            this.button2.UseVisualStyleBackColor = true;
+
             this.buttonDevolver.Location = new System.Drawing.Point(12, 225);
             this.buttonDevolver.Name = "buttonDevolver";
             this.buttonDevolver.Size = new System.Drawing.Size(377, 60);
@@ -429,9 +479,10 @@
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormAluguer";
-            this.Text = "FormAluguer";
+            this.Text = "Aluguer de carros do Stand";
             this.Load += new System.EventHandler(this.FormAluguer_Load);
             this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarrosAluguer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);

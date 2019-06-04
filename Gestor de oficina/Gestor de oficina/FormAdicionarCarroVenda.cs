@@ -12,110 +12,37 @@ namespace Gestor_de_oficina
 {
     public partial class FormAdicionarCarroVenda : Form
     {
-        private string numchassi;
-        private string marca;
-        private string modelo;
-        private string combust;
-        private string[] extra;
+        private StandAutomoveisContainer myDb;
         public FormAdicionarCarroVenda()
         {
             InitializeComponent();
+            myDb = new StandAutomoveisContainer();
         }
 
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
-            numchassi = maskedTextBoxNumChassi.Text;
-            marca = comboBoxMarca.Text;
-            modelo = comboBoxModelo.Text;
-            combust = comboBoxCombustivel.Text;
+            if (string.IsNullOrEmpty(maskedTextBoxNumChassi.Text) || string.IsNullOrEmpty(comboBoxMarca.Text) || string.IsNullOrEmpty(comboBoxModelo.Text) || string.IsNullOrEmpty(comboBoxCombustivel.Text))
+                return;
 
+            CarroVenda novoCarroVenda = new CarroVenda
+            {
+                NumeroChassis = maskedTextBoxNumChassi.Text,
+                Marca = comboBoxMarca.Text,
+                Modelo = comboBoxModelo.Text,
+                Combustivel = comboBoxCombustivel.Text,
+                Extras = listBoxExtras.Items.OfType<string>().ToString()
+            };
+            myDb.SaveChanges();
         }
 
-        private void comboBoxnumext_SelectedIndexChanged(object sender, EventArgs e)
+        private void buttonAddExtra_Click(object sender, EventArgs e)
         {
-            if (comboBoxnumext.SelectedIndex == 0)
-            {
-                labelextra1.Visible = false;
-                comboBoxExtra1.Visible = false;
-                labelextra2.Visible = false;
-                comboBoxExtra2.Visible = false;
-                labelextra3.Visible = false;
-                comboBoxExtra3.Visible = false;
-                labelextra4.Visible = false;
-                comboBoxExtra4.Visible = false;
-                labelextra5.Visible = false;
-                comboBoxExtra5.Visible = false;
-            }
+            listBoxExtras.Items.Add(textBoxExtra.Text);
+        }
 
-            if (comboBoxnumext.SelectedIndex == 1)
-            {
-                labelextra1.Visible = true;
-                comboBoxExtra1.Visible = true;
-                labelextra2.Visible = false;
-                comboBoxExtra2.Visible = false;
-                labelextra3.Visible = false;
-                comboBoxExtra3.Visible = false;
-                labelextra4.Visible = false;
-                comboBoxExtra4.Visible = false;
-                labelextra5.Visible = false;
-                comboBoxExtra5.Visible = false;
-            }
-
-            if (comboBoxnumext.SelectedIndex == 2)
-            {
-                labelextra1.Visible = true;
-                comboBoxExtra1.Visible = true;
-                labelextra2.Visible = true;
-                comboBoxExtra2.Visible = true;
-                labelextra3.Visible = false;
-                comboBoxExtra3.Visible = false;
-                labelextra4.Visible = false;
-                comboBoxExtra4.Visible = false;
-                labelextra5.Visible = false;
-                comboBoxExtra5.Visible = false;
-            }
-
-            if (comboBoxnumext.SelectedIndex == 3)
-            {
-                labelextra1.Visible = true;
-                comboBoxExtra1.Visible = true;
-                labelextra2.Visible = true;
-                comboBoxExtra2.Visible = true;
-                labelextra3.Visible = true;
-                comboBoxExtra3.Visible = true;
-                labelextra4.Visible = false;
-                comboBoxExtra4.Visible = false;
-                labelextra5.Visible = false;
-                comboBoxExtra5.Visible = false;
-            }
-
-            if (comboBoxnumext.SelectedIndex == 4)
-            {
-                labelextra1.Visible = true;
-                comboBoxExtra1.Visible = true;
-                labelextra2.Visible = true;
-                comboBoxExtra2.Visible = true;
-                labelextra3.Visible = true;
-                comboBoxExtra3.Visible = true;
-                labelextra4.Visible = true;
-                comboBoxExtra4.Visible = true;
-                labelextra5.Visible = false;
-                comboBoxExtra5.Visible = false;
-            }
-
-            if (comboBoxnumext.SelectedIndex == 5)
-            {
-                labelextra1.Visible = true;
-                comboBoxExtra1.Visible = true;
-                labelextra2.Visible = true;
-                comboBoxExtra2.Visible = true;
-                labelextra3.Visible = true;
-                comboBoxExtra3.Visible = true;
-                labelextra4.Visible = true;
-                comboBoxExtra4.Visible = true;
-                labelextra5.Visible = true;
-                comboBoxExtra5.Visible = true;
-            }
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            listBoxExtras.Items.Remove(listBoxExtras.SelectedItem);
         }
     }
 }

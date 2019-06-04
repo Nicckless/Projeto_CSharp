@@ -52,7 +52,7 @@ namespace Gestor_de_oficina
         }
         private void LerDados()
         {
-            listBoxCarros.DataSource = myDb.Carros.ToList();
+            listBoxCarros.DataSource = myDb.Carros.OfType<CarroOficina>().ToList();
             listBoxClientes.DataSource = myDb.Clientes.ToList();
             listBoxParcelas.DataSource = myDb.Parcelas.ToList();
             listBoxServicos.DataSource = myDb.Servicos.ToList();
@@ -65,7 +65,7 @@ namespace Gestor_de_oficina
             listBoxParcelas.SelectedItem = 0;
 
             listBoxClientes.DataSource = myDb.Clientes.ToList();
-            listBoxCarros.DataSource = myDb.Carros.ToList();
+            listBoxCarros.DataSource = myDb.Carros.OfType<CarroOficina>().ToList();
             listBoxServicos.DataSource = myDb.Servicos.ToList();
             listBoxParcelas.DataSource = myDb.Parcelas.ToList();
         }
@@ -199,7 +199,9 @@ namespace Gestor_de_oficina
             CarroOficina carroOficinaSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
 
-            string[] lines = { "Cliente: " + clienteSelecionado.Nome, "Numero Chassis: " + carroOficinaSelecionado.NumeroChassis + "\n\nMarca + Modelo: " + carroOficinaSelecionado.Marca + " " + carroOficinaSelecionado.Modelo , "-------------------------------------\nValor total do Servico: " + servicoSelecionado.totalGastoNoStand + "€" };
+            string[] lines = { "Dados do Cliente:\n Nome do cliente: " + clienteSelecionado.Nome +  "\n Morada: " + clienteSelecionado.Morada + "\n Contacto: " + clienteSelecionado.Contacto + "\n NIF: " + clienteSelecionado.NIF,
+                "\n-------------------------------------\nDados do Automóvel: \n Numero Chassis: " + carroOficinaSelecionado.NumeroChassis + "\n\nMarca + Modelo: " + carroOficinaSelecionado.Marca + " " + carroOficinaSelecionado.Modelo + "\n Combustivel: " + carroOficinaSelecionado.Combustivel + "\n Matricula: " + carroOficinaSelecionado.Matricula + "\n Quilometros: " + carroOficinaSelecionado.Kms + " kms",
+                "\n-------------------------------------\nDados do Servico: \n Data de entrada: " + servicoSelecionado.DataEntrada + "\n Data de saída: " + servicoSelecionado.DataSaida + "\n Tipo de servico: " + servicoSelecionado.Tipo + "\nValor total do Servico: " + servicoSelecionado.totalGastoNoStand + "€"}; 
 
             string docPath = @"E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Recibos da Oficina";
 

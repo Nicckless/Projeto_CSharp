@@ -1,0 +1,21 @@
+Dados do Cliente:
+ Nome do cliente: 123213
+ Morada: 12323
+ Contacto: 1123121
+ NIF: 3123112
+
+-------------------------------------
+Dados do Automóvel: 
+ Numero Chassis: 231231213212e3213
+
+Marca + Modelo: 12312 123213
+ Combustivel: 123123312
+ Matricula: 31-ds-12
+ Quilometros: 123123 kms
+
+-------------------------------------
+Dados do Servico: 
+ Data de entrada: 28/05/2019 15:25:50
+ Data de saída: 28/05/2019 15:25:48
+ Tipo de servico: qweweqeqw
+Valor total do Servico: 132€
