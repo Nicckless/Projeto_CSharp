@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -98,6 +99,7 @@ namespace Gestor_de_oficina
 
         private void buttonDevolver_Click(object sender, EventArgs e)
         {
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             Aluguer aluguerselected = (Aluguer)listBoxAlugueres.SelectedItem;
 
             if(aluguerselected.Valor <= 0)
@@ -107,6 +109,38 @@ namespace Gestor_de_oficina
                 aluguerselected.Valor = Convert.ToInt32(total);
                 aluguerselected.CarroAluguer.Estado = "No Stand";
                 myDB.SaveChanges();
+
+                if(checkBoxOverdate.Checked == true)
+                {
+                    string[] lines = { "Dados do Cliente:\n Nome do cliente: " + clienteSelecionado.Nome +  "\n Morada: " + clienteSelecionado.Morada + "\n Contacto: " + clienteSelecionado.Contacto + "\n NIF: " + clienteSelecionado.NIF,
+                                        "\n-------------------------------------\nDados do Automóvel: \n Numero Chassis: " + aluguerselected.CarroAluguer.NumeroChassis + "\n\nMarca + Modelo: " + aluguerselected.CarroAluguer.Marca + " " + aluguerselected.CarroAluguer.Modelo + "\n Combustivel: " + aluguerselected.CarroAluguer.Combustivel + "\n Matricula: " + aluguerselected.CarroAluguer.Matricula,
+                                        "\n-------------------------------------\nDados do Aluguer: \n Data de inicio de aluguer: " + aluguerselected.DataInicio + "\n Data de termino de aluguer: " + aluguerselected.DataFim + "\n Quilometros feitos: " + aluguerselected.Kms +"\n Carro entregue a tempo: Sim" + "\nValor total do aluguer: " + aluguerselected.Valor + "€"};
+
+                    string docPath = @"E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Recibos da Oficina";
+
+                    using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, clienteSelecionado.Nome + ".txt")))
+                    {
+                        foreach (string line in lines)
+                            outputFile.WriteLine(line);
+                    }
+                }
+                else
+                {
+                    string[] lines = { "Dados do Cliente:\n Nome do cliente: " + clienteSelecionado.Nome +  "\n Morada: " + clienteSelecionado.Morada + "\n Contacto: " + clienteSelecionado.Contacto + "\n NIF: " + clienteSelecionado.NIF,
+                                        "\n-------------------------------------\nDados do Automóvel: \n Numero Chassis: " + aluguerselected.CarroAluguer.NumeroChassis + "\n\nMarca + Modelo: " + aluguerselected.CarroAluguer.Marca + " " + aluguerselected.CarroAluguer.Modelo + "\n Combustivel: " + aluguerselected.CarroAluguer.Combustivel + "\n Matricula: " + aluguerselected.CarroAluguer.Matricula,
+                                        "\n-------------------------------------\nDados do Aluguer: \n Data de inicio de aluguer: " + aluguerselected.DataInicio + "\n Data de termino de aluguer: " + aluguerselected.DataFim + "\n Quilometros feitos: " + aluguerselected.Kms  + "\n Carro entregue a tempo: Não" +  "\nValor total do aluguer: " + aluguerselected.Valor + "€"};
+
+                    string docPath = @"E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Recibos da Oficina";
+
+                    using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, clienteSelecionado.Nome + ".txt")))
+                    {
+                        foreach (string line in lines)
+                            outputFile.WriteLine(line);
+                    }
+                }
+
+                
+
                 textBoxKmfeitos.Text = "";
                 labeltotal.Text = "0€";
                 checkBoxOverdate.Checked = false;
