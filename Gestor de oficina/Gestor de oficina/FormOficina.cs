@@ -72,56 +72,48 @@ namespace Gestor_de_oficina
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1)
-            //    return;
-            try
+            if (listBoxClientes.SelectedIndex != -1 || listBoxCarros.SelectedIndex != -1 || listBoxServicos.SelectedIndex != -1)
             {
-                Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-                Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
-                Parcela parcelaSelecionada = (Parcela)listBoxParcelas.SelectedItem;
+                try
+                {
+                    Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+                    Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
+                    Parcela parcelaSelecionada = (Parcela)listBoxParcelas.SelectedItem;
 
-                listBoxServicos.DataSource = null;
-                listBoxParcelas.DataSource = null;
-            if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1)
-                return;
+                    listBoxServicos.DataSource = null;
+                    listBoxParcelas.DataSource = null;
 
-            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-            Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
+                    labelNome.Text = clienteSelecionado.Nome;
+                    labelNIF.Text = clienteSelecionado.NIF.ToString();
+                    labelMorada.Text = clienteSelecionado.Morada;
 
-                labelNome.Text = clienteSelecionado.Nome;
-                labelNIF.Text = clienteSelecionado.NIF.ToString();
-                labelMorada.Text = clienteSelecionado.Morada;
+                    if(listBoxCarros.SelectedIndex < 0)
+                    {
+                        labelValorTotal.Text = "0";
+                    }
 
-                atualizarListaCarros(clienteSelecionado);
+                    atualizarListaCarros(clienteSelecionado);
+                }
+                catch (Exception)
+                {
+
+                    return;
+                }
+
             }
-            catch (Exception)
-            {
-
-                return;
-            }
-
         }
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1)
-            //    return;
-            try
-            {
+
                 Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
                 CarroOficina carroOficinaSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
 
-                listBoxServicos.DataSource = null;
+
                 listBoxParcelas.DataSource = null;
+                listBoxServicos.DataSource = null;
 
                 atualizarListaServicos(carroOficinaSelecionado);
-            }
-            catch (Exception)
-            {
-
-                return;
-            }
-
         }
 
         private void listBoxServicos_SelectedIndexChanged(object sender, EventArgs e)
@@ -233,7 +225,7 @@ namespace Gestor_de_oficina
 
             string docPath = @"C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Recibos da Oficina";
 
-            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "Matricula_" + carroOficinaSelecionado.Matricula + ".txt")))
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, clienteSelecionado.Nome + ".txt")))
             {
                 foreach (string line in lines)
                     outputFile.WriteLine(line);

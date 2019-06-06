@@ -24,6 +24,7 @@ namespace Gestor_de_oficina
             if (string.IsNullOrEmpty(maskedTextBoxNumChassi.Text) || string.IsNullOrEmpty(comboBoxMarca.Text) || string.IsNullOrEmpty(comboBoxModelo.Text) || string.IsNullOrEmpty(comboBoxCombustivel.Text))
                 return;
 
+
             CarroVenda novoCarroVenda = new CarroVenda
             {
                 NumeroChassis = maskedTextBoxNumChassi.Text,
@@ -32,12 +33,16 @@ namespace Gestor_de_oficina
                 Combustivel = comboBoxCombustivel.Text,
                 Extras = listBoxExtras.Items.OfType<string>().ToString()
             };
+            myDb.Carros.Add(novoCarroVenda);
             myDb.SaveChanges();
+
+            MessageBox.Show("Carro adicionado com sucesso para venda", "Criar Venda");
         }
 
         private void buttonAddExtra_Click(object sender, EventArgs e)
         {
             listBoxExtras.Items.Add(textBoxExtra.Text);
+            textBoxExtra.Text = "";
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
