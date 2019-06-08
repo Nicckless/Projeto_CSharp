@@ -85,8 +85,6 @@ namespace Gestor_de_oficina
             if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1)
                 return;
 
-            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-            Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
 
                 labelNome.Text = clienteSelecionado.Nome;
                 labelNIF.Text = clienteSelecionado.NIF.ToString();

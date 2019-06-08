@@ -33,9 +33,9 @@
             this.listBoxCliente = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.listBoxVenda = new System.Windows.Forms.ListBox();
+            //this.label6 = new System.Windows.Forms.Label();
+            //this.panel4 = new System.Windows.Forms.Panel();
+            //this.listBoxVenda = new System.Windows.Forms.ListBox();
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.listBoxCarrosVenda = new System.Windows.Forms.ListBox();
@@ -48,7 +48,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
+            //this.panel4.SuspendLayout();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -102,30 +102,30 @@
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(754, 10);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 17);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Vendas";
+            //this.label6.AutoSize = true;
+            //this.label6.Location = new System.Drawing.Point(754, 10);
+            //this.label6.Name = "label6";
+            //this.label6.Size = new System.Drawing.Size(56, 17);
+            //this.label6.TabIndex = 4;
+            //this.label6.Text = "Vendas";
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.listBoxVenda);
-            this.panel4.Controls.Add(this.buttonImprimir);
-            this.panel4.Location = new System.Drawing.Point(748, 17);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(379, 469);
-            this.panel4.TabIndex = 4;
+            //this.panel4.Controls.Add(this.listBoxVenda);
+            //this.panel4.Controls.Add(this.buttonImprimir);
+            //this.panel4.Location = new System.Drawing.Point(748, 17);
+            //this.panel4.Name = "panel4";
+            //this.panel4.Size = new System.Drawing.Size(379, 469);
+            //this.panel4.TabIndex = 4;
             // 
             // listBoxVenda
             // 
-            this.listBoxVenda.FormattingEnabled = true;
-            this.listBoxVenda.ItemHeight = 16;
-            this.listBoxVenda.Location = new System.Drawing.Point(4, 21);
-            this.listBoxVenda.Name = "listBoxVenda";
-            this.listBoxVenda.Size = new System.Drawing.Size(372, 340);
-            this.listBoxVenda.TabIndex = 0;
+            //this.listBoxVenda.FormattingEnabled = true;
+            //this.listBoxVenda.ItemHeight = 16;
+            //this.listBoxVenda.Location = new System.Drawing.Point(4, 21);
+            //this.listBoxVenda.Name = "listBoxVenda";
+            //this.listBoxVenda.Size = new System.Drawing.Size(372, 340);
+            //this.listBoxVenda.TabIndex = 0;
             // 
             // buttonImprimir
             // 
@@ -252,7 +252,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
+            //this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);

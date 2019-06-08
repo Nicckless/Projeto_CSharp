@@ -107,8 +107,7 @@ namespace Gestor_de_oficina
 
         private void toolStripLabelGuardarAlt_Click(object sender, EventArgs e)
         {
-            /*
-            Cliente clientselected = (Cliente)listBoxClientes.SelectedItem;
+            Cliente clientselected = (Cliente)dataGridView1.CurrentRow.DataBoundItem;
             myDb.Clientes.Attach(clientselected);
             clientselected.Nome = textBoxNome.Text;
             clientselected.Contacto = textBoxContacto.Text;
@@ -116,9 +115,7 @@ namespace Gestor_de_oficina
             clientselected.NIF = Convert.ToInt32(textBoxNIF.Text);
             myDb.SaveChanges();
             LerDados();
-            */
         }
-        
     }
 }
 
