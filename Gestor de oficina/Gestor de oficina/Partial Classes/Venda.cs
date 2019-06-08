@@ -8,11 +8,11 @@ namespace Gestor_de_oficina
 {
     public partial class Venda
     {
-        public Venda(int Valor, string Estado)
+        public Venda()
         {
+            this.Data = Data;
             this.Valor = Valor;
             this.Estado = Estado;
-            this.Data = Data;
         }
         public override string ToString()
         {

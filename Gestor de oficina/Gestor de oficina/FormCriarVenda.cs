@@ -12,9 +12,8 @@ namespace Gestor_de_oficina
 {
     public partial class FormCriarVenda : Form
     {
-        public int valor;
-        public string estado;
-        public DateTime dataVenda;
+        public Venda Venda { get; private set; }
+
         public FormCriarVenda()
         {
             InitializeComponent();
@@ -25,9 +24,14 @@ namespace Gestor_de_oficina
             if (string.IsNullOrEmpty(comboBoxEstado.Text) || string.IsNullOrEmpty(textBoxValor.Text))
                 return;
 
-            valor = Convert.ToInt32(textBoxValor.Text);
-            estado = comboBoxEstado.Text;
-            dataVenda = DateTime.Now;
+            int valorvendar = 0;
+            if (!int.TryParse(textBoxValor.Text, out valorvendar))
+            {
+                MessageBox.Show("Erro ao introduzir valor", "Valor incorreto: "+ textBoxValor.Text);
+                return;
+            }
+
+            Venda = new Venda { Valor = valorvendar, Estado = comboBoxEstado.Text, Data = DateTime.Now };
             DialogResult = DialogResult.OK;
         }
     }

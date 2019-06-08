@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace Gestor_de_oficina
 {
@@ -35,25 +29,7 @@ namespace Gestor_de_oficina
             FormAdicionarCliente formAdicionarCliente = new FormAdicionarCliente();
             formAdicionarCliente.ShowDialog();
             LerDados();
-            //SaveCustomerInfo();
         }
-
-        /*
-        private void SaveCustomerInfo()
-        {
-            Cliente novoCliente = new Cliente
-            {
-                Nome = textBoxNome.Text,
-                Contacto = textBoxContacto.Text,
-                Morada = textBoxMorada.Text,
-                NIF = Convert.ToInt32(textBoxNIF.Text)
-            };
-            myDb.Clientes.Add(novoCliente);
-
-            myDb.SaveChanges();
-            LerDados();
-        }
-        */
 
         private void LerDados()
         {
@@ -68,8 +44,6 @@ namespace Gestor_de_oficina
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            //Cliente clientselected = (Cliente)listBoxClientes.SelectedItem;
-            //myDb.Clientes.Remove(clientselected);
             myDb.SaveChanges();
             LerDados();
         }

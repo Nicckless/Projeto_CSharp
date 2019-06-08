@@ -33,6 +33,7 @@ namespace Gestor_de_oficina
         {
             listBoxCarrosVenda.DataSource = myDb.Carros.OfType<CarroVenda>().ToList();
             listBoxCliente.DataSource = myDb.Clientes.ToList();
+            listBoxVendas.DataSource = myDb.Vendas.ToList();
         }
         private void inserirCarroVenda()
         {
@@ -45,9 +46,20 @@ namespace Gestor_de_oficina
                 return;
 
             FormCriarVenda formCriarVenda = new FormCriarVenda();
-            Cliente clienteSelecionado = new Cliente();
-            clienteSelecionado = (Cliente)listBoxCliente.SelectedItem;
+            Cliente clienteSelecionado = (Cliente)listBoxCliente.SelectedItem;
+            CarroVenda carroVendaSelecionado = (CarroVenda)listBoxCarrosVenda.SelectedItem;
 
+            if (formCriarVenda.ShowDialog() == DialogResult.OK)
+            {
+                var venda = formCriarVenda.Venda;
+                myDb.Vendas.Add(venda);
+                clienteSelecionado.Vendas.Add(venda);
+
+                myDb.SaveChanges();
+                lerDados();
+
+                listBoxVendas.SelectedItem = venda;
+            }
         }
     }
 }
