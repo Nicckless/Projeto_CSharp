@@ -1,0 +1,19 @@
+Dados do Cliente:
+ Nome do cliente: dasdsad
+ Morada: 12asdasd
+ Contacto: 123123
+ NIF: 123213123
+
+-------------------------------------
+Dados do Automóvel: 
+ Numero Chassis: x12ex123213123x12
+
+Marca + Modelo: Caterham qwewq
+ Combustivel: Diesel
+ Extras do automovel: System.Linq.Enumerable+<OfTypeIterator>d__95`1[System.String]
+
+-------------------------------------
+Dados da venda: 
+ Data de entrada: 07/06/2019 22:11:44
+ Estado do veículo: Usado
+Valor total da venda: 1232€

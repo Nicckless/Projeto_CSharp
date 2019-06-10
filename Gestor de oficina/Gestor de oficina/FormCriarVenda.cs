@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Gestor_de_oficina
@@ -24,14 +17,14 @@ namespace Gestor_de_oficina
             if (string.IsNullOrEmpty(comboBoxEstado.Text) || string.IsNullOrEmpty(textBoxValor.Text))
                 return;
 
-            int valorvendar = 0;
-            if (!int.TryParse(textBoxValor.Text, out valorvendar))
+            int ValorVenda = 0;
+            if (!int.TryParse(textBoxValor.Text, out ValorVenda))
             {
                 MessageBox.Show("Erro ao introduzir valor", "Valor incorreto: "+ textBoxValor.Text);
                 return;
             }
 
-            Venda = new Venda { Valor = valorvendar, Estado = comboBoxEstado.Text, Data = DateTime.Now };
+            Venda = new Venda { Valor = ValorVenda, Estado = comboBoxEstado.Text, Data = DateTime.Now };
             DialogResult = DialogResult.OK;
         }
     }

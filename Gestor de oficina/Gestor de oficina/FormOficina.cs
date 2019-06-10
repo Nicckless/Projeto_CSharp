@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -33,18 +34,10 @@ namespace Gestor_de_oficina
             if(formAdicionarCarroOficina.ShowDialog() == DialogResult.OK)
             {
 
-                CarroOficina novoCarroOficina = new CarroOficina
-                {
-                    NumeroChassis = formAdicionarCarroOficina.numchassis,
-                    Marca = formAdicionarCarroOficina.marca,
-                    Modelo = formAdicionarCarroOficina.modelo,
-                    Combustivel = formAdicionarCarroOficina.combustivel, 
-                    Matricula = formAdicionarCarroOficina.matricula,
-                    Kms = formAdicionarCarroOficina.kms
-                };
-                clienteSelecionado.CarroOficinas.Add(novoCarroOficina);
+                var carroOficina = formAdicionarCarroOficina.CarroOficina;
+                clienteSelecionado.CarroOficinas.Add(carroOficina);
 
-                listBoxCarros.SelectedItem = novoCarroOficina;
+                listBoxCarros.SelectedItem = carroOficina;
 
                 myDb.SaveChanges();
                 LerDados();
@@ -196,9 +189,16 @@ namespace Gestor_de_oficina
             if (string.IsNullOrEmpty(textBoxValorParcela.Text) || string.IsNullOrEmpty(textBoxDescricaoParcela.Text))
                 return;
 
+            int ValorParcela = 0;
+            if (!int.TryParse(textBoxValorParcela.Text, out ValorParcela))
+            {
+                MessageBox.Show("Erro ao introduzir valor", "Valor incorreto: " + textBoxValorParcela.Text);
+                return;
+            }
+
             Parcela novaParcela = new Parcela
             {
-                Valor = Convert.ToInt32(textBoxValorParcela.Text),
+                Valor = ValorParcela,
                 Descricao = textBoxDescricaoParcela.Text
             };
             servicoSelecionado.Parcelas.Add(novaParcela);
@@ -211,24 +211,50 @@ namespace Gestor_de_oficina
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1 || listBoxParcelas.SelectedIndex == -1)
-                return;
-
-
-            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-            CarroOficina carroOficinaSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
-            Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
-
-            string[] lines = { "Dados do Cliente:\n Nome do cliente: " + clienteSelecionado.Nome +  "\n Morada: " + clienteSelecionado.Morada + "\n Contacto: " + clienteSelecionado.Contacto + "\n NIF: " + clienteSelecionado.NIF,
-                "\n-------------------------------------\nDados do Automóvel: \n Numero Chassis: " + carroOficinaSelecionado.NumeroChassis + "\n\nMarca + Modelo: " + carroOficinaSelecionado.Marca + " " + carroOficinaSelecionado.Modelo + "\n Combustivel: " + carroOficinaSelecionado.Combustivel + "\n Matricula: " + carroOficinaSelecionado.Matricula + "\n Quilometros: " + carroOficinaSelecionado.Kms + " kms",
-                "\n-------------------------------------\nDados do Servico: \n Data de entrada: " + servicoSelecionado.DataEntrada + "\n Data de saída: " + servicoSelecionado.DataSaida + "\n Tipo de servico: " + servicoSelecionado.Tipo + "\nValor total do Servico: " + servicoSelecionado.totalGastoNoStand + "€"}; 
-
-            string docPath = @"C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Recibos da Oficina";
-
-            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, clienteSelecionado.Nome + ".txt")))
+            try
             {
-                foreach (string line in lines)
-                    outputFile.WriteLine(line);
+                if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1 || listBoxParcelas.SelectedIndex == -1)
+                    return;
+
+
+                Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+                CarroOficina carroOficinaSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
+                Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
+
+                string[] lines = { "Dados do Cliente:\n Nome do cliente: " + clienteSelecionado.Nome +  "\n Morada: " + clienteSelecionado.Morada + "\n Contacto: " + clienteSelecionado.Contacto + "\n NIF: " + clienteSelecionado.NIF,
+                "\n-------------------------------------\nDados do Automóvel: \n Numero Chassis: " + carroOficinaSelecionado.NumeroChassis + "\n\nMarca + Modelo: " + carroOficinaSelecionado.Marca + " " + carroOficinaSelecionado.Modelo + "\n Combustivel: " + carroOficinaSelecionado.Combustivel + "\n Matricula: " + carroOficinaSelecionado.Matricula + "\n Quilometros: " + carroOficinaSelecionado.Kms + " kms",
+                "\n-------------------------------------\nDados do Servico: \n Data de entrada: " + servicoSelecionado.DataEntrada + "\n Data de saída: " + servicoSelecionado.DataSaida + "\n Tipo de servico: " + servicoSelecionado.Tipo + "\nValor total do Servico: " + servicoSelecionado.totalGastoNoStand + "€"};
+
+                string docPath = @"E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Recibos da Oficina";
+
+                using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, carroOficinaSelecionado.Matricula + ".txt")))
+                {
+                    foreach (string line in lines)
+                        outputFile.WriteLine(line);
+                }
+
+                try
+                {
+                    DialogResult dialogResult = MessageBox.Show("Impressao concluida com sucesso, deseja abrir o recibo?", "Impressao Concluída", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        Process.Start(docPath + "\\" + carroOficinaSelecionado.Matricula + ".txt");
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        return;
+                    };
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Nao foi possível abrir recibo", "Erro a abrir");
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nao foi possível imprimir recibo", "Erro na impressao");
+                return;
             }
         }
     }

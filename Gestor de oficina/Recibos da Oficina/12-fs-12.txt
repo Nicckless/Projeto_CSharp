@@ -1,0 +1,21 @@
+Dados do Cliente:
+ Nome do cliente: Tiago
+ Morada: ABF
+ Contacto: 964685630
+ NIF: 123123123
+
+-------------------------------------
+Dados do Automóvel: 
+ Numero Chassis: v4124v12v412v4141
+
+Marca + Modelo: VW Polo
+ Combustivel: Diesel
+ Matricula: 12-fs-12
+ Quilometros: 12311 kms
+
+-------------------------------------
+Dados do Servico: 
+ Data de entrada: 04/06/2019 15:45:41
+ Data de saída: 04/06/2019 15:45:36
+ Tipo de servico: Motor
+Valor total do Servico: 12€

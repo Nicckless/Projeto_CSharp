@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Gestor_de_oficina
@@ -24,14 +18,20 @@ namespace Gestor_de_oficina
             if (string.IsNullOrEmpty(maskedTextBoxNumChassi.Text) || string.IsNullOrEmpty(comboBoxMarca.Text) || string.IsNullOrEmpty(comboBoxModelo.Text) || string.IsNullOrEmpty(comboBoxCombustivel.Text))
                 return;
 
+            var extras = listBoxExtras.Items.OfType<string>().ToArray();
+            string extrasComEnters = "";
 
+            foreach (var extra in extras)
+            {
+                extrasComEnters += extra + "\n";
+            }
             CarroVenda novoCarroVenda = new CarroVenda
             {
                 NumeroChassis = maskedTextBoxNumChassi.Text,
                 Marca = comboBoxMarca.Text,
                 Modelo = comboBoxModelo.Text,
                 Combustivel = comboBoxCombustivel.Text,
-                Extras = listBoxExtras.Items.OfType<string>().ToString()
+                Extras = extrasComEnters
             };
             myDb.Carros.Add(novoCarroVenda);
             myDb.SaveChanges();
