@@ -170,21 +170,15 @@ namespace Gestor_de_oficina
 
         private void buttonFiltrarListaCarros_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBoxFiltrarMarca.Text) && string.IsNullOrWhiteSpace(textBoxFiltrarModelo.Text) && string.IsNullOrWhiteSpace(checkedListBoxFiltrarCombustivel.Text))
+            if (string.IsNullOrEmpty(textBoxFiltrarMarca.Text) && string.IsNullOrEmpty(textBoxFiltrarModelo.Text) && string.IsNullOrEmpty(checkedListBoxFiltrarCombustivel.Text))
             {
                 listBoxCarrosVenda.DataSource = myDb.Carros.OfType<CarroVenda>().ToList();
                 return;
             }
+                listBoxCarrosVenda.DataSource = myDb.Carros.OfType<CarroVenda>().
+                    Where(cv => cv.Marca.ToLower().Contains(textBoxFiltrarMarca.Text.ToLower().Trim())).
+                    ToList();
 
-            listBoxCarrosVenda.DataSource = myDb.Carros.OfType<CarroVenda>().
-                Where(cv => cv.Marca.ToLower().Contains(textBoxFiltrarMarca.Text.ToLower().Trim())).
-                ToList();
-            listBoxCarrosVenda.DataSource = myDb.Carros.OfType<CarroVenda>().
-                Where(cv => cv.Modelo.ToLower().Contains(textBoxFiltrarModelo.Text.ToLower().Trim())).
-                ToList();
-            listBoxCarrosVenda.DataSource = myDb.Carros.OfType<CarroVenda>().
-                Where(cv => cv.Combustivel.ToLower().Contains(checkedListBoxFiltrarCombustivel.Text.ToLower().Trim())).
-                ToList();
         }
 
         private void buttonFiltrarListaClientes_Click(object sender, EventArgs e)

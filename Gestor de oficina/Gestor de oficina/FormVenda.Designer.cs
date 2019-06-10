@@ -38,9 +38,6 @@
             this.buttonEliminarCarroVenda = new System.Windows.Forms.Button();
             this.listBoxCarrosVenda = new System.Windows.Forms.ListBox();
             this.buttonVender = new System.Windows.Forms.Button();
-            this.checkedListBoxFiltrarCombustivel = new System.Windows.Forms.CheckedListBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,7 +48,6 @@
             this.buttonFiltrarListaClientes = new System.Windows.Forms.Button();
             this.textBoxFiltrarNome = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxFiltrarModelo = new System.Windows.Forms.TextBox();
             this.textBoxFiltrarMarca = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -98,15 +94,11 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.textBoxFiltrarMarca);
-            this.panel3.Controls.Add(this.textBoxFiltrarModelo);
             this.panel3.Controls.Add(this.buttonFiltrarListaCarros);
             this.panel3.Controls.Add(this.buttonEditarCarroVenda);
             this.panel3.Controls.Add(this.buttonEliminarCarroVenda);
             this.panel3.Controls.Add(this.listBoxCarrosVenda);
             this.panel3.Controls.Add(this.buttonVender);
-            this.panel3.Controls.Add(this.checkedListBoxFiltrarCombustivel);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(6, 17);
             this.panel3.Name = "panel3";
@@ -115,7 +107,7 @@
             // 
             // buttonFiltrarListaCarros
             // 
-            this.buttonFiltrarListaCarros.Location = new System.Drawing.Point(15, 255);
+            this.buttonFiltrarListaCarros.Location = new System.Drawing.Point(12, 69);
             this.buttonFiltrarListaCarros.Name = "buttonFiltrarListaCarros";
             this.buttonFiltrarListaCarros.Size = new System.Drawing.Size(188, 23);
             this.buttonFiltrarListaCarros.TabIndex = 21;
@@ -162,37 +154,6 @@
             this.buttonVender.Text = "Vender Carro";
             this.buttonVender.UseVisualStyleBackColor = true;
             this.buttonVender.Click += new System.EventHandler(this.buttonVender_Click);
-            // 
-            // checkedListBoxFiltrarCombustivel
-            // 
-            this.checkedListBoxFiltrarCombustivel.FormattingEnabled = true;
-            this.checkedListBoxFiltrarCombustivel.Items.AddRange(new object[] {
-            "Diesel",
-            "Gasolina",
-            "Gas",
-            "Elétrico"});
-            this.checkedListBoxFiltrarCombustivel.Location = new System.Drawing.Point(15, 176);
-            this.checkedListBoxFiltrarCombustivel.Name = "checkedListBoxFiltrarCombustivel";
-            this.checkedListBoxFiltrarCombustivel.Size = new System.Drawing.Size(188, 72);
-            this.checkedListBoxFiltrarCombustivel.TabIndex = 15;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 156);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 17);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Combustivel:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 87);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 17);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Modelo:";
             // 
             // label3
             // 
@@ -287,13 +248,6 @@
             this.label7.TabIndex = 24;
             this.label7.Text = "Introduzir Nome:";
             // 
-            // textBoxFiltrarModelo
-            // 
-            this.textBoxFiltrarModelo.Location = new System.Drawing.Point(15, 107);
-            this.textBoxFiltrarModelo.Name = "textBoxFiltrarModelo";
-            this.textBoxFiltrarModelo.Size = new System.Drawing.Size(188, 22);
-            this.textBoxFiltrarModelo.TabIndex = 25;
-            // 
             // textBoxFiltrarMarca
             // 
             this.textBoxFiltrarMarca.Location = new System.Drawing.Point(12, 41);
@@ -337,9 +291,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.CheckedListBox checkedListBoxFiltrarCombustivel;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonImprimir;
         private System.Windows.Forms.Button buttonVender;
@@ -355,6 +306,5 @@
         private System.Windows.Forms.TextBox textBoxFiltrarNome;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxFiltrarMarca;
-        private System.Windows.Forms.TextBox textBoxFiltrarModelo;
     }
 }
