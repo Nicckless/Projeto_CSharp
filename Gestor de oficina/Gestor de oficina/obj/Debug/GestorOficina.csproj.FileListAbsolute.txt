@@ -48,4 +48,4 @@ E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Proje
 E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\GestorOficina.csprojAssemblyReference.cache
 E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormCriarVenda.resources
 E:\Everything\Universidade\TeSP\2_Semestre\Desenvolvimento_de_Aplicações\Projeto\Projeto DA\Projeto_CSharp\Gestor de oficina\Gestor de oficina\obj\Debug\Gestor_de_oficina.FormEditarCarroVenda.resources
-C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de 
+C:\Users\Tiago Antunes\Documents\GitHub\Projeto_CSharp\Gestor de oficina\Gestor de

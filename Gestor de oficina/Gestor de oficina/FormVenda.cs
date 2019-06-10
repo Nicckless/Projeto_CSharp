@@ -179,7 +179,7 @@ namespace Gestor_de_oficina
 
         private void buttonFiltrarListaCarros_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBoxFiltrarMarca.Text) && string.IsNullOrEmpty(textBoxFiltrarModelo.Text) && string.IsNullOrEmpty(checkedListBoxFiltrarCombustivel.Text))
+            if (string.IsNullOrEmpty(textBoxFiltrarMarca.Text))
             {
                 listBoxCarrosVenda.DataSource = myDb.Carros.OfType<CarroVenda>().ToList();
                 return;
