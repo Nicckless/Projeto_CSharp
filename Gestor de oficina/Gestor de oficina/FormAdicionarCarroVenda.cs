@@ -19,11 +19,11 @@ namespace Gestor_de_oficina
             myDb = new StandAutomoveisContainer();
         }
 
+        //Adicionar um carro para venda à base de dados
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(maskedTextBoxNumChassi.Text) || string.IsNullOrEmpty(comboBoxMarca.Text) || string.IsNullOrEmpty(comboBoxModelo.Text) || string.IsNullOrEmpty(comboBoxCombustivel.Text))
                 return;
-
 
             CarroVenda novoCarroVenda = new CarroVenda
             {
@@ -39,12 +39,14 @@ namespace Gestor_de_oficina
             MessageBox.Show("Carro adicionado com sucesso para venda", "Criar Venda");
         }
 
+        //Adicionar extras do carro a ser criado
         private void buttonAddExtra_Click(object sender, EventArgs e)
         {
             listBoxExtras.Items.Add(textBoxExtra.Text);
             textBoxExtra.Text = "";
         }
 
+        //Eliminar extras do carro a ser criado
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
             listBoxExtras.Items.Remove(listBoxExtras.SelectedItem);

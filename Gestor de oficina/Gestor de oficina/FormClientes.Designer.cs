@@ -54,10 +54,6 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabelGuardarAlt = new System.Windows.Forms.ToolStripLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBoxfiltar = new System.Windows.Forms.TextBox();
-            //this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,8 +63,8 @@
             this.carroOficinasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vendasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aluguersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            //this.button1 = new System.Windows.Forms.Button();
-            //this.textBoxfiltar = new System.Windows.Forms.TextBox();
+            this.buttonFiltrar = new System.Windows.Forms.Button();
+            this.textBoxfiltar = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
@@ -296,7 +292,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.buttonFiltrar);
             this.groupBox1.Controls.Add(this.textBoxfiltar);
             this.groupBox1.Location = new System.Drawing.Point(7, 12);
             this.groupBox1.Name = "groupBox1";
@@ -373,14 +369,15 @@
             this.aluguersDataGridViewTextBoxColumn.HeaderText = "Aluguers";
             this.aluguersDataGridViewTextBoxColumn.Name = "aluguersDataGridViewTextBoxColumn";
             // 
-            // button1
+            // buttonFiltrar
             // 
-            this.button1.Location = new System.Drawing.Point(279, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Filtrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonFiltrar.Location = new System.Drawing.Point(281, 33);
+            this.buttonFiltrar.Name = "buttonFiltrar";
+            this.buttonFiltrar.Size = new System.Drawing.Size(105, 23);
+            this.buttonFiltrar.TabIndex = 1;
+            this.buttonFiltrar.Text = "Filtrar";
+            this.buttonFiltrar.UseVisualStyleBackColor = true;
+            this.buttonFiltrar.Click += new System.EventHandler(this.buttonFiltrar_Click);
             // 
             // textBoxfiltar
             // 
@@ -396,6 +393,7 @@
             this.ClientSize = new System.Drawing.Size(914, 420);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormClientes";
             this.Text = "Clientes do Stand";
             this.groupBox2.ResumeLayout(false);
@@ -436,7 +434,7 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripLabel toolStripLabelGuardarAlt;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonFiltrar;
         private System.Windows.Forms.TextBox textBoxfiltar;
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private System.Windows.Forms.DataGridView dataGridView1;

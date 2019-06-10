@@ -19,6 +19,7 @@ namespace Gestor_de_oficina
             InitializeComponent();
         }
 
+        //Criação de uma Venda de um carro
         private void buttonCriarVenda_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(comboBoxEstado.Text) || string.IsNullOrEmpty(textBoxValor.Text))

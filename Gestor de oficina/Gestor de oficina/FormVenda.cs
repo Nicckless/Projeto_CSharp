@@ -24,22 +24,27 @@ namespace Gestor_de_oficina
 
         }
 
+        //Executar a função LerDados()
         private void FormVenda_Load(object sender, EventArgs e)
         {
-
             lerDados();
         }
+
+        //Fazer Reload aos dados das list boxes dos carros venda, clientes e vendas
         private void lerDados()
         {
             listBoxCarrosVenda.DataSource = myDb.Carros.OfType<CarroVenda>().ToList();
             listBoxCliente.DataSource = myDb.Clientes.ToList();
             listBoxVendas.DataSource = myDb.Vendas.ToList();
         }
+
         private void inserirCarroVenda()
         {
 
         }
 
+
+        //Criar uma venda para o cliente selecionado
         private void buttonVender_Click(object sender, EventArgs e)
         {
             if (listBoxCliente.SelectedIndex == -1)

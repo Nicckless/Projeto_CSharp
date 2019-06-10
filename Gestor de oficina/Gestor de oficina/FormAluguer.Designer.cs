@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAluguer));
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridViewCarrosAluguer = new System.Windows.Forms.DataGridView();
             this.idCarroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,7 +105,7 @@
             this.marcaDataGridViewTextBoxColumn,
             this.modeloDataGridViewTextBoxColumn,
             this.combustivelDataGridViewTextBoxColumn});
-            this.dataGridViewCarrosAluguer.DataSource = this.carroBindingSource;
+            this.dataGridViewCarrosAluguer.DataSource = this.carroAluguerBindingSource;
             this.dataGridViewCarrosAluguer.Location = new System.Drawing.Point(274, 21);
             this.dataGridViewCarrosAluguer.Name = "dataGridViewCarrosAluguer";
             this.dataGridViewCarrosAluguer.RowTemplate.Height = 24;
@@ -427,6 +428,7 @@
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAluguer";
             this.Text = "Aluguer de carros do Stand";
             this.Load += new System.EventHandler(this.FormAluguer_Load);

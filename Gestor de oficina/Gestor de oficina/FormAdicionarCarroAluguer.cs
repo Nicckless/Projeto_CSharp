@@ -20,6 +20,7 @@ namespace Gestor_de_oficina
             myDB = new StandAutomoveisContainer();
         }
 
+        //Criar um novo carro de aluguer e colocar todos os campos de volta a branco
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
             if(maskedTextBoxNumChassi.Text != "" && maskedTextBoxMatricula.Text != "" && comboBoxMarca.Text != "" && comboBoxModelo.Text != "" && comboBoxCombustivel.Text != "")

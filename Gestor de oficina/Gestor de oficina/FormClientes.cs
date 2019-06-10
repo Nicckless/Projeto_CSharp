@@ -19,11 +19,10 @@ namespace Gestor_de_oficina
              select cliente).Load();
 
             clienteBindingSource.DataSource = myDb.Clientes.Local.ToBindingList();
-
             bindingNavigator1.CountItem.Text = myDb.Clientes.Local.Count().ToString();
-
         }
 
+        //Abre um form para adicionar clientes á base de dados
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             FormAdicionarCliente formAdicionarCliente = new FormAdicionarCliente();
@@ -31,24 +30,42 @@ namespace Gestor_de_oficina
             LerDados();
         }
 
+        //Dá reload dos dados da base de dados para o Data Grid dos clientes e para o Navigator
         private void LerDados()
         {
             dataGridView1.DataSource = myDb.Clientes.ToList();
             clienteBindingSource.DataSource = myDb.Clientes.ToList();
         }
 
+
         private void FormClientes_Load(object sender, EventArgs e)
         {
             LerDados();
         }
 
+        //Elimina clientes da base de dados
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
             myDb.SaveChanges();
             LerDados();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //Fazer alterações nos dados da base de dados
+        private void toolStripLabelGuardarAlt_Click(object sender, EventArgs e)
+        {
+            Cliente clientselected = (Cliente)dataGridView1.CurrentRow.DataBoundItem;
+            myDb.Clientes.Attach(clientselected);
+            clientselected.Nome = textBoxNome.Text;
+            clientselected.Contacto = textBoxContacto.Text;
+            clientselected.Morada = textBoxMorada.Text;
+            clientselected.NIF = Convert.ToInt32(textBoxNIF.Text);
+            myDb.SaveChanges();
+            LerDados();
+        }
+
+
+        //Filtra os clientes por nome
+        private void buttonFiltrar_Click(object sender, EventArgs e)
         {
             if (textBoxfiltar.Text.Length > 0)
             {
@@ -58,7 +75,7 @@ namespace Gestor_de_oficina
                 myDb = new StandAutomoveisContainer();
 
                 (from cliente in myDb.Clientes
-                 where cliente.Nome.ToUpper().Contains(textBoxfiltar.Text.ToUpper())
+                 where cliente.Nome.ToUpper().StartsWith(textBoxfiltar.Text.ToUpper())
                  orderby cliente.Nome
                  select cliente).ToList();
 
@@ -77,18 +94,6 @@ namespace Gestor_de_oficina
 
                 dataGridView1.DataSource = myDb.Clientes.Local.ToBindingList();
             }
-        }
-
-        private void toolStripLabelGuardarAlt_Click(object sender, EventArgs e)
-        {
-            Cliente clientselected = (Cliente)dataGridView1.CurrentRow.DataBoundItem;
-            myDb.Clientes.Attach(clientselected);
-            clientselected.Nome = textBoxNome.Text;
-            clientselected.Contacto = textBoxContacto.Text;
-            clientselected.Morada = textBoxMorada.Text;
-            clientselected.NIF = Convert.ToInt32(textBoxNIF.Text);
-            myDb.SaveChanges();
-            LerDados();
         }
     }
 }
