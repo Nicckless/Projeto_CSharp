@@ -19,6 +19,7 @@ namespace Gestor_de_oficina
             myDb = new StandAutomoveisContainer();
         }
 
+        //Adiciona um cliente à base de dados
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
             Cliente novoCliente = new Cliente

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVenda));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.listBoxCliente = new System.Windows.Forms.ListBox();
@@ -41,6 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonImprimir = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.buttonEliminarVenda = new System.Windows.Forms.Button();
@@ -183,6 +185,15 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Carros para venda";
             // 
+            // buttonImprimir
+            // 
+            this.buttonImprimir.Location = new System.Drawing.Point(17, 336);
+            this.buttonImprimir.Name = "buttonImprimir";
+            this.buttonImprimir.Size = new System.Drawing.Size(327, 28);
+            this.buttonImprimir.TabIndex = 3;
+            this.buttonImprimir.Text = "Imprimir Recibo";
+            this.buttonImprimir.UseVisualStyleBackColor = true;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.label6);
@@ -268,6 +279,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormVenda";
             this.Text = "Venda";
             this.Load += new System.EventHandler(this.FormVenda_Load);

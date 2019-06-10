@@ -18,6 +18,7 @@ namespace Gestor_de_oficina
             InitializeComponent();
         }
 
+        //Adicionar um carro de oficina ao cliente
         private void buttonAdicionarCarroOficina_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(maskedTextBoxNumeroChassis.Text) || string.IsNullOrEmpty(comboBoxModelo.Text) || string.IsNullOrEmpty(comboBoxMarca.Text) || string.IsNullOrEmpty(comboBoxCombustivel.Text) || string.IsNullOrEmpty(maskedTextBoxMatricula.Text) || string.IsNullOrEmpty(textBoxKMs.Text))

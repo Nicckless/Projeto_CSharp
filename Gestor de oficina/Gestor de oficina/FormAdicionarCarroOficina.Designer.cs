@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdicionarCarroOficina));
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxKMs = new System.Windows.Forms.TextBox();
             this.maskedTextBoxMatricula = new System.Windows.Forms.MaskedTextBox();
@@ -199,6 +200,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 533);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAdicionarCarroOficina";
             this.Text = "Adicionar um novo carro";
             this.panel1.ResumeLayout(false);

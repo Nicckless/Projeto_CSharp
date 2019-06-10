@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data;
+using System.Data.Entity;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -17,8 +19,6 @@ namespace Gestor_de_oficina
             InitializeComponent();
             myDB = new StandAutomoveisContainer();
 
-            LerDados();
-
             precoaluguer = 0.34f;
             total = 0f;
         }
@@ -33,6 +33,7 @@ namespace Gestor_de_oficina
                 dateTimePicker2.Value = DateTime.Now;
         }
 
+        //Dá reload aos dados dos clientes e filtrar os carros de aluguer caso eles não estejam alugados  
         private void LerDados()
         {
             (from carro in myDB.Carros.OfType<CarroAluguer>()
@@ -41,10 +42,11 @@ namespace Gestor_de_oficina
              select carro).ToList();
 
             listBoxClientes.DataSource = myDB.Clientes.ToList();
-            carroBindingSource.DataSource = myDB.Carros.OfType<CarroAluguer>().ToList();
+            carroAluguerBindingSource.DataSource = myDB.Carros.OfType<CarroAluguer>().ToList();
             dataGridViewCarrosAluguer.Update();
         }
 
+        //Ao selecionar um cliente dá reload à aos dados da list box dos alugueres com os dados dos alugueres daquele cliente
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             Cliente clientselected = (Cliente)listBoxClientes.SelectedItem;
@@ -56,11 +58,13 @@ namespace Gestor_de_oficina
             LerDados();     
         }
 
+        //Ao mudar do valor do date time picker(date time picker com a data de hoje) este muda para a data de hoje 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             dateTimePicker1.Value = DateTime.Now;
         }
 
+        //Criar um aluguer para o cliente selecionado e põe o carro selecionado em estado aluguer
         private void buttonAlugar_Click(object sender, EventArgs e)
         {
             CarroAluguer carroAluguer = (CarroAluguer)dataGridViewCarrosAluguer.CurrentRow.DataBoundItem;
@@ -88,6 +92,7 @@ namespace Gestor_de_oficina
             }
         }
 
+        //Entraga do carro alugado, calculo do preço a pagar e emissão da fatura 
         private void buttonDevolver_Click(object sender, EventArgs e)
         {
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
@@ -144,6 +149,7 @@ namespace Gestor_de_oficina
             }
         }
 
+        //mudar de aluguer selecionado e verificação se o carro foi entregue a tempo
         private void listBoxAlugueres_SelectedIndexChanged(object sender, EventArgs e)
         {
             Aluguer aluguerselected = (Aluguer)listBoxAlugueres.SelectedItem;
@@ -157,6 +163,7 @@ namespace Gestor_de_oficina
             }
         }
 
+        //calculo do preço a pagar pelo aluguer
         private void textBoxKmfeitos_TextChanged(object sender, EventArgs e)
         {
             Aluguer aluguerselected = (Aluguer)listBoxAlugueres.SelectedItem;

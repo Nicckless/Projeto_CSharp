@@ -20,6 +20,7 @@ namespace Gestor_de_oficina
             InitializeComponent();
         }
 
+        //Adicionar um serviço a um carro de oficina de um cliente
         private void buttonAdivionarServico_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBoxTipoServico.Text))

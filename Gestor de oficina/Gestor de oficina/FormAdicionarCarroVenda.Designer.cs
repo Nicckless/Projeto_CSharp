@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdicionarCarroVenda));
             this.buttonAdicionarCarro = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonEliminar = new System.Windows.Forms.Button();
@@ -265,6 +266,7 @@
             this.Controls.Add(this.buttonAdicionarCarro);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAdicionarCarroVenda";
             this.Text = "Adicionar carro para venda";
             this.groupBox2.ResumeLayout(false);

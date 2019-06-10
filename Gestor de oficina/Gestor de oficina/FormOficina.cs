@@ -21,6 +21,7 @@ namespace Gestor_de_oficina
             myDb = new StandAutomoveisContainer();
         }
 
+        //Adiciona um Carro de oficina ao cliente selecionado
         private void buttonAdicionarCarro_Click(object sender, EventArgs e)
         {
             if (listBoxClientes.SelectedIndex == -1)
@@ -43,6 +44,8 @@ namespace Gestor_de_oficina
                 LerDados();
             }
         }
+
+        //Dá Reload aos dados das list boxes dos clientes, dos carros, das parcelas e dos serviços
         private void LerDados()
         {
             listBoxCarros.DataSource = myDb.Carros.OfType<CarroOficina>().ToList();
@@ -50,6 +53,8 @@ namespace Gestor_de_oficina
             listBoxParcelas.DataSource = myDb.Parcelas.ToList();
             listBoxServicos.DataSource = myDb.Servicos.ToList();
         }
+
+        //Executa o LerDados();
         private void FormOficina_Load(object sender, EventArgs e)
         {
             listBoxClientes.SelectedItem = 0;
@@ -57,12 +62,10 @@ namespace Gestor_de_oficina
             listBoxServicos.SelectedItem = 0;
             listBoxParcelas.SelectedItem = 0;
 
-            listBoxClientes.DataSource = myDb.Clientes.ToList();
-            listBoxCarros.DataSource = myDb.Carros.OfType<CarroOficina>().ToList();
-            listBoxServicos.DataSource = myDb.Servicos.ToList();
-            listBoxParcelas.DataSource = myDb.Parcelas.ToList();
+            LerDados();
         }
 
+        //Ao mudar de cliente selecionado atualiza a lista dos carros
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listBoxClientes.SelectedIndex != -1 || listBoxCarros.SelectedIndex != -1 || listBoxServicos.SelectedIndex != -1)
@@ -75,10 +78,10 @@ namespace Gestor_de_oficina
 
                     listBoxServicos.DataSource = null;
                     listBoxParcelas.DataSource = null;
-
                     labelNome.Text = clienteSelecionado.Nome;
                     labelNIF.Text = clienteSelecionado.NIF.ToString();
                     labelMorada.Text = clienteSelecionado.Morada;
+
 
                     if(listBoxCarros.SelectedIndex < 0)
                     {
@@ -96,6 +99,7 @@ namespace Gestor_de_oficina
             }
         }
 
+        //Ao mudar de carro selecionado atualiza a lista dos serviços
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -109,6 +113,7 @@ namespace Gestor_de_oficina
                 atualizarListaServicos(carroOficinaSelecionado);
         }
 
+        //Ao mudar de serviço selecionado atualiza a lista das parcelas
         private void listBoxServicos_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1)
@@ -137,12 +142,13 @@ namespace Gestor_de_oficina
         {
             listBoxServicos.DataSource = carroOficinaSelecionado.Servicoes.ToList();
         }
-        
+
         private void atualizarListaParcelas(Servico servicoSelecionado)
         {
             listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
         }
 
+        //Adiciona um serviço ao carro selecionado
         private void buttonCriarServico_Click(object sender, EventArgs e)
         {
             if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1)
@@ -173,6 +179,7 @@ namespace Gestor_de_oficina
             }
         }
 
+        //Adiciona uma parcela ao serviço selecionado
         private void buttonCriarParcela_Click(object sender, EventArgs e)
         {
             if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1)
@@ -209,6 +216,7 @@ namespace Gestor_de_oficina
             LerDados();
         }
 
+        //Emitir a fatura
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try

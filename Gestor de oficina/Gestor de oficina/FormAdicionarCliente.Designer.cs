@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdicionarCliente));
             this.textBoxNIF = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -127,6 +128,7 @@
             this.Controls.Add(this.textBoxMorada);
             this.Controls.Add(this.textBoxContacto);
             this.Controls.Add(this.textBoxNome);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAdicionarCliente";
             this.Text = "Adicionar Cliente";
             this.ResumeLayout(false);
