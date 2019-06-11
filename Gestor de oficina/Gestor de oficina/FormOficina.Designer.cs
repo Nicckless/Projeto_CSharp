@@ -58,6 +58,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.reciboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -237,6 +238,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.labelValorTotal);
             this.panel2.Controls.Add(this.labelMorada);
             this.panel2.Controls.Add(this.labelNIF);
@@ -250,7 +252,7 @@
             // labelValorTotal
             // 
             this.labelValorTotal.AutoSize = true;
-            this.labelValorTotal.Location = new System.Drawing.Point(719, 110);
+            this.labelValorTotal.Location = new System.Drawing.Point(763, 86);
             this.labelValorTotal.Name = "labelValorTotal";
             this.labelValorTotal.Size = new System.Drawing.Size(12, 17);
             this.labelValorTotal.TabIndex = 9;
@@ -278,7 +280,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(718, 40);
+            this.label8.Location = new System.Drawing.Point(664, 83);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 20);
             this.label8.TabIndex = 6;
@@ -348,6 +350,15 @@
             this.guardarToolStripMenuItem.Text = "Guardar Recibo";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(814, 85);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(16, 17);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "€";
+            // 
             // FormOficina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -415,5 +426,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem reciboToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
+        private System.Windows.Forms.Label label7;
     }
 }

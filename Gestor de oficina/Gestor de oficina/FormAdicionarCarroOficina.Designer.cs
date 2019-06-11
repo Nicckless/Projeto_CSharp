@@ -85,7 +85,13 @@
             // 
             // comboBoxCombustivel
             // 
+            this.comboBoxCombustivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCombustivel.FormattingEnabled = true;
+            this.comboBoxCombustivel.Items.AddRange(new object[] {
+            "Diesel",
+            "Gasolina",
+            "Gas",
+            "Eletrico"});
             this.comboBoxCombustivel.Location = new System.Drawing.Point(15, 239);
             this.comboBoxCombustivel.Name = "comboBoxCombustivel";
             this.comboBoxCombustivel.Size = new System.Drawing.Size(404, 24);
