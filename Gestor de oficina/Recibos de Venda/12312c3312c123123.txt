@@ -1,0 +1,19 @@
+Dados do Cliente:
+ Nome do cliente: Tiago
+ Morada: ABF
+ Contacto: 964685630
+ NIF: 123123123
+
+-------------------------------------
+Dados do Automóvel: 
+ Numero Chassis: 12312c3312c123123
+
+Marca + Modelo: vW 1212da
+ Combustivel: Gas
+ Extras do automovel: System.Linq.Enumerable+<OfTypeIterator>d__95`1[System.String]
+
+-------------------------------------
+Dados da venda: 
+ Data de entrada: 07/06/2019 22:10:46
+ Estado do veículo: Usado
+Valor total da venda: 123213€
