@@ -1,0 +1,22 @@
+Dados do Cliente:
+ Nome do cliente: Ze
+ Morada: Leiria
+ Contacto: 962848283
+ NIF: 123123123
+
+-------------------------------------
+Dados do Automóvel: 
+ Numero Chassis: 21d12x22xd1e1x12x
+
+Marca + Modelo: VW GOLF
+ Combustivel: Gasolina
+ Extras do automovel: saf
+saddas
+sdsad
+
+
+-------------------------------------
+Dados da venda: 
+ Data de entrada: 11/06/2019 14:56:07
+ Estado do veículo: Usado
+Valor total da venda: 12312312€
