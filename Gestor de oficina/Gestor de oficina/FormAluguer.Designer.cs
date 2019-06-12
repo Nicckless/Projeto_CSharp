@@ -37,13 +37,8 @@
             this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.combustivelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carroAluguerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carroBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBoxClientes = new System.Windows.Forms.ListBox();
@@ -63,21 +58,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxKmfeitos = new System.Windows.Forms.TextBox();
             this.buttonDevolver = new System.Windows.Forms.Button();
-            this.carroAluguerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.listBoxAlugueres = new System.Windows.Forms.ListBox();
             this.aluguerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarrosAluguer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carroAluguerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.carroAluguerBindingSource)).BeginInit();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aluguerBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -85,9 +76,6 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.dataGridViewCarrosAluguer);
-            this.groupBox5.Controls.Add(this.groupBox2);
-            this.groupBox5.Controls.Add(this.groupBox4);
-            this.groupBox5.Controls.Add(this.groupBox3);
             this.groupBox5.Location = new System.Drawing.Point(318, 11);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(830, 262);
@@ -106,10 +94,10 @@
             this.modeloDataGridViewTextBoxColumn,
             this.combustivelDataGridViewTextBoxColumn});
             this.dataGridViewCarrosAluguer.DataSource = this.carroAluguerBindingSource;
-            this.dataGridViewCarrosAluguer.Location = new System.Drawing.Point(274, 21);
+            this.dataGridViewCarrosAluguer.Location = new System.Drawing.Point(12, 21);
             this.dataGridViewCarrosAluguer.Name = "dataGridViewCarrosAluguer";
             this.dataGridViewCarrosAluguer.RowTemplate.Height = 24;
-            this.dataGridViewCarrosAluguer.Size = new System.Drawing.Size(549, 229);
+            this.dataGridViewCarrosAluguer.Size = new System.Drawing.Size(811, 229);
             this.dataGridViewCarrosAluguer.TabIndex = 4;
             // 
             // idCarroDataGridViewTextBoxColumn
@@ -142,68 +130,13 @@
             this.combustivelDataGridViewTextBoxColumn.HeaderText = "Combustivel";
             this.combustivelDataGridViewTextBoxColumn.Name = "combustivelDataGridViewTextBoxColumn";
             // 
+            // carroAluguerBindingSource
+            // 
+            this.carroAluguerBindingSource.DataSource = typeof(Gestor_de_oficina.CarroAluguer);
+            // 
             // carroBindingSource
             // 
             this.carroBindingSource.DataSource = typeof(Gestor_de_oficina.Carro);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Location = new System.Drawing.Point(6, 21);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(262, 58);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Marca";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 21);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(250, 24);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.checkedListBox1);
-            this.groupBox4.Location = new System.Drawing.Point(6, 149);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(262, 101);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Combustivel";
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Diesel",
-            "Gasolina",
-            "Gás",
-            "Elétricos"});
-            this.checkedListBox1.Location = new System.Drawing.Point(6, 21);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(250, 72);
-            this.checkedListBox1.TabIndex = 0;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.comboBox2);
-            this.groupBox3.Location = new System.Drawing.Point(6, 85);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(262, 58);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Modelo";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(6, 21);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(250, 24);
-            this.comboBox2.TabIndex = 0;
             // 
             // clienteBindingSource
             // 
@@ -389,10 +322,6 @@
             this.buttonDevolver.UseVisualStyleBackColor = true;
             this.buttonDevolver.Click += new System.EventHandler(this.buttonDevolver_Click);
             // 
-            // carroAluguerBindingSource
-            // 
-            this.carroAluguerBindingSource.DataSource = typeof(Gestor_de_oficina.CarroAluguer);
-            // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.listBoxAlugueres);
@@ -434,17 +363,14 @@
             this.Load += new System.EventHandler(this.FormAluguer_Load);
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarrosAluguer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carroAluguerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.carroAluguerBindingSource)).EndInit();
             this.groupBox8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.aluguerBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -454,12 +380,6 @@
         #endregion
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView dataGridViewCarrosAluguer;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListBox listBoxClientes;
         private System.Windows.Forms.GroupBox groupBox6;
