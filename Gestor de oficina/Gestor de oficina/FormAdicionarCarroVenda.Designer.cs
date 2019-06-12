@@ -38,12 +38,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxCombustivel = new System.Windows.Forms.ComboBox();
             this.maskedTextBoxNumChassi = new System.Windows.Forms.MaskedTextBox();
-            this.comboBoxModelo = new System.Windows.Forms.ComboBox();
             this.comboBoxMarca = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBoxModelo = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -109,9 +109,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBoxModelo);
             this.groupBox1.Controls.Add(this.comboBoxCombustivel);
             this.groupBox1.Controls.Add(this.maskedTextBoxNumChassi);
-            this.groupBox1.Controls.Add(this.comboBoxModelo);
             this.groupBox1.Controls.Add(this.comboBoxMarca);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label4);
@@ -144,14 +144,6 @@
             this.maskedTextBoxNumChassi.Name = "maskedTextBoxNumChassi";
             this.maskedTextBoxNumChassi.Size = new System.Drawing.Size(321, 22);
             this.maskedTextBoxNumChassi.TabIndex = 13;
-            // 
-            // comboBoxModelo
-            // 
-            this.comboBoxModelo.FormattingEnabled = true;
-            this.comboBoxModelo.Location = new System.Drawing.Point(28, 168);
-            this.comboBoxModelo.Name = "comboBoxModelo";
-            this.comboBoxModelo.Size = new System.Drawing.Size(321, 24);
-            this.comboBoxModelo.TabIndex = 11;
             // 
             // comboBoxMarca
             // 
@@ -257,6 +249,13 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Modelo";
             // 
+            // textBoxModelo
+            // 
+            this.textBoxModelo.Location = new System.Drawing.Point(28, 168);
+            this.textBoxModelo.Name = "textBoxModelo";
+            this.textBoxModelo.Size = new System.Drawing.Size(321, 22);
+            this.textBoxModelo.TabIndex = 15;
+            // 
             // FormAdicionarCarroVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -284,7 +283,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBoxCombustivel;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxNumChassi;
-        private System.Windows.Forms.ComboBox comboBoxModelo;
         private System.Windows.Forms.ComboBox comboBoxMarca;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
@@ -294,5 +292,6 @@
         private System.Windows.Forms.Button buttonAddExtra;
         private System.Windows.Forms.ListBox listBoxExtras;
         private System.Windows.Forms.TextBox textBoxExtra;
+        private System.Windows.Forms.TextBox textBoxModelo;
     }
 }

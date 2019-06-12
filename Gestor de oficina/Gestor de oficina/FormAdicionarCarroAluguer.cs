@@ -23,13 +23,13 @@ namespace Gestor_de_oficina
         //Criar um novo carro de aluguer e colocar todos os campos de volta a branco
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
-            if(maskedTextBoxNumChassi.Text != "" && maskedTextBoxMatricula.Text != "" && comboBoxMarca.Text != "" && comboBoxModelo.Text != "" && comboBoxCombustivel.Text != "")
+            if(maskedTextBoxNumChassi.Text != "" && maskedTextBoxMatricula.Text != "" && comboBoxMarca.Text != "" && textBoxModelo.Text != "" && comboBoxCombustivel.Text != "")
             {
                 CarroAluguer carroAluguer = new CarroAluguer
                 {
                     NumeroChassis = maskedTextBoxNumChassi.Text,
                     Marca = comboBoxMarca.Text,
-                    Modelo = comboBoxModelo.Text,
+                    Modelo = textBoxModelo.Text,
                     Combustivel = comboBoxCombustivel.Text,
                     Matricula = maskedTextBoxMatricula.Text,
                     Estado = "No Stand"
@@ -40,7 +40,7 @@ namespace Gestor_de_oficina
 
                 maskedTextBoxNumChassi.Text = "";
                 comboBoxMarca.Text = "";
-                comboBoxModelo.Text = "";
+                textBoxModelo.Text = "";
                 comboBoxCombustivel.Text = "";
                 maskedTextBoxMatricula.Text = "";
             }

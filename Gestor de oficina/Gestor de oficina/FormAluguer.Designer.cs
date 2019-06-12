@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAluguer));
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.buttonDescontinuar = new System.Windows.Forms.Button();
             this.dataGridViewCarrosAluguer = new System.Windows.Forms.DataGridView();
             this.idCarroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroChassisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,13 +76,24 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.buttonDescontinuar);
             this.groupBox5.Controls.Add(this.dataGridViewCarrosAluguer);
             this.groupBox5.Location = new System.Drawing.Point(318, 11);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(830, 262);
+            this.groupBox5.Size = new System.Drawing.Size(830, 279);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Carros para Alugar";
+            // 
+            // buttonDescontinuar
+            // 
+            this.buttonDescontinuar.Location = new System.Drawing.Point(12, 233);
+            this.buttonDescontinuar.Name = "buttonDescontinuar";
+            this.buttonDescontinuar.Size = new System.Drawing.Size(811, 32);
+            this.buttonDescontinuar.TabIndex = 6;
+            this.buttonDescontinuar.Text = "Descontinuar Carro";
+            this.buttonDescontinuar.UseVisualStyleBackColor = true;
+            this.buttonDescontinuar.Click += new System.EventHandler(this.buttonDescontinuar_Click);
             // 
             // dataGridViewCarrosAluguer
             // 
@@ -97,7 +109,7 @@
             this.dataGridViewCarrosAluguer.Location = new System.Drawing.Point(12, 21);
             this.dataGridViewCarrosAluguer.Name = "dataGridViewCarrosAluguer";
             this.dataGridViewCarrosAluguer.RowTemplate.Height = 24;
-            this.dataGridViewCarrosAluguer.Size = new System.Drawing.Size(811, 229);
+            this.dataGridViewCarrosAluguer.Size = new System.Drawing.Size(811, 206);
             this.dataGridViewCarrosAluguer.TabIndex = 4;
             // 
             // idCarroDataGridViewTextBoxColumn
@@ -172,16 +184,16 @@
             this.groupBox6.Controls.Add(this.label1);
             this.groupBox6.Controls.Add(this.dateTimePicker2);
             this.groupBox6.Controls.Add(this.buttonAlugar);
-            this.groupBox6.Location = new System.Drawing.Point(318, 279);
+            this.groupBox6.Location = new System.Drawing.Point(318, 296);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(413, 292);
+            this.groupBox6.Size = new System.Drawing.Size(413, 275);
             this.groupBox6.TabIndex = 16;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Alugar Carro";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(35, 55);
+            this.dateTimePicker1.Location = new System.Drawing.Point(35, 82);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 8;
@@ -190,7 +202,7 @@
             // labelTotaldias
             // 
             this.labelTotaldias.AutoSize = true;
-            this.labelTotaldias.Location = new System.Drawing.Point(271, 85);
+            this.labelTotaldias.Location = new System.Drawing.Point(271, 112);
             this.labelTotaldias.Name = "labelTotaldias";
             this.labelTotaldias.Size = new System.Drawing.Size(46, 17);
             this.labelTotaldias.TabIndex = 7;
@@ -199,7 +211,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(257, 55);
+            this.label3.Location = new System.Drawing.Point(257, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(134, 17);
             this.label3.TabIndex = 6;
@@ -208,7 +220,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 85);
+            this.label2.Location = new System.Drawing.Point(9, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(184, 17);
             this.label2.TabIndex = 4;
@@ -217,7 +229,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 30);
+            this.label1.Location = new System.Drawing.Point(9, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(166, 17);
             this.label1.TabIndex = 3;
@@ -225,7 +237,7 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(35, 105);
+            this.dateTimePicker2.Location = new System.Drawing.Point(35, 132);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker2.TabIndex = 2;
@@ -233,7 +245,7 @@
             // 
             // buttonAlugar
             // 
-            this.buttonAlugar.Location = new System.Drawing.Point(12, 225);
+            this.buttonAlugar.Location = new System.Drawing.Point(12, 203);
             this.buttonAlugar.Name = "buttonAlugar";
             this.buttonAlugar.Size = new System.Drawing.Size(379, 60);
             this.buttonAlugar.TabIndex = 0;
@@ -250,9 +262,9 @@
             this.groupBox7.Controls.Add(this.label4);
             this.groupBox7.Controls.Add(this.textBoxKmfeitos);
             this.groupBox7.Controls.Add(this.buttonDevolver);
-            this.groupBox7.Location = new System.Drawing.Point(737, 279);
+            this.groupBox7.Location = new System.Drawing.Point(737, 296);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(411, 292);
+            this.groupBox7.Size = new System.Drawing.Size(411, 275);
             this.groupBox7.TabIndex = 12;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Devolver Carro";
@@ -260,7 +272,7 @@
             // labeltotal
             // 
             this.labeltotal.AutoSize = true;
-            this.labeltotal.Location = new System.Drawing.Point(304, 85);
+            this.labeltotal.Location = new System.Drawing.Point(306, 112);
             this.labeltotal.Name = "labeltotal";
             this.labeltotal.Size = new System.Drawing.Size(24, 17);
             this.labeltotal.TabIndex = 17;
@@ -269,7 +281,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(287, 60);
+            this.label5.Location = new System.Drawing.Point(291, 82);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 17);
             this.label5.TabIndex = 16;
@@ -279,7 +291,7 @@
             // 
             this.checkBoxOverdate.AutoSize = true;
             this.checkBoxOverdate.Enabled = false;
-            this.checkBoxOverdate.Location = new System.Drawing.Point(32, 120);
+            this.checkBoxOverdate.Location = new System.Drawing.Point(34, 147);
             this.checkBoxOverdate.Name = "checkBoxOverdate";
             this.checkBoxOverdate.Size = new System.Drawing.Size(228, 21);
             this.checkBoxOverdate.TabIndex = 15;
@@ -289,7 +301,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(210, 57);
+            this.label7.Location = new System.Drawing.Point(212, 84);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(28, 17);
             this.label7.TabIndex = 14;
@@ -298,7 +310,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 37);
+            this.label4.Location = new System.Drawing.Point(9, 57);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 17);
             this.label4.TabIndex = 11;
@@ -306,7 +318,7 @@
             // 
             // textBoxKmfeitos
             // 
-            this.textBoxKmfeitos.Location = new System.Drawing.Point(32, 57);
+            this.textBoxKmfeitos.Location = new System.Drawing.Point(34, 82);
             this.textBoxKmfeitos.Name = "textBoxKmfeitos";
             this.textBoxKmfeitos.Size = new System.Drawing.Size(172, 22);
             this.textBoxKmfeitos.TabIndex = 9;
@@ -314,7 +326,7 @@
             // 
             // buttonDevolver
             // 
-            this.buttonDevolver.Location = new System.Drawing.Point(12, 225);
+            this.buttonDevolver.Location = new System.Drawing.Point(12, 203);
             this.buttonDevolver.Name = "buttonDevolver";
             this.buttonDevolver.Size = new System.Drawing.Size(377, 60);
             this.buttonDevolver.TabIndex = 1;
@@ -409,5 +421,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modeloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn combustivelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button buttonDescontinuar;
     }
 }

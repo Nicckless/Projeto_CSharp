@@ -42,7 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonImprimir = new System.Windows.Forms.Button();
+            //this.buttonImprimir = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.buttonEliminarVenda = new System.Windows.Forms.Button();

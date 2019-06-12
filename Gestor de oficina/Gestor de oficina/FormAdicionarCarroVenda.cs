@@ -16,7 +16,7 @@ namespace Gestor_de_oficina
         //Adicionar um carro para venda à base de dados
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(maskedTextBoxNumChassi.Text) || string.IsNullOrEmpty(comboBoxMarca.Text) || string.IsNullOrEmpty(comboBoxModelo.Text) || string.IsNullOrEmpty(comboBoxCombustivel.Text))
+            if (string.IsNullOrEmpty(maskedTextBoxNumChassi.Text) || string.IsNullOrEmpty(comboBoxMarca.Text) || string.IsNullOrEmpty(textBoxModelo.Text) || string.IsNullOrEmpty(comboBoxCombustivel.Text))
                 return;
 
             var extras = listBoxExtras.Items.OfType<string>().ToArray();
@@ -30,7 +30,7 @@ namespace Gestor_de_oficina
             {
                 NumeroChassis = maskedTextBoxNumChassi.Text,
                 Marca = comboBoxMarca.Text,
-                Modelo = comboBoxModelo.Text,
+                Modelo = textBoxModelo.Text,
                 Combustivel = comboBoxCombustivel.Text,
                 Extras = extrasComEnters
             };
