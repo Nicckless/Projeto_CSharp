@@ -19,10 +19,10 @@ namespace Gestor_de_oficina
             if (string.IsNullOrEmpty(maskedTextBoxNumChassi.Text) || string.IsNullOrEmpty(comboBoxMarca.Text) || string.IsNullOrEmpty(textBoxModelo.Text) || string.IsNullOrEmpty(comboBoxCombustivel.Text))
                 return;
 
-            var extras = listBoxExtras.Items.OfType<string>().ToArray();
+            string[] extras = listBoxExtras.Items.OfType<string>().ToArray();
             string extrasComEnters = "";
 
-            foreach (var extra in extras)
+            foreach (String extra in extras)
             {
                 extrasComEnters += extra + "\n";
             }
