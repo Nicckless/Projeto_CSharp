@@ -52,7 +52,7 @@ namespace Gestor_de_oficina
 
             if (formCriarVenda.ShowDialog() == DialogResult.OK)
             {
-                var venda = formCriarVenda.Venda;
+                Venda venda = formCriarVenda.Venda;
 
                 venda.CarroVenda = carroVendaSelecionado;
                 myDb.Vendas.Add(venda);
