@@ -1,0 +1,21 @@
+Dados do Cliente:
+ Nome do cliente: Tiago Ruivo Ramos
+ Morada: casa dele
+ Contacto: 969696969
+ NIF: 123456789
+
+-------------------------------------
+Dados do Automóvel: 
+ Numero Chassis: A5841557551545255
+
+Marca + Modelo: BMW X3
+ Combustivel: Diesel
+ Matricula: 55-TG-89
+
+-------------------------------------
+Dados do Aluguer: 
+ Data de inicio de aluguer: 04/06/2019 21:13:51
+ Data de termino de aluguer: 05/06/2019 21:13:51
+ Quilometros feitos: 150
+ Carro entregue a tempo: Não
+Valor total do aluguer: 101€

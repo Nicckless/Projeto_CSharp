@@ -14,12 +14,7 @@ namespace Gestor_de_oficina
             InitializeComponent();
             myDb = new StandAutomoveisContainer();
 
-            (from cliente in myDb.Clientes
-             orderby cliente.Nome
-             select cliente).Load();
-
-            clienteBindingSource.DataSource = myDb.Clientes.Local.ToBindingList();
-            bindingNavigator1.CountItem.Text = myDb.Clientes.Local.Count().ToString();
+            LerDados();
         }
 
         //Abre um form para adicionar clientes á base de dados
@@ -33,8 +28,12 @@ namespace Gestor_de_oficina
         //Dá reload dos dados da base de dados para o Data Grid dos clientes e para o Navigator
         private void LerDados()
         {
-            dataGridView1.DataSource = myDb.Clientes.ToList();
-            clienteBindingSource.DataSource = myDb.Clientes.ToList();
+            (from cliente in myDb.Clientes
+             orderby cliente.Nome
+             select cliente).Load();
+
+            clienteBindingSource.DataSource = myDb.Clientes.Local.ToBindingList();
+            bindingNavigator1.CountItem.Text = " de " + myDb.Clientes.Local.Count().ToString();
         }
 
 

@@ -155,11 +155,18 @@ namespace Gestor_de_oficina
             Aluguer aluguerselected = (Aluguer)listBoxAlugueres.SelectedItem;
             if(aluguerselected.Valor <= 0)
             {
+                textBoxKmfeitos.Enabled = true;
                 if (aluguerselected.DataFim < DateTime.Now)
                     checkBoxOverdate.Checked = true;
 
                 if (checkBoxOverdate.Checked == true)
                     total = total + 50;
+            }
+            else
+            {
+                textBoxKmfeitos.Text = "";
+                textBoxKmfeitos.Enabled = false;
+                checkBoxOverdate.Checked = false;
             }
         }
 
@@ -171,13 +178,42 @@ namespace Gestor_de_oficina
             {
                 if (textBoxKmfeitos.Text.Length > 0)
                 {
-                    labeltotal.Text = (total + Convert.ToInt32(textBoxKmfeitos.Text) * precoaluguer).ToString() + "€";
+                    int km = 0;
+                    if (int.TryParse(textBoxKmfeitos.Text, out km))
+                    {
+                        labeltotal.Text = (total + Convert.ToInt32(textBoxKmfeitos.Text) * precoaluguer).ToString() + "€";
+                    }
                 }
                 else
                 {
-                    labeltotal.Text = "0€";
+                    if(total > 0)
+                    {
+                        labeltotal.Text = total.ToString() + "€";
+                    }
+                    else
+                    {
+                        labeltotal.Text = "0€";
+                    }
                 }
             }
+        }
+
+        //Colocar os carro como descontinuados
+        private void buttonDescontinuar_Click(object sender, EventArgs e)
+        {
+            CarroAluguer carroAluguer = (CarroAluguer)dataGridViewCarrosAluguer.CurrentRow.DataBoundItem;
+
+            if (carroAluguer.Estado == "No Stand")
+            {
+                carroAluguer.Estado = "Descontinuado";
+                myDB.SaveChanges();
+                MessageBox.Show("O Carro selecionado foi descontinuado");
+            }
+            else
+            {
+                MessageBox.Show("O Carro selecionado está alugado");
+            }
+            LerDados();
         }
     }
 }
